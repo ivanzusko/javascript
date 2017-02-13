@@ -45,17 +45,17 @@
   1. [Тестування](#testing)
   1. [Продуктивність](#performance)
   1. [Ресурсии](#resources)
-  1. [In the Wild](#in-the-wild)
+  1. [В реальному Світі](#in-the-wild)
   1. [Переклад](#translation)
-  1. [The JavaScript Style Guide Guide](#the-javascript-style-guide-guide)
+  1. [Керівництво зі стилю написання JavaScript](#the-javascript-style-guide-guide)
   1. [Поговоріть з нами про JavaScript](#chat-with-us-about-javascript)
   1. [Автори](#contributors)
   1. [License](#license)
 
-## Types
+## Типи
 
   <a name="types--primitives"></a><a name="1.1"></a>
-  - [1.1](#types--primitives) **Primitives**: When you access a primitive type you work directly on its value.
+  - [1.1](#types--primitives) **Примітиви**: Коли ви отримуєте доступ до примітиву, ви працюєте напряму з його значенням.
 
     + `string`
     + `number`
@@ -73,7 +73,7 @@
     ```
 
   <a name="types--complex"></a><a name="1.2"></a>
-  - [1.2](#types--complex)  **Complex**: When you access a complex type you work on a reference to its value.
+  - [1.2](#types--complex)  **Складні типи**: Коли ви отримуєте доступ до складного типу, ви працюєте з посиланням на його значення.
 
     + `object`
     + `array`
@@ -88,38 +88,38 @@
     console.log(foo[0], bar[0]); // => 9, 9
     ```
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ вверх](#table-of-contents)**
 
-## References
+## Посилання
 
   <a name="references--prefer-const"></a><a name="2.1"></a>
-  - [2.1](#references--prefer-const) Use `const` for all of your references; avoid using `var`. eslint: [`prefer-const`](http://eslint.org/docs/rules/prefer-const.html), [`no-const-assign`](http://eslint.org/docs/rules/no-const-assign.html)
+  - [2.1](#references--prefer-const) Використовуйте `const` для всіх посиланнь; уникайте використання `var`. eslint: [`prefer-const`](http://eslint.org/docs/rules/prefer-const.html), [`no-const-assign`](http://eslint.org/docs/rules/no-const-assign.html)
 
-    > Why? This ensures that you can't reassign your references, which can lead to bugs and difficult to comprehend code.
+    > Чому? Це убезпечить вас від переприсвоєння значення для вашого посилання, що може призвести до багів та важкості розуміння коду.
 
     ```javascript
-    // bad
+    // погано
     var a = 1;
     var b = 2;
 
-    // good
+    // добре
     const a = 1;
     const b = 2;
     ```
 
   <a name="references--disallow-var"></a><a name="2.2"></a>
-  - [2.2](#references--disallow-var) If you must reassign references, use `let` instead of `var`. eslint: [`no-var`](http://eslint.org/docs/rules/no-var.html) jscs: [`disallowVar`](http://jscs.info/rule/disallowVar)
+  - [2.2](#references--disallow-var) Якщо ви пеприсвоюєте посилання -  використовуйте `let` замість `var`. eslint: [`no-var`](http://eslint.org/docs/rules/no-var.html) jscs: [`disallowVar`](http://jscs.info/rule/disallowVar)
 
-    > Why? `let` is block-scoped rather than function-scoped like `var`.
+    > Чому? `let` має блочну область видимості, на відміну від `var`, область видимості котрого обмежена функцією.
 
     ```javascript
-    // bad
+    // погано
     var count = 1;
     if (true) {
       count += 1;
     }
 
-    // good, use the let.
+    // добре, використовуйте let.
     let count = 1;
     if (true) {
       count += 1;
@@ -127,10 +127,10 @@
     ```
 
   <a name="references--block-scope"></a><a name="2.3"></a>
-  - [2.3](#references--block-scope) Note that both `let` and `const` are block-scoped.
+  - [2.3](#references--block-scope) Зауважте, що і `let` і `const` мають блочну область видимості.
 
     ```javascript
-    // const and let only exist in the blocks they are defined in.
+    // const та let існують лише в межах блоку, в якому вони були визначені.
     {
       let a = 1;
       const b = 1;
@@ -139,25 +139,25 @@
     console.log(b); // ReferenceError
     ```
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ вверх](#table-of-contents)**
 
-## Objects
+## Об'єкти
 
   <a name="objects--no-new"></a><a name="3.1"></a>
-  - [3.1](#objects--no-new) Use the literal syntax for object creation. eslint: [`no-new-object`](http://eslint.org/docs/rules/no-new-object.html)
+  - [3.1](#objects--no-new) Використовуйте літерали (фгурні скобки) для створення нового об'єкта. Не використовуйте для створення нового об'єкта конструктор `new Object`. eslint: [`no-new-object`](http://eslint.org/docs/rules/no-new-object.html)
 
     ```javascript
-    // bad
+    // погано
     const item = new Object();
 
-    // good
+    // добре
     const item = {};
     ```
 
   <a name="es6-computed-properties"></a><a name="3.4"></a>
   - [3.2](#es6-computed-properties) Use computed property names when creating objects with dynamic property names.
 
-    > Why? They allow you to define all the properties of an object in one place.
+    > Чому? Вони дозволяють визначати всі властивості об'єкта в одному місці.
 
     ```javascript
 
@@ -165,14 +165,14 @@
       return `a key named ${k}`;
     }
 
-    // bad
+    // погано
     const obj = {
       id: 5,
       name: 'San Francisco',
     };
     obj[getKey('enabled')] = true;
 
-    // good
+    // добре
     const obj = {
       id: 5,
       name: 'San Francisco',
@@ -181,10 +181,10 @@
     ```
 
   <a name="es6-object-shorthand"></a><a name="3.5"></a>
-  - [3.3](#es6-object-shorthand) Use object method shorthand. eslint: [`object-shorthand`](http://eslint.org/docs/rules/object-shorthand.html) jscs: [`requireEnhancedObjectLiterals`](http://jscs.info/rule/requireEnhancedObjectLiterals)
+  - [3.3](#es6-object-shorthand) Використовуйте скорочення для метода об'єкта. eslint: [`object-shorthand`](http://eslint.org/docs/rules/object-shorthand.html) jscs: [`requireEnhancedObjectLiterals`](http://jscs.info/rule/requireEnhancedObjectLiterals)
 
     ```javascript
-    // bad
+    // погано
     const atom = {
       value: 1,
 
@@ -193,7 +193,7 @@
       },
     };
 
-    // good
+    // добре
     const atom = {
       value: 1,
 
@@ -204,34 +204,34 @@
     ```
 
   <a name="es6-object-concise"></a><a name="3.6"></a>
-  - [3.4](#es6-object-concise) Use property value shorthand. eslint: [`object-shorthand`](http://eslint.org/docs/rules/object-shorthand.html) jscs: [`requireEnhancedObjectLiterals`](http://jscs.info/rule/requireEnhancedObjectLiterals)
+  - [3.4](#es6-object-concise) Використовуйте скорочення значення властивості. eslint: [`object-shorthand`](http://eslint.org/docs/rules/object-shorthand.html) jscs: [`requireEnhancedObjectLiterals`](http://jscs.info/rule/requireEnhancedObjectLiterals)
 
-    > Why? It is shorter to write and descriptive.
+    > Чому? Так менше писати і більш зрозуміло.
 
     ```javascript
     const lukeSkywalker = 'Luke Skywalker';
 
-    // bad
+    // погано
     const obj = {
       lukeSkywalker: lukeSkywalker,
     };
 
-    // good
+    // добре
     const obj = {
       lukeSkywalker,
     };
     ```
 
   <a name="objects--grouped-shorthand"></a><a name="3.7"></a>
-  - [3.5](#objects--grouped-shorthand) Group your shorthand properties at the beginning of your object declaration.
+  - [3.5](#objects--grouped-shorthand) Групуйте ваші скорочені властивості на початку оголошення вашого об'єкту.
 
-    > Why? It's easier to tell which properties are using the shorthand.
+    > Чому? Так легше сказати які властивості використовують скорочення.
 
     ```javascript
     const anakinSkywalker = 'Anakin Skywalker';
     const lukeSkywalker = 'Luke Skywalker';
 
-    // bad
+    // погано
     const obj = {
       episodeOne: 1,
       twoJediWalkIntoACantina: 2,
@@ -241,7 +241,7 @@
       anakinSkywalker,
     };
 
-    // good
+    // добре
     const obj = {
       lukeSkywalker,
       anakinSkywalker,
@@ -253,19 +253,19 @@
     ```
 
   <a name="objects--quoted-props"></a><a name="3.8"></a>
-  - [3.6](#objects--quoted-props) Only quote properties that are invalid identifiers. eslint: [`quote-props`](http://eslint.org/docs/rules/quote-props.html) jscs: [`disallowQuotedKeysInObjects`](http://jscs.info/rule/disallowQuotedKeysInObjects)
+  - [3.6](#objects--quoted-props) Беріть в лапки лише ті властивості, які є неприпустимими ідентифікаторами. eslint: [`quote-props`](http://eslint.org/docs/rules/quote-props.html) jscs: [`disallowQuotedKeysInObjects`](http://jscs.info/rule/disallowQuotedKeysInObjects)
 
-  > Why? In general we consider it subjectively easier to read. It improves syntax highlighting, and is also more easily optimized by many JS engines.
+  > Чому? В загальному, ми вважаємо, що так суб'єктивно легше читати. Це покращує підсвітку синтаксису, а також більш легко оптимізується багатьма JS двигунами.
 
   ```javascript
-  // bad
+  // погано
   const bad = {
     'foo': 3,
     'bar': 4,
     'data-blah': 5,
   };
 
-  // good
+  // добре
   const good = {
     foo: 3,
     bar: 4,
@@ -274,12 +274,12 @@
   ```
 
   <a name="objects--prototype-builtins"></a>
-  - [3.7](#objects--prototype-builtins) Do not call `Object.prototype` methods directly, such as `hasOwnProperty`, `propertyIsEnumerable`, and `isPrototypeOf`.
+  - [3.7](#objects--prototype-builtins) Не використовуйте напряму методи `Object.prototype`, такі як `hasOwnProperty`, `propertyIsEnumerable`, і `isPrototypeOf`.
 
-  > Why? These methods may be shadowed by properties on the object in question - consider `{ hasOwnProperty: false }` - or, the object may be a null object (`Object.create(null)`).
+  > Чому? These methods may be shadowed by properties on the object in question - consider `{ hasOwnProperty: false }` - or, the object may be a null object (`Object.create(null)`).
 
   ```javascript
-  // bad
+  // погано
   console.log(object.hasOwnProperty(key));
 
   // good
