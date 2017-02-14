@@ -318,34 +318,34 @@ TODO: FIXME
 ## Масиви
 
   <a name="arrays--literals"></a><a name="4.1"></a>
-  - [4.1](#arrays--literals) Use the literal syntax for array creation. eslint: [`no-array-constructor`](http://eslint.org/docs/rules/no-array-constructor.html)
+  - [4.1](#arrays--literals) Використовуйте синтаксис літерала для створення масиву. eslint: [`no-array-constructor`](http://eslint.org/docs/rules/no-array-constructor.html)
 
     ```javascript
-    // bad
+    // погано
     const items = new Array();
 
-    // good
+    // добре
     const items = [];
     ```
 
   <a name="arrays--push"></a><a name="4.2"></a>
-  - [4.2](#arrays--push) Use [Array#push](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Array/push) instead of direct assignment to add items to an array.
+  - [4.2](#arrays--push) Використовуйте [Array#push](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Array/push) замість прямого запису елементів у масив.
 
     ```javascript
     const someStack = [];
 
-    // bad
+    // погано
     someStack[someStack.length] = 'abracadabra';
 
-    // good
+    // добре
     someStack.push('abracadabra');
     ```
 
   <a name="es6-array-spreads"></a><a name="4.3"></a>
-  - [4.3](#es6-array-spreads) Use array spreads `...` to copy arrays.
+  - [4.3](#es6-array-spreads) Використовуйте `...`( `spreads` ) оператор масива для копіювання масивів.
 
     ```javascript
-    // bad
+    // погано
     const len = items.length;
     const itemsCopy = [];
     let i;
@@ -354,12 +354,12 @@ TODO: FIXME
       itemsCopy[i] = items[i];
     }
 
-    // good
+    // добре
     const itemsCopy = [...items];
     ```
 
   <a name="arrays--from"></a><a name="4.4"></a>
-  - [4.4](#arrays--from) To convert an array-like object to an array, use [Array.from](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Array/from).
+  - [4.4](#arrays--from) Для конвертації масивоподібних об'єктів в масив, використовуйте [Array.from](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Array/from).
 
     ```javascript
     const foo = document.querySelectorAll('.foo');
@@ -367,26 +367,26 @@ TODO: FIXME
     ```
 
   <a name="arrays--callback-return"></a><a name="4.5"></a>
-  - [4.5](#arrays--callback-return) Use return statements in array method callbacks. It's ok to omit the return if the function body consists of a single statement following [8.2](#8.2). eslint: [`array-callback-return`](http://eslint.org/docs/rules/array-callback-return)
+  - [4.5](#arrays--callback-return) Використовуйте оператор `return` у функціях зворотнього виклику методу масива. Це нормально не робити повернення, якщо тіло функції складається з одного визначення згідно з [8.2](#8.2). eslint: [`array-callback-return`](http://eslint.org/docs/rules/array-callback-return)
 
     ```javascript
-    // good
+    // добре
     [1, 2, 3].map((x) => {
       const y = x + 1;
       return x * y;
     });
 
-    // good
+    // добре
     [1, 2, 3].map(x => x + 1);
 
-    // bad
+    // погано
     const flat = {};
     [[0, 1], [2, 3], [4, 5]].reduce((memo, item, index) => {
       const flatten = memo.concat(item);
       flat[index] = flatten;
     });
 
-    // good
+    // добре
     const flat = {};
     [[0, 1], [2, 3], [4, 5]].reduce((memo, item, index) => {
       const flatten = memo.concat(item);
@@ -394,7 +394,7 @@ TODO: FIXME
       return flatten;
     });
 
-    // bad
+    // погано
     inbox.filter((msg) => {
       const { subject, author } = msg;
       if (subject === 'Mockingbird') {
@@ -404,7 +404,7 @@ TODO: FIXME
       }
     });
 
-    // good
+    // добре
     inbox.filter((msg) => {
       const { subject, author } = msg;
       if (subject === 'Mockingbird') {
@@ -415,7 +415,7 @@ TODO: FIXME
     });
     ```
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ вверх](#table-of-contents)**
 
 ## Destructuring
 
