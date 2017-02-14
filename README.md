@@ -417,15 +417,15 @@ TODO: FIXME
 
 **[⬆ вверх](#table-of-contents)**
 
-## Destructuring
+## Деструктурування
 
   <a name="destructuring--object"></a><a name="5.1"></a>
-  - [5.1](#destructuring--object) Use object destructuring when accessing and using multiple properties of an object. jscs: [`requireObjectDestructuring`](http://jscs.info/rule/requireObjectDestructuring)
+  - [5.1](#destructuring--object) Використовуйте деструктурування об'єкта, коли отримуєте доступ і використовуєте декілька властивостей об'єкта. jscs: [`requireObjectDestructuring`](http://jscs.info/rule/requireObjectDestructuring)
 
-    > Why? Destructuring saves you from creating temporary references for those properties.
+    > Чому? Деструктурування вберігаж вас від створення тимчасових посиланнь на ті властивості.
 
     ```javascript
-    // bad
+    // погано
     function getFullName(user) {
       const firstName = user.firstName;
       const lastName = user.lastName;
@@ -433,59 +433,59 @@ TODO: FIXME
       return `${firstName} ${lastName}`;
     }
 
-    // good
+    // добре
     function getFullName(user) {
       const { firstName, lastName } = user;
       return `${firstName} ${lastName}`;
     }
 
-    // best
+    // найкраще
     function getFullName({ firstName, lastName }) {
       return `${firstName} ${lastName}`;
     }
     ```
 
   <a name="destructuring--array"></a><a name="5.2"></a>
-  - [5.2](#destructuring--array) Use array destructuring. jscs: [`requireArrayDestructuring`](http://jscs.info/rule/requireArrayDestructuring)
+  - [5.2](#destructuring--array) Використовуйте деструктурування масивів. jscs: [`requireArrayDestructuring`](http://jscs.info/rule/requireArrayDestructuring)
 
     ```javascript
     const arr = [1, 2, 3, 4];
 
-    // bad
+    // погано
     const first = arr[0];
     const second = arr[1];
 
-    // good
+    // добре
     const [first, second] = arr;
     ```
 
   <a name="destructuring--object-over-array"></a><a name="5.3"></a>
-  - [5.3](#destructuring--object-over-array) Use object destructuring for multiple return values, not array destructuring. jscs: [`disallowArrayDestructuringReturn`](http://jscs.info/rule/disallowArrayDestructuringReturn)
+  - [5.3](#destructuring--object-over-array) Використовуйте деструктурування об'єкта, а не масива, для декількох повертаємих значеннь . jscs: [`disallowArrayDestructuringReturn`](http://jscs.info/rule/disallowArrayDestructuringReturn)
 
-    > Why? You can add new properties over time or change the order of things without breaking call sites.
+    > Чому? Ви зможете з часом додати нові властивості або змінити послідовність речей не порушуючи розташування викликів.
 
     ```javascript
-    // bad
+    // погано
     function processInput(input) {
-      // then a miracle occurs
+      // то відбувається чудо
       return [left, right, top, bottom];
     }
 
-    // the caller needs to think about the order of return data
+    // Виклик повинен подумати про послідовність повертаємих даних
     const [left, __, top] = processInput(input);
 
-    // good
+    // добре
     function processInput(input) {
-      // then a miracle occurs
+      // то відбувається чудо
       return { left, right, top, bottom };
     }
 
-    // the caller selects only the data they need
+    // виклик обирає лише необхідні йому данні
     const { left, top } = processInput(input);
     ```
 
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ вверх](#table-of-contents)**
 
 ## Strings
 
