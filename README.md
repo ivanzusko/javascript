@@ -487,88 +487,88 @@ TODO: FIXME
 
 **[⬆ вверх](#table-of-contents)**
 
-## Strings
+## Строки
 
   <a name="strings--quotes"></a><a name="6.1"></a>
-  - [6.1](#strings--quotes) Use single quotes `''` for strings. eslint: [`quotes`](http://eslint.org/docs/rules/quotes.html) jscs: [`validateQuoteMarks`](http://jscs.info/rule/validateQuoteMarks)
+  - [6.1](#strings--quotes) Використовуйте одинарні лапки `''` для строк. eslint: [`quotes`](http://eslint.org/docs/rules/quotes.html) jscs: [`validateQuoteMarks`](http://jscs.info/rule/validateQuoteMarks)
 
     ```javascript
-    // bad
+    // погано
     const name = "Capt. Janeway";
 
-    // bad - template literals should contain interpolation or newlines
+    // погано - літеральні шаблони мають містити інтерполяцію чи нові строки
     const name = `Capt. Janeway`;
 
-    // good
+    // добре
     const name = 'Capt. Janeway';
     ```
 
   <a name="strings--line-length"></a><a name="6.2"></a>
-  - [6.2](#strings--line-length) Strings that cause the line to go over 100 characters should not be written across multiple lines using string concatenation.
+  - [6.2](#strings--line-length) Строки, які подовжують лінію більше ніж на 100 символів не повинні записуватись у кілька рядків за допомогою конкатенації
 
-    > Why? Broken strings are painful to work with and make code less searchable.
+    > Чому? З розбитими таким чином строками болючіше працювати і вони роблять код важко читаємим.
 
     ```javascript
-    // bad
+    // погано
     const errorMessage = 'This is a super long error that was thrown because \
     of Batman. When you stop to think about how Batman had anything to do \
     with this, you would get nowhere \
     fast.';
 
-    // bad
+    // погано
     const errorMessage = 'This is a super long error that was thrown because ' +
       'of Batman. When you stop to think about how Batman had anything to do ' +
       'with this, you would get nowhere fast.';
 
-    // good
+    // добре
     const errorMessage = 'This is a super long error that was thrown because of Batman. When you stop to think about how Batman had anything to do with this, you would get nowhere fast.';
     ```
 
   <a name="es6-template-literals"></a><a name="6.4"></a>
-  - [6.3](#es6-template-literals) When programmatically building up strings, use template strings instead of concatenation. eslint: [`prefer-template`](http://eslint.org/docs/rules/prefer-template.html) [`template-curly-spacing`](http://eslint.org/docs/rules/template-curly-spacing) jscs: [`requireTemplateStrings`](http://jscs.info/rule/requireTemplateStrings)
+  - [6.3](#es6-template-literals) Коли програмно будуєте строки, використовуйте строчні шаблони замість конкатенації. eslint: [`prefer-template`](http://eslint.org/docs/rules/prefer-template.html) [`template-curly-spacing`](http://eslint.org/docs/rules/template-curly-spacing) jscs: [`requireTemplateStrings`](http://jscs.info/rule/requireTemplateStrings)
 
-    > Why? Template strings give you a readable, concise syntax with proper newlines and string interpolation features.
+    > Чому? Строчні шаблони дають читабельність, короткий синтаксис з переносом нових ліній та функціями інтерполяції строки.
 
     ```javascript
-    // bad
+    // погано
     function sayHi(name) {
       return 'How are you, ' + name + '?';
     }
 
-    // bad
+    // погано
     function sayHi(name) {
       return ['How are you, ', name, '?'].join();
     }
 
-    // bad
+    // погано
     function sayHi(name) {
       return `How are you, ${ name }?`;
     }
 
-    // good
+    // добре
     function sayHi(name) {
       return `How are you, ${name}?`;
     }
     ```
 
   <a name="strings--eval"></a><a name="6.5"></a>
-  - [6.4](#strings--eval) Never use `eval()` on a string, it opens too many vulnerabilities.
+  - [6.4](#strings--eval) Ніколи не використовуйте `eval()` на строці, це відкриває дуже багато вразливостей.
 
   <a name="strings--escaping"></a>
-  - [6.5](#strings--escaping) Do not unnecessarily escape characters in strings. eslint: [`no-useless-escape`](http://eslint.org/docs/rules/no-useless-escape)
+  - [6.5](#strings--escaping) Не зловживайте символами екранування у строках. eslint: [`no-useless-escape`](http://eslint.org/docs/rules/no-useless-escape)
 
-    > Why? Backslashes harm readability, thus they should only be present when necessary.
+    > Чому? Зворотні слеші ('\') шкодять читаємості, тому вони мають використовуватись лише там де дійсно необхідно.
 
     ```javascript
-    // bad
+    // погано
     const foo = '\'this\' \i\s \"quoted\"';
 
-    // good
+    // добре
     const foo = '\'this\' is "quoted"';
     const foo = `my name is '${name}'`;
     ```
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ вверх](#table-of-contents)**
 
 
 ## Functions
