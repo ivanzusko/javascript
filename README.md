@@ -144,7 +144,7 @@
 ## Об'єкти
 
   <a name="objects--no-new"></a><a name="3.1"></a>
-  - [3.1](#objects--no-new) Використовуйте літерали (фгурні скобки) для створення нового об'єкта. Не використовуйте для створення нового об'єкта конструктор `new Object`. eslint: [`no-new-object`](http://eslint.org/docs/rules/no-new-object.html)
+  - [3.1](#objects--no-new) Використовуйте літерали (фігурні скобки) для створення нового об'єкта. Не використовуйте для створення нового об'єкта конструктор `new Object`. eslint: [`no-new-object`](http://eslint.org/docs/rules/no-new-object.html)
 
     ```javascript
     // погано
@@ -155,7 +155,7 @@
     ```
 
   <a name="es6-computed-properties"></a><a name="3.4"></a>
-  - [3.2](#es6-computed-properties) Use computed property names when creating objects with dynamic property names.
+  - [3.2](#es6-computed-properties) Використовуйте вираховані імена властивостей, при створенні об'єктів з динамічними іменами властивостей.
 
     > Чому? Вони дозволяють визначати всі властивості об'єкта в одному місці.
 
@@ -275,47 +275,47 @@
 
   <a name="objects--prototype-builtins"></a>
   - [3.7](#objects--prototype-builtins) Не використовуйте напряму методи `Object.prototype`, такі як `hasOwnProperty`, `propertyIsEnumerable`, і `isPrototypeOf`.
-
+TODO: FIXME
   > Чому? These methods may be shadowed by properties on the object in question - consider `{ hasOwnProperty: false }` - or, the object may be a null object (`Object.create(null)`).
 
   ```javascript
   // погано
   console.log(object.hasOwnProperty(key));
 
-  // good
+  // добре
   console.log(Object.prototype.hasOwnProperty.call(object, key));
 
-  // best
-  const has = Object.prototype.hasOwnProperty; // cache the lookup once, in module scope.
-  /* or */
+  // найкраще
+  const has = Object.prototype.hasOwnProperty; // закешовуємо результати пошуку у скоупі модуля.
+  /* або */
   import has from 'has';
   …
   console.log(has.call(object, key));
   ```
 
   <a name="objects--rest-spread"></a>
-  - [3.8](#objects--rest-spread) Prefer the object spread operator over [`Object.assign`](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Object/assign) to shallow-copy objects. Use the object rest operator to get a new object with certain properties omitted.
+  - [3.8](#objects--rest-spread) Віддавайте перевагу `spread` оператору над [`Object.assign`](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Object/assign) для дрібного копіювання об'єктів. Використовуйте `rest` оператор для отримання нового об'єкта з певними відсутніми властивостями.
 
   ```javascript
-  // very bad
+  // дуже погано
   const original = { a: 1, b: 2 };
-  const copy = Object.assign(original, { c: 3 }); // this mutates `original` ಠ_ಠ
-  delete copy.a; // so does this
+  const copy = Object.assign(original, { c: 3 }); // це мутує `original` ಠ_ಠ
+  delete copy.a; // це також
 
-  // bad
+  // погано
   const original = { a: 1, b: 2 };
   const copy = Object.assign({}, original, { c: 3 }); // copy => { a: 1, b: 2, c: 3 }
 
-  // good
+  // добре
   const original = { a: 1, b: 2 };
   const copy = { ...original, c: 3 }; // copy => { a: 1, b: 2, c: 3 }
 
   const { a, ...noA } = copy; // noA => { b: 2, c: 3 }
   ```
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ вверх](#table-of-contents)**
 
-## Arrays
+## Масиви
 
   <a name="arrays--literals"></a><a name="4.1"></a>
   - [4.1](#arrays--literals) Use the literal syntax for array creation. eslint: [`no-array-constructor`](http://eslint.org/docs/rules/no-array-constructor.html)
