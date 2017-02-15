@@ -1139,37 +1139,37 @@ TODO: FIXME
 **[⬆ вверх](#table-of-contents)**
 
 
-## Modules
+## Модулі
 
   <a name="modules--use-them"></a><a name="10.1"></a>
-  - [10.1](#modules--use-them) Always use modules (`import`/`export`) over a non-standard module system. You can always transpile to your preferred module system.
+  - [10.1](#modules--use-them) Завжди віддавайте перевагу використанню (`import`/`export`) модуля, а не нестандартній модульній системі. Ви завжди можете зконвертувати(transpile) до вашої улюбленої модульної системи.
 
-    > Why? Modules are the future, let's start using the future now.
+    > Чому? Модулі - це майбутнє, тож давайте використовувати майбутнє вже зараз.
 
     ```javascript
-    // bad
+    // погано
     const AirbnbStyleGuide = require('./AirbnbStyleGuide');
     module.exports = AirbnbStyleGuide.es6;
 
-    // ok
+    // нормально
     import AirbnbStyleGuide from './AirbnbStyleGuide';
     export default AirbnbStyleGuide.es6;
 
-    // best
+    // найкраще
     import { es6 } from './AirbnbStyleGuide';
     export default es6;
     ```
 
   <a name="modules--no-wildcard"></a><a name="10.2"></a>
-  - [10.2](#modules--no-wildcard) Do not use wildcard imports.
+  - [10.2](#modules--no-wildcard) Ніколи не вживайте непередбачувані імпортів.
 
-    > Why? This makes sure you have a single default export.
+    > Чому? Це гарантує, що у вас по замовчуванню експортується лише один модуль.
 
     ```javascript
-    // bad
+    // погано
     import * as AirbnbStyleGuide from './AirbnbStyleGuide';
 
-    // good
+    // добре
     import AirbnbStyleGuide from './AirbnbStyleGuide';
     ```
 
