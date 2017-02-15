@@ -1174,33 +1174,33 @@ TODO: FIXME
     ```
 
   <a name="modules--no-export-from-import"></a><a name="10.3"></a>
-  - [10.3](#modules--no-export-from-import) And do not export directly from an import.
+  - [10.3](#modules--no-export-from-import) І не експортуйте напряму з імпорту.
 
-    > Why? Although the one-liner is concise, having one clear way to import and one clear way to export makes things consistent.
+    > Чому? Не дивлячись на те, що одна строка це досить коротко, мати один чіткий шлях для імпорта і один чіткий шлях для експорта робить речі більш зрозумілими.
 
     ```javascript
-    // bad
+    // погано
     // filename es6.js
     export { es6 as default } from './AirbnbStyleGuide';
 
-    // good
+    // добре
     // filename es6.js
     import { es6 } from './AirbnbStyleGuide';
     export default es6;
     ```
 
   <a name="modules--no-duplicate-imports"></a>
-  - [10.4](#modules--no-duplicate-imports) Only import from a path in one place.
+  - [10.4](#modules--no-duplicate-imports) Імпортуйте з одного місця лише раз.
  eslint: [`no-duplicate-imports`](http://eslint.org/docs/rules/no-duplicate-imports)
-    > Why? Having multiple lines that import from the same path can make code harder to maintain.
+    > Чому? Коли є кілька рядків, які імпортують з одного шляху - це ускладнює підтримку коду.
 
     ```javascript
-    // bad
+    // погано
     import foo from 'foo';
     // … some other imports … //
     import { named1, named2 } from 'foo';
 
-    // good
+    // добре
     import foo, { named1, named2 } from 'foo';
 
     // good
