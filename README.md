@@ -845,23 +845,23 @@ TODO: FIXME
 
 **[⬆ вверх](#table-of-contents)**
 
-## Arrow Functions
+## Arrow-функції
 
   <a name="arrows--use-them"></a><a name="8.1"></a>
-  - [8.1](#arrows--use-them) When you must use function expressions (as when passing an anonymous function), use arrow function notation. eslint: [`prefer-arrow-callback`](http://eslint.org/docs/rules/prefer-arrow-callback.html), [`arrow-spacing`](http://eslint.org/docs/rules/arrow-spacing.html) jscs: [`requireArrowFunctions`](http://jscs.info/rule/requireArrowFunctions)
+  - [8.1](#arrows--use-them) Коли вам потрібно використати функціональний вираз (так само якщо потрібно передати анонімну функцію) - використовуйте позначення arrow-функції. eslint: [`prefer-arrow-callback`](http://eslint.org/docs/rules/prefer-arrow-callback.html), [`arrow-spacing`](http://eslint.org/docs/rules/arrow-spacing.html) jscs: [`requireArrowFunctions`](http://jscs.info/rule/requireArrowFunctions)
 
-    > Why? It creates a version of the function that executes in the context of `this`, which is usually what you want, and is a more concise syntax.
+    > Чому? Це створює версію функції, яка виконується у контексті `this`, що вам зазвичай і потрібно, і має коротший синтаксис.
 
-    > Why not? If you have a fairly complicated function, you might move that logic out into its own function declaration.
+    > Чому ні? Якщо у вас є досить складна функція, ви можете винести складну логіку з неї у її власну оголошену функцію.
 
     ```javascript
-    // bad
+    // погано
     [1, 2, 3].map(function (x) {
       const y = x + 1;
       return x * y;
     });
 
-    // good
+    // добре
     [1, 2, 3].map((x) => {
       const y = x + 1;
       return x * y;
