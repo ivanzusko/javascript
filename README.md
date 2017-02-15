@@ -905,7 +905,7 @@ TODO: FIXME
     ['get', 'post', 'put'].map(httpMethod => Object.prototype.hasOwnProperty.call(
         httpMagicObjectWithAVeryLongName,
         httpMethod
-      
+
     );
 
     // добре
@@ -920,7 +920,7 @@ TODO: FIXME
   <a name="arrows--one-arg-parens"></a><a name="8.4"></a>
   - [8.4](#arrows--one-arg-parens) Якщо ваша функція приймає єдиний аргумент і ви не використовуєте дужки - не використайте в такому разі і фігурні дужки. В іншому випадку, завжди огортайте аргументи дужками. eslint: [`arrow-parens`](http://eslint.org/docs/rules/arrow-parens.html) jscs:  [`disallowParenthesesAroundArrowParam`](http://jscs.info/rule/disallowParenthesesAroundArrowParam)
 
-    > Чому? Less visual clutter.TODO: COMPLETE THIS
+    > Чому? Менше візуального безладу.
 
     ```js
     // погано
@@ -948,7 +948,7 @@ TODO: FIXME
     ```
 
   <a name="arrows--confusing"></a><a name="8.5"></a>
-  - [8.5](#arrows--confusing) Уникайте збентежливого синтаксису arrow-функції (`=>`) з операторами порівняння (`<=`, `>=`). eslint: [`no-confusing-arrow`](http://eslint.org/docs/rules/no-confusing-arrow)
+  - [8.5](#arrows--confusing) Уникайте синтаксису arrow-функції (`=>`) з операторами порівняння (`<=`, `>=`), оскільки це може збити з пантелику. eslint: [`no-confusing-arrow`](http://eslint.org/docs/rules/no-confusing-arrow)
 
     ```js
     // погано
@@ -970,15 +970,15 @@ TODO: FIXME
 **[⬆ вверх](#table-of-contents)**
 
 
-## Classes & Constructors
+## Класи & Конструктори
 
   <a name="constructors--use-class"></a><a name="9.1"></a>
-  - [9.1](#constructors--use-class) Always use `class`. Avoid manipulating `prototype` directly.
+  - [9.1](#constructors--use-class) Завжди використовуйте `class`. Уникайте маніпулювати `prototype` напряму.
 
-    > Why? `class` syntax is more concise and easier to reason about.
+    > Чому? `class` синтаксис коротший і його легше зрозуміти.
 
     ```javascript
-    // bad
+    // погано
     function Queue(contents = []) {
       this.queue = [...contents];
     }
@@ -989,7 +989,7 @@ TODO: FIXME
     };
 
 
-    // good
+    // добре
     class Queue {
       constructor(contents = []) {
         this.queue = [...contents];
@@ -1003,12 +1003,12 @@ TODO: FIXME
     ```
 
   <a name="constructors--extends"></a><a name="9.2"></a>
-  - [9.2](#constructors--extends) Use `extends` for inheritance.
+  - [9.2](#constructors--extends) Використовуйте `extends` для наслідування.
 
-    > Why? It is a built-in way to inherit prototype functionality without breaking `instanceof`.
+    > Чому? Це вбудований спосіб щоб наслідувати функціональність прототипу, не порушуючи `instanceof`.
 
     ```javascript
-    // bad
+    // погано
     const inherits = require('inherits');
     function PeekableQueue(contents) {
       Queue.apply(this, contents);
@@ -1018,7 +1018,7 @@ TODO: FIXME
       return this._queue[0];
     }
 
-    // good
+    // добре
     class PeekableQueue extends Queue {
       peek() {
         return this._queue[0];
@@ -1027,10 +1027,10 @@ TODO: FIXME
     ```
 
   <a name="constructors--chaining"></a><a name="9.3"></a>
-  - [9.3](#constructors--chaining) Methods can return `this` to help with method chaining.
+  - [9.3](#constructors--chaining) Методи можуть повертати `this`, щоб допомогти методу з побудовою ланцюжка.
 
     ```javascript
-    // bad
+    // погано
     Jedi.prototype.jump = function () {
       this.jumping = true;
       return true;
@@ -1044,7 +1044,7 @@ TODO: FIXME
     luke.jump(); // => true
     luke.setHeight(20); // => undefined
 
-    // good
+    // добре
     class Jedi {
       jump() {
         this.jumping = true;
@@ -1065,7 +1065,7 @@ TODO: FIXME
 
 
   <a name="constructors--tostring"></a><a name="9.4"></a>
-  - [9.4](#constructors--tostring) It's okay to write a custom toString() method, just make sure it works successfully and causes no side effects.
+  - [9.4](#constructors--tostring) Це нормально писати власний toString() метод, просто переконайтесь, що він працює вдало і без побічних ефектів.
 
     ```javascript
     class Jedi {
@@ -1084,10 +1084,10 @@ TODO: FIXME
     ```
 
   <a name="constructors--no-useless"></a><a name="9.5"></a>
-  - [9.5](#constructors--no-useless) Classes have a default constructor if one is not specified. An empty constructor function or one that just delegates to a parent class is unnecessary. eslint: [`no-useless-constructor`](http://eslint.org/docs/rules/no-useless-constructor)
+  - [9.5](#constructors--no-useless) Класи мають конструктор за замовчуванням, якщо не вказано іншого. Порожній конструктор функції або конструктор, який просто посилається на батьківський клас не є необхідними. eslint: [`no-useless-constructor`](http://eslint.org/docs/rules/no-useless-constructor)
 
     ```javascript
-    // bad
+    // погано
     class Jedi {
       constructor() {}
 
@@ -1096,14 +1096,14 @@ TODO: FIXME
       }
     }
 
-    // bad
+    // погано
     class Rey extends Jedi {
       constructor(...args) {
         super(...args);
       }
     }
 
-    // good
+    // добре
     class Rey extends Jedi {
       constructor(...args) {
         super(...args);
@@ -1113,30 +1113,30 @@ TODO: FIXME
     ```
 
   <a name="classes--no-duplicate-members"></a>
-  - [9.6](#classes--no-duplicate-members) Avoid duplicate class members. eslint: [`no-dupe-class-members`](http://eslint.org/docs/rules/no-dupe-class-members)
+  - [9.6](#classes--no-duplicate-members) Уникайте дублювання членів класу. eslint: [`no-dupe-class-members`](http://eslint.org/docs/rules/no-dupe-class-members)
 
-    > Why? Duplicate class member declarations will silently prefer the last one - having duplicates is almost certainly a bug.
+    > Чому? Продублтовані оголошення членів класу будуть нишком віддавати перевагу останньому, тому наявність дублікатів майже напевно - помилка.
 
     ```javascript
-    // bad
+    // погано
     class Foo {
       bar() { return 1; }
       bar() { return 2; }
     }
 
-    // good
+    // добре
     class Foo {
       bar() { return 1; }
     }
 
-    // good
+    // добре
     class Foo {
       bar() { return 2; }
     }
     ```
 
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ вверх](#table-of-contents)**
 
 
 ## Modules
