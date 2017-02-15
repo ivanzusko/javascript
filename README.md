@@ -869,46 +869,46 @@ TODO: FIXME
     ```
 
   <a name="arrows--implicit-return"></a><a name="8.2"></a>
-  - [8.2](#arrows--implicit-return) If the function body consists of a single expression, omit the braces and use the implicit return. Otherwise, keep the braces and use a `return` statement. eslint: [`arrow-parens`](http://eslint.org/docs/rules/arrow-parens.html), [`arrow-body-style`](http://eslint.org/docs/rules/arrow-body-style.html) jscs:  [`disallowParenthesesAroundArrowParam`](http://jscs.info/rule/disallowParenthesesAroundArrowParam), [`requireShorthandArrowFunctions`](http://jscs.info/rule/requireShorthandArrowFunctions)
+  - [8.2](#arrows--implicit-return) Якщо тіло функцій складається з одного виразу - не застосовуйте фігурні дужки, а одразу використовуйте неявне повернення. Або, лишіть фігурні дужки і використайте оператор `return`. eslint: [`arrow-parens`](http://eslint.org/docs/rules/arrow-parens.html), [`arrow-body-style`](http://eslint.org/docs/rules/arrow-body-style.html) jscs:  [`disallowParenthesesAroundArrowParam`](http://jscs.info/rule/disallowParenthesesAroundArrowParam), [`requireShorthandArrowFunctions`](http://jscs.info/rule/requireShorthandArrowFunctions)
 
-    > Why? Syntactic sugar. It reads well when multiple functions are chained together.
+    > Чому? Синтаксичний цукор. Це гарно читається, особливо коли в функції вилаштовуються у послідовну ціпочку.
 
     ```javascript
-    // bad
+    // погано
     [1, 2, 3].map(number => {
       const nextNumber = number + 1;
       `A string containing the ${nextNumber}.`;
     });
 
-    // good
+    // добре
     [1, 2, 3].map(number => `A string containing the ${number}.`);
 
-    // good
+    // добре
     [1, 2, 3].map((number) => {
       const nextNumber = number + 1;
       return `A string containing the ${nextNumber}.`;
     });
 
-    // good
+    // добре
     [1, 2, 3].map((number, index) => ({
       [index]: number
     }));
     ```
 
   <a name="arrows--paren-wrap"></a><a name="8.3"></a>
-  - [8.3](#arrows--paren-wrap) In case the expression spans over multiple lines, wrap it in parentheses for better readability.
+  - [8.3](#arrows--paren-wrap) У випадку, коли вираз розбивається на декілька рядків, огорніть його у дужки для кращої читаємості.
 
-    > Why? It shows clearly where the function starts and ends.
+    > Чому? Це чітко показує де функція починається і де закінчується.
 
     ```js
-    // bad
+    // погано
     ['get', 'post', 'put'].map(httpMethod => Object.prototype.hasOwnProperty.call(
         httpMagicObjectWithAVeryLongName,
         httpMethod
-      )
+      
     );
 
-    // good
+    // добре
     ['get', 'post', 'put'].map(httpMethod => (
       Object.prototype.hasOwnProperty.call(
         httpMagicObjectWithAVeryLongName,
@@ -918,29 +918,29 @@ TODO: FIXME
     ```
 
   <a name="arrows--one-arg-parens"></a><a name="8.4"></a>
-  - [8.4](#arrows--one-arg-parens) If your function takes a single argument and doesn’t use braces, omit the parentheses. Otherwise, always include parentheses around arguments. eslint: [`arrow-parens`](http://eslint.org/docs/rules/arrow-parens.html) jscs:  [`disallowParenthesesAroundArrowParam`](http://jscs.info/rule/disallowParenthesesAroundArrowParam)
+  - [8.4](#arrows--one-arg-parens) Якщо ваша функція приймає єдиний аргумент і ви не використовуєте дужки - не використайте в такому разі і фігурні дужки. В іншому випадку, завжди огортайте аргументи дужками. eslint: [`arrow-parens`](http://eslint.org/docs/rules/arrow-parens.html) jscs:  [`disallowParenthesesAroundArrowParam`](http://jscs.info/rule/disallowParenthesesAroundArrowParam)
 
-    > Why? Less visual clutter.
+    > Чому? Less visual clutter.TODO: COMPLETE THIS
 
     ```js
-    // bad
+    // погано
     [1, 2, 3].map((x) => x * x);
 
-    // good
+    // добре
     [1, 2, 3].map(x => x * x);
 
-    // good
+    // добре
     [1, 2, 3].map(number => (
       `A long string with the ${number}. It’s so long that we don’t want it to take up space on the .map line!`
     ));
 
-    // bad
+    // погано
     [1, 2, 3].map(x => {
       const y = x + 1;
       return x * y;
     });
 
-    // good
+    // добре
     [1, 2, 3].map((x) => {
       const y = x + 1;
       return x * y;
@@ -948,26 +948,26 @@ TODO: FIXME
     ```
 
   <a name="arrows--confusing"></a><a name="8.5"></a>
-  - [8.5](#arrows--confusing) Avoid confusing arrow function syntax (`=>`) with comparison operators (`<=`, `>=`). eslint: [`no-confusing-arrow`](http://eslint.org/docs/rules/no-confusing-arrow)
+  - [8.5](#arrows--confusing) Уникайте збентежливого синтаксису arrow-функції (`=>`) з операторами порівняння (`<=`, `>=`). eslint: [`no-confusing-arrow`](http://eslint.org/docs/rules/no-confusing-arrow)
 
     ```js
-    // bad
+    // погано
     const itemHeight = item => item.height > 256 ? item.largeSize : item.smallSize;
 
-    // bad
+    // погано
     const itemHeight = (item) => item.height > 256 ? item.largeSize : item.smallSize;
 
-    // good
+    // добре
     const itemHeight = item => (item.height > 256 ? item.largeSize : item.smallSize);
 
-    // good
+    // добре
     const itemHeight = (item) => {
       const { height, largeSize, smallSize } = item;
       return height > 256 ? largeSize : smallSize;
     };
     ```
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ вверх](#table-of-contents)**
 
 
 ## Classes & Constructors
