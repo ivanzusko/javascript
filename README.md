@@ -571,54 +571,54 @@ TODO: FIXME
 **[⬆ вверх](#table-of-contents)**
 
 
-## Functions
+## Функції
 
   <a name="functions--declarations"></a><a name="7.1"></a>
-  - [7.1](#functions--declarations) Use named function expressions instead of function declarations. eslint: [`func-style`](http://eslint.org/docs/rules/func-style) jscs: [`disallowFunctionDeclarations`](http://jscs.info/rule/disallowFunctionDeclarations)
+  - [7.1](#functions--declarations) Використовуйте іменовані функціональні вирази замість функціональних оголошеннь. eslint: [`func-style`](http://eslint.org/docs/rules/func-style) jscs: [`disallowFunctionDeclarations`](http://jscs.info/rule/disallowFunctionDeclarations)
 
-    > Why? Function declarations are hoisted, which means that it’s easy - too easy - to reference the function before it is defined in the file. This harms readability and maintainability. If you find that a function’s definition is large or complex enough that it is interfering with understanding the rest of the file, then perhaps it’s time to extract it to its own module! Don’t forget to name the expression - anonymous functions can make it harder to locate the problem in an Error's call stack. ([Discussion](https://github.com/airbnb/javascript/issues/794))
+    > Чому? Функціональні оголошення хойстяться (вспливають уверх), що означає, що це лугко, дуже легко послатися на функцію до того, як вона оголошена у файлі. Це шкодить читаємості та підтримуємості. Якщо вам здається, що визначення функції досить велике чи воно ускладнює розуміння іншої частини файлу, то, можливо, прийшов час, щоб виокремити це в окремий модуль! Не забувайте іменувати вирази - анонімні функції можуть ускладнити локалізацію проблеми у стеку викликів. ([Discussion](https://github.com/airbnb/javascript/issues/794))
 
     ```javascript
-    // bad
+    // погано
     const foo = function () {
     };
 
-    // bad
+    // погано
     function foo() {
     }
 
-    // good
+    // добре
     const foo = function bar() {
     };
     ```
 
   <a name="functions--iife"></a><a name="7.2"></a>
-  - [7.2](#functions--iife) Wrap immediately invoked function expressions in parentheses. eslint: [`wrap-iife`](http://eslint.org/docs/rules/wrap-iife.html) jscs: [`requireParenthesesAroundIIFE`](http://jscs.info/rule/requireParenthesesAroundIIFE)
+  - [7.2](#functions--iife) Огортайте негайно виконувані функціональні вирази (НВФВ) у дужки. eslint: [`wrap-iife`](http://eslint.org/docs/rules/wrap-iife.html) jscs: [`requireParenthesesAroundIIFE`](http://jscs.info/rule/requireParenthesesAroundIIFE)
 
-    > Why? An immediately invoked function expression is a single unit - wrapping both it, and its invocation parens, in parens, cleanly expresses this. Note that in a world with modules everywhere, you almost never need an IIFE.
+    > Чому? Негайно виконуваний функціональний вираз являє собою єдиний блок - огортання обох, і його і його виклику чітко це показує. Варто зауважити, що у світі де модулі повсюди, вам майже ніколи не потрібен НВФВ.
 
     ```javascript
-    // immediately-invoked function expression (IIFE)
+    // Негайно виконуваний функціональний вираз (НВФВ)
     (function () {
       console.log('Welcome to the Internet. Please follow me.');
     }());
     ```
 
   <a name="functions--in-blocks"></a><a name="7.3"></a>
-  - [7.3](#functions--in-blocks) Never declare a function in a non-function block (if, while, etc). Assign the function to a variable instead. Browsers will allow you to do it, but they all interpret it differently, which is bad news bears. eslint: [`no-loop-func`](http://eslint.org/docs/rules/no-loop-func.html)
+  - [7.3](#functions--in-blocks) Ніколи не оголошуйте функцію у нефункціональному блоці(if, while, etc). Натомість, призначте функцію змінній. Браузери дозволять вам це зробити, але всі вони інтерпретують це по-різному, що є поганими новинами. eslint: [`no-loop-func`](http://eslint.org/docs/rules/no-loop-func.html)
 
   <a name="functions--note-on-blocks"></a><a name="7.4"></a>
-  - [7.4](#functions--note-on-blocks) **Note:** ECMA-262 defines a `block` as a list of statements. A function declaration is not a statement. [Read ECMA-262's note on this issue](http://www.ecma-international.org/publications/files/ECMA-ST/Ecma-262.pdf#page=97).
+  - [7.4](#functions--note-on-blocks) **Увага:** ECMA-262 визначає `block` як список визначеннь. Оголошення функції не є визначенням. [Read ECMA-262's note on this issue](http://www.ecma-international.org/publications/files/ECMA-ST/Ecma-262.pdf#page=97).
 
     ```javascript
-    // bad
+    // погано
     if (currentUser) {
       function test() {
         console.log('Nope.');
       }
     }
 
-    // good
+    // добре
     let test;
     if (currentUser) {
       test = () => {
@@ -628,52 +628,52 @@ TODO: FIXME
     ```
 
   <a name="functions--arguments-shadow"></a><a name="7.5"></a>
-  - [7.5](#functions--arguments-shadow) Never name a parameter `arguments`. This will take precedence over the `arguments` object that is given to every function scope.
+  - [7.5](#functions--arguments-shadow) Ніколи не називайте параметр як `arguments`. Це матиме пріоритет над `arguments` об'єкта, який надається області видимості кожної функції.
 
     ```javascript
-    // bad
+    // погано
     function nope(name, options, arguments) {
-      // ...stuff...
+      // ...щось відбувається...
     }
 
-    // good
+    // добре
     function yup(name, options, args) {
-      // ...stuff...
+      // ...щось відбувається...
     }
     ```
 
   <a name="es6-rest"></a><a name="7.6"></a>
-  - [7.6](#es6-rest) Never use `arguments`, opt to use rest syntax `...` instead. eslint: [`prefer-rest-params`](http://eslint.org/docs/rules/prefer-rest-params)
+  - [7.6](#es6-rest) Ннколи не використовуйте `arguments`, краще натомість використовуйте `rest` синтаксис (`...`). eslint: [`prefer-rest-params`](http://eslint.org/docs/rules/prefer-rest-params)
 
-    > Why? `...` is explicit about which arguments you want pulled. Plus, rest arguments are a real Array, and not merely Array-like like `arguments`.
+    > Чому? `...` оператор явно зазначає, що ви хочете щось витягти. Крім того, rest аргументи являються реальним масивом, а не масивоподібністю, як `arguments`.
 
     ```javascript
-    // bad
+    // погано
     function concatenateAll() {
       const args = Array.prototype.slice.call(arguments);
       return args.join('');
     }
 
-    // good
+    // добре
     function concatenateAll(...args) {
       return args.join('');
     }
     ```
 
   <a name="es6-default-parameters"></a><a name="7.7"></a>
-  - [7.7](#es6-default-parameters) Use default parameter syntax rather than mutating function arguments.
+  - [7.7](#es6-default-parameters) Використовуйте синтаксис "параметру за замовчуванням", а не мутуйте аргументи функції.
 
     ```javascript
-    // really bad
+    // насправді погано
     function handleThings(opts) {
-      // No! We shouldn't mutate function arguments.
-      // Double bad: if opts is falsy it'll be set to an object which may
-      // be what you want but it can introduce subtle bugs.
+      // Ні! Ми не повинні мутувати аргументи функції.
+      // Двічі погано: якщо `opts` є направдивим(`falsy` - прим. прекладача), то воно так і буде задано об'єкту. Це, звісно, може бути тим, що
+      // вам саме потрібно, але це може призвести до тонких багів.
       opts = opts || {};
       // ...
     }
 
-    // still bad
+    // все ще погано
     function handleThings(opts) {
       if (opts === void 0) {
         opts = {};
@@ -681,20 +681,20 @@ TODO: FIXME
       // ...
     }
 
-    // good
+    // добре
     function handleThings(opts = {}) {
       // ...
     }
     ```
 
   <a name="functions--default-side-effects"></a><a name="7.8"></a>
-  - [7.8](#functions--default-side-effects) Avoid side effects with default parameters.
+  - [7.8](#functions--default-side-effects) Уникайте сторонніх ефектів при використанні параметрів за замовчуванням.
 
-    > Why? They are confusing to reason about.
+    > Чому? Вони збентежують.
 
     ```javascript
     var b = 1;
-    // bad
+    // погано
     function count(a = b++) {
       console.log(a);
     }
@@ -705,73 +705,73 @@ TODO: FIXME
     ```
 
   <a name="functions--defaults-last"></a><a name="7.9"></a>
-  - [7.9](#functions--defaults-last) Always put default parameters last.
+  - [7.9](#functions--defaults-last) Завжди зазначайте параметри за замовчуванням останніми.
 
     ```javascript
-    // bad
+    // погано
     function handleThings(opts = {}, name) {
       // ...
     }
 
-    // good
+    // добре
     function handleThings(name, opts = {}) {
       // ...
     }
     ```
 
   <a name="functions--constructor"></a><a name="7.10"></a>
-  - [7.10](#functions--constructor) Never use the Function constructor to create a new function. eslint: [`no-new-func`](http://eslint.org/docs/rules/no-new-func)
+  - [7.10](#functions--constructor) Ніколи не використовуйте конструктор функцій для створення нової функції. eslint: [`no-new-func`](http://eslint.org/docs/rules/no-new-func)
 
-    > Why? Creating a function in this way evaluates a string similarly to eval(), which opens vulnerabilities.
+    > Чому? Створення функції таким чином обчислює строку аналогічно eval(), що, в свою чергу, відкриває вразливості.
 
     ```javascript
-    // bad
+    // погано
     var add = new Function('a', 'b', 'return a + b');
 
-    // still bad
+    // досі погано
     var subtract = Function('a', 'b', 'return a - b');
     ```
 
   <a name="functions--signature-spacing"></a><a name="7.11"></a>
-  - [7.11](#functions--signature-spacing) Spacing in a function signature. eslint: [`space-before-function-paren`](http://eslint.org/docs/rules/space-before-function-paren) [`space-before-blocks`](http://eslint.org/docs/rules/space-before-blocks)
+  - [7.11](#functions--signature-spacing) Відступи у сигнатурі функції. eslint: [`space-before-function-paren`](http://eslint.org/docs/rules/space-before-function-paren) [`space-before-blocks`](http://eslint.org/docs/rules/space-before-blocks)
 
-    > Why? Consistency is good, and you shouldn’t have to add or remove a space when adding or removing a name.
+    > Чому? Постійність - це добре, і ви не повинні додавати або видаляти пробіл при додаванні або видаленні імені.
 
     ```javascript
-    // bad
+    // погано
     const f = function(){};
     const g = function (){};
     const h = function() {};
 
-    // good
+    // добре
     const x = function () {};
     const y = function a() {};
     ```
 
   <a name="functions--mutate-params"></a><a name="7.12"></a>
-  - [7.12](#functions--mutate-params) Never mutate parameters. eslint: [`no-param-reassign`](http://eslint.org/docs/rules/no-param-reassign.html)
+  - [7.12](#functions--mutate-params) Ніколи не мутуйте параметри. eslint: [`no-param-reassign`](http://eslint.org/docs/rules/no-param-reassign.html)
 
-    > Why? Manipulating objects passed in as parameters can cause unwanted variable side effects in the original caller.
+    > Чому? Маніпулювання об'єктами, які були передані як параметри, може призвести до небажаних побічних ефектів у змінних, у місці звідки відбувся початковий виклик.
 
     ```javascript
-    // bad
+    // погано
     function f1(obj) {
       obj.key = 1;
     };
 
-    // good
+    // добре
     function f2(obj) {
       const key = Object.prototype.hasOwnProperty.call(obj, 'key') ? obj.key : 1;
     };
     ```
 
   <a name="functions--reassign-params"></a><a name="7.13"></a>
-  - [7.13](#functions--reassign-params) Never reassign parameters. eslint: [`no-param-reassign`](http://eslint.org/docs/rules/no-param-reassign.html)
+  - [7.13](#functions--reassign-params) Ніколи не перепризначайте параметри. eslint: [`no-param-reassign`](http://eslint.org/docs/rules/no-param-reassign.html)
 
-    > Why? Reassigning parameters can lead to unexpected behavior, especially when accessing the `arguments` object. It can also cause optimization issues, especially in V8.
+    > Чому? Перепризначення параметрів може призвести до неочікуваної поведінки, особливо, при доступі до об'єкту аргументів. Це також може викликати оптимізаційні проблеми, особливо у V8.
 
     ```javascript
-    // bad
+    // погано
     function f1(a) {
       a = 1;
     }
@@ -780,7 +780,7 @@ TODO: FIXME
       if (!a) { a = 1; }
     }
 
-    // good
+    // добре
     function f3(a) {
       const b = a || 1;
     }
@@ -790,52 +790,52 @@ TODO: FIXME
     ```
 
   <a name="functions--spread-vs-apply"></a><a name="7.14"></a>
-  - [7.14](#functions--spread-vs-apply) Prefer the use of the spread operator `...` to call variadic functions. eslint: [`prefer-spread`](http://eslint.org/docs/rules/prefer-spread)
+  - [7.14](#functions--spread-vs-apply) Віддавайте перевагу використанню `...` (оператор `spread`) при виклику функцій зі змінним числом параметрів . eslint: [`prefer-spread`](http://eslint.org/docs/rules/prefer-spread)
 
-    > Why? It's cleaner, you don't need to supply a context, and you can not easily compose `new` with `apply`.
+    > Чому? Так чистіше, вам не потрібно надавати контекст і ви не можете легко створити `new` за допомогою `apply`.
 
     ```javascript
-    // bad
+    // погано
     const x = [1, 2, 3, 4, 5];
     console.log.apply(console, x);
 
-    // good
+    // добре
     const x = [1, 2, 3, 4, 5];
     console.log(...x);
 
-    // bad
+    // погано
     new (Function.prototype.bind.apply(Date, [null, 2016, 08, 05]));
 
-    // good
+    // добре
     new Date(...[2016, 08, 05]);
     ```
 
   <a name="functions--signature-invocation-indentation"></a>
-  - [7.15](#functions--signature-invocation-indentation) Functions with multiline signatures, or invocations, should be indented just like every other multiline list in this guide: with each item on a line by itself, with a trailing comma on the last item.
+  - [7.15](#functions--signature-invocation-indentation) Функції з кількома сигнатурами, чи викликами, повинні бути з відступами, так само як і будь-який інший список у кілька рядків у цьому керівництві: з кожним елементом на своєму рядку, з комою у кінці кожного рядка.
 
     ```javascript
-    // bad
+    // погано
     function foo(bar,
                  baz,
                  quux) {
-      // body
+      // тіло функції
     }
 
-    // good
+    // добре
     function foo(
       bar,
       baz,
       quux,
     ) {
-      // body
+      // тіло функції
     }
 
-    // bad
+    // погано
     console.log(foo,
       bar,
       baz);
 
-    // good
+    // добре
     console.log(
       foo,
       bar,
@@ -843,7 +843,7 @@ TODO: FIXME
     );
     ```
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ вверх](#table-of-contents)**
 
 ## Arrow Functions
 
