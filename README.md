@@ -1295,57 +1295,57 @@ TODO: FIXME
 ## Ітератори та генератори
 
   <a name="iterators--nope"></a><a name="11.1"></a>
-  - [11.1](#iterators--nope) Don't use iterators. Prefer JavaScript's higher-order functions instead of loops like `for-in` or `for-of`. eslint: [`no-iterator`](http://eslint.org/docs/rules/no-iterator.html) [`no-restricted-syntax`](http://eslint.org/docs/rules/no-restricted-syntax)
+  - [11.1](#iterators--nope) Не використовуйте ітератори. Віддавайте перевагу функціям вищого порядку замість циклів, таких як `for-in` чи `for-of`. eslint: [`no-iterator`](http://eslint.org/docs/rules/no-iterator.html) [`no-restricted-syntax`](http://eslint.org/docs/rules/no-restricted-syntax)
 
-    > Why? This enforces our immutable rule. Dealing with pure functions that return values is easier to reason about than side effects.
+    > Чому? Це примушує дотримуватись нашого правила не мутувати дані. Легше працювати з чистими функціями які повертають значення, а не побічні ефекти.
 
-    > Use `map()` / `every()` / `filter()` / `find()` / `findIndex()` / `reduce()` / `some()` / ... to iterate over arrays, and `Object.keys()` / `Object.values()` / `Object.entries()` to produce arrays so you can iterate over objects.
+    > Використовуйте `map()` / `every()` / `filter()` / `find()` / `findIndex()` / `reduce()` / `some()` / ... щоб перебирати масиви, і `Object.keys()` / `Object.values()` / `Object.entries()` для створення масивів, щоб мати змогу далі їх перебирати.
 
     ```javascript
     const numbers = [1, 2, 3, 4, 5];
 
-    // bad
+    // погано
     let sum = 0;
     for (let num of numbers) {
       sum += num;
     }
     sum === 15;
 
-    // good
+    // добре
     let sum = 0;
     numbers.forEach(num => sum += num);
     sum === 15;
 
-    // best (use the functional force)
+    // найкраще (використовуйте функціональну силу)
     const sum = numbers.reduce((total, num) => total + num, 0);
     sum === 15;
 
-    // bad
+    // погано
     const increasedByOne = [];
     for (let i = 0; i < numbers.length; i++) {
       modified.push(numbers[i] + 1);
     }
 
-    // good
+    // добре
     const increasedByOne = [];
     numbers.forEach(num => modified.push(num + 1));
 
-    // best (keeping it functional)
+    // найкраще (притримуйтесь функціонального стилю)
     const increasedByOne = numbers.map(num => num + 1);
     ```
 
   <a name="generators--nope"></a><a name="11.2"></a>
-  - [11.2](#generators--nope) Don't use generators for now.
+  - [11.2](#generators--nope) Покищо не використовуйте генератори.
 
-    > Why? They don't transpile well to ES5.
+    > Чому? Вони не досить добре перетворюються в ES5.
 
   <a name="generators--spacing"></a>
-  - [11.3](#generators--spacing) If you must use generators, or if you disregard [our advice](#generators--nope), make sure their function signature is spaced properly. eslint: [`generator-star-spacing`](http://eslint.org/docs/rules/generator-star-spacing)
+  - [11.3](#generators--spacing) Якщо вам потрібно використати генератори, або якщо ви вирішили не скористатись нашою порадою [our advice](#generators--nope), переконайтесь, що сигнатура функції має правильні фідступи. eslint: [`generator-star-spacing`](http://eslint.org/docs/rules/generator-star-spacing)
 
-    > Why? `function` and `*` are part of the same conceptual keyword - `*` is not a modifier for `function`, `function*` is a unique construct, different from `function`.
+    > Чому? `function` і `*` є частиною одного концептуального ключового слова - `*` це не модифікатор `function`, `function*` - це унікальна конструкція, відмінна від `function`.
 
     ```js
-    // bad
+    // погано
     function * foo() {
     }
 
@@ -1364,7 +1364,7 @@ TODO: FIXME
     function *foo() {
     }
 
-    // very bad
+    // дуже погано
     function
     *
     foo() {
@@ -1375,7 +1375,7 @@ TODO: FIXME
     () {
     }
 
-    // good
+    // добре
     function* foo() {
     }
 
@@ -1383,7 +1383,7 @@ TODO: FIXME
     }
     ```
 
-**[⬆ back to top](#Зміст)**
+**[⬆ вверх](#Зміст)**
 
 
 ## Properties
