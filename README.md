@@ -25,7 +25,7 @@
   1. [Стрілочні функції](#arrow-functions)
   1. [Класи та Конструктори](#classes--constructors)
   1. [Модулі](#modules)
-  1. [Ітератори та Генератори](#iterators-and-generators)
+  1. [Ітератори та Генератори](#Ітератори-та-генератори)
   1. [Властивості](#properties)
   1. [Змінні](#variables)
   1. [Підйом (Hoisting)](#hoisting)
@@ -1292,7 +1292,7 @@ TODO: FIXME
 
 **[⬆ вверх](#table-of-contents)**
 
-## Iterators and Generators
+## Ітератори та генератори
 
   <a name="iterators--nope"></a><a name="11.1"></a>
   - [11.1](#iterators--nope) Don't use iterators. Prefer JavaScript's higher-order functions instead of loops like `for-in` or `for-of`. eslint: [`no-iterator`](http://eslint.org/docs/rules/no-iterator.html) [`no-restricted-syntax`](http://eslint.org/docs/rules/no-restricted-syntax)
