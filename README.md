@@ -15,16 +15,16 @@
 
 ## Зміст
 
-  1. [Типи](#types)
-  1. [Посилання](#references)
-  1. [Об'єкти](#objects)
-  1. [Масиви](#arrays)
-  1. [Деструктуризація](#destructuring)
-  1. [Строки](#strings)
-  1. [Функції](#functions)
-  1. [Стрілочні функції](#arrow-functions)
-  1. [Класи та Конструктори](#classes--constructors)
-  1. [Модулі](#modules)
+  1. [Типи](#Типи)
+  1. [Посилання](#Посилання)
+  1. [Об'єкти](#Об'єкти)
+  1. [Масиви](#Масиви)
+  1. [Деструктуризація](#Деструктурування)
+  1. [Строки](#Строки)
+  1. [Функції](#Функції)
+  1. [Стрілочні функції](#Arrow-функції)
+  1. [Класи та Конструктори](#Класи-та-Конструктори)
+  1. [Модулі](#Модулі)
   1. [Ітератори та Генератори](#Ітератори-та-генератори)
   1. [Властивості](#properties)
   1. [Змінні](#variables)
@@ -88,7 +88,7 @@
     console.log(foo[0], bar[0]); // => 9, 9
     ```
 
-**[⬆ вверх](#table-of-contents)**
+**[⬆ вверх](#Зміст)**
 
 ## Посилання
 
@@ -139,7 +139,7 @@
     console.log(b); // ReferenceError
     ```
 
-**[⬆ вверх](#table-of-contents)**
+**[⬆ вверх](#Зміст)**
 
 ## Об'єкти
 
@@ -313,7 +313,7 @@ TODO: FIXME
   const { a, ...noA } = copy; // noA => { b: 2, c: 3 }
   ```
 
-**[⬆ вверх](#table-of-contents)**
+**[⬆ вверх](#Зміст)**
 
 ## Масиви
 
@@ -415,7 +415,7 @@ TODO: FIXME
     });
     ```
 
-**[⬆ вверх](#table-of-contents)**
+**[⬆ вверх](#Зміст)**
 
 ## Деструктурування
 
@@ -485,7 +485,7 @@ TODO: FIXME
     ```
 
 
-**[⬆ вверх](#table-of-contents)**
+**[⬆ вверх](#Зміст)**
 
 ## Строки
 
@@ -568,7 +568,7 @@ TODO: FIXME
     const foo = `my name is '${name}'`;
     ```
 
-**[⬆ вверх](#table-of-contents)**
+**[⬆ вверх](#Зміст)**
 
 
 ## Функції
@@ -843,7 +843,7 @@ TODO: FIXME
     );
     ```
 
-**[⬆ вверх](#table-of-contents)**
+**[⬆ вверх](#Зміст)**
 
 ## Arrow-функції
 
@@ -967,10 +967,10 @@ TODO: FIXME
     };
     ```
 
-**[⬆ вверх](#table-of-contents)**
+**[⬆ вверх](#Зміст)**
 
 
-## Класи & Конструктори
+## Класи та Конструктори
 
   <a name="constructors--use-class"></a><a name="9.1"></a>
   - [9.1](#constructors--use-class) Завжди використовуйте `class`. Уникайте маніпулювати `prototype` напряму.
@@ -1136,7 +1136,7 @@ TODO: FIXME
     ```
 
 
-**[⬆ вверх](#table-of-contents)**
+**[⬆ вверх](#Зміст)**
 
 
 ## Модулі
@@ -1290,7 +1290,7 @@ TODO: FIXME
     import barCss from 'bar.css';
     ```
 
-**[⬆ вверх](#table-of-contents)**
+**[⬆ вверх](#Зміст)**
 
 ## Ітератори та генератори
 
@@ -1383,7 +1383,7 @@ TODO: FIXME
     }
     ```
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ back to top](#Зміст)**
 
 
 ## Properties
@@ -1420,7 +1420,7 @@ TODO: FIXME
     const isJedi = getProp('jedi');
     ```
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ back to top](#Зміст)**
 
 
 ## Variables
@@ -1590,7 +1590,7 @@ TODO: FIXME
       const truthyCount = array.filter(Boolean).length;
     ```
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ back to top](#Зміст)**
 
 
 ## Hoisting
@@ -1690,7 +1690,7 @@ TODO: FIXME
 
   - For more information refer to [JavaScript Scoping & Hoisting](http://www.adequatelygood.com/2010/2/JavaScript-Scoping-and-Hoisting/) by [Ben Cherry](http://www.adequatelygood.com/).
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ back to top](#Зміст)**
 
 
 ## Comparison Operators & Equality
@@ -1840,7 +1840,7 @@ TODO: FIXME
     const baz = !c;
     ```
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ back to top](#Зміст)**
 
 
 ## Blocks
@@ -1893,7 +1893,7 @@ TODO: FIXME
     ```
 
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ back to top](#Зміст)**
 
 
 ## Comments
@@ -2034,7 +2034,7 @@ TODO: FIXME
     }
     ```
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ back to top](#Зміст)**
 
 
 ## Whitespace
@@ -2361,7 +2361,7 @@ TODO: FIXME
       .fail(() => console.log('You have failed this city.'));
     ```
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ back to top](#Зміст)**
 
 ## Commas
 
@@ -2496,7 +2496,7 @@ TODO: FIXME
     )
     ```
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ back to top](#Зміст)**
 
 
 ## Semicolons
@@ -2526,7 +2526,7 @@ TODO: FIXME
 
     [Read more](https://stackoverflow.com/questions/7365172/semicolon-before-self-invoking-function/7365214%237365214).
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ back to top](#Зміст)**
 
 
 ## Type Casting & Coercion
@@ -2613,7 +2613,7 @@ TODO: FIXME
     const hasAge = !!age;
     ```
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ back to top](#Зміст)**
 
 
 ## Naming Conventions
@@ -2804,7 +2804,7 @@ TODO: FIXME
     ];
     ```
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ back to top](#Зміст)**
 
 
 ## Accessors
@@ -2874,7 +2874,7 @@ TODO: FIXME
     }
     ```
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ back to top](#Зміст)**
 
 
 ## Events
@@ -2906,7 +2906,7 @@ TODO: FIXME
     });
     ```
 
-  **[⬆ back to top](#table-of-contents)**
+  **[⬆ back to top](#Зміст)**
 
 
 ## jQuery
@@ -2976,7 +2976,7 @@ TODO: FIXME
     $sidebar.find('ul').hide();
     ```
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ back to top](#Зміст)**
 
 
 ## ECMAScript 5 Compatibility
@@ -2984,7 +2984,7 @@ TODO: FIXME
   <a name="es5-compat--kangax"></a><a name="26.1"></a>
   - [26.1](#es5-compat--kangax) Refer to [Kangax](https://twitter.com/kangax/)'s ES5 [compatibility table](https://kangax.github.io/es5-compat-table/).
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ back to top](#Зміст)**
 
 <a name="ecmascript-6-styles"></a>
 ## ECMAScript 6+ (ES 2015+) Styles
@@ -3011,7 +3011,7 @@ TODO: FIXME
 
     > Why? [They are not finalized](https://tc39.github.io/process-document/), and they are subject to change or to be withdrawn entirely. We want to use JavaScript, and proposals are not JavaScript yet.
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ back to top](#Зміст)**
 
 ## Testing
 
@@ -3033,7 +3033,7 @@ TODO: FIXME
    - 100% test coverage is a good goal to strive for, even if it's not always practical to reach it.
    - Whenever you fix a bug, _write a regression test_. A bug fixed without a regression test is almost certainly going to break again in the future.
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ back to top](#Зміст)**
 
 
 ## Performance
@@ -3048,7 +3048,7 @@ TODO: FIXME
   - [Are Javascript functions like `map()`, `reduce()`, and `filter()` optimized for traversing arrays?](https://www.quora.com/JavaScript-programming-language-Are-Javascript-functions-like-map-reduce-and-filter-already-optimized-for-traversing-array/answer/Quildreen-Motta)
   - Loading...
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ back to top](#Зміст)**
 
 
 ## Resources
@@ -3130,7 +3130,7 @@ TODO: FIXME
   - [JavaScript Jabber](https://devchat.tv/js-jabber/)
 
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ back to top](#Зміст)**
 
 ## In the Wild
 
@@ -3216,7 +3216,7 @@ TODO: FIXME
   - **Zillow**: [zillow/javascript](https://github.com/zillow/javascript)
   - **ZocDoc**: [ZocDoc/javascript](https://github.com/ZocDoc/javascript)
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ back to top](#Зміст)**
 
 ## Translation
 
@@ -3276,7 +3276,7 @@ CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
 TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
 SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ back to top](#Зміст)**
 
 ## Amendments
 
