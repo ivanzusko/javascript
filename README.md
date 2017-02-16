@@ -1203,7 +1203,7 @@ TODO: FIXME
     // добре
     import foo, { named1, named2 } from 'foo';
 
-    // good
+    // добре
     import foo, {
       named1,
       named2,
@@ -1211,45 +1211,45 @@ TODO: FIXME
     ```
 
   <a name="modules--no-mutable-exports"></a>
-  - [10.5](#modules--no-mutable-exports) Do not export mutable bindings.
+  - [10.5](#modules--no-mutable-exports) Не експортуйте мутабельні прив'язки.
  eslint: [`import/no-mutable-exports`](https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-mutable-exports.md)
-    > Why? Mutation should be avoided in general, but in particular when exporting mutable bindings. While this technique may be needed for some special cases, in general, only constant references should be exported.
+    > Чому? Взагалі, мутацій потрібно уникати, особливо при експорті мутабельних прив'язок. Хоча цей прийом(мутація) може бути потрібним в деяких особливих ситуаціях, але в загальному потрібно експортувати лише постійні посилання.
 
     ```javascript
-    // bad
+    // погано
     let foo = 3;
     export { foo }
 
-    // good
+    // добре
     const foo = 3;
     export { foo }
     ```
 
   <a name="modules--prefer-default-export"></a>
-  - [10.6](#modules--prefer-default-export) In modules with a single export, prefer default export over named export.
+  - [10.6](#modules--prefer-default-export) У модулі з єдиним експортом віддавайте превагу експорту за замовчуванням (`default`), а не іменованому експорту.
  eslint: [`import/prefer-default-export`](https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/prefer-default-export.md)
 
     ```javascript
-    // bad
+    // погано
     export function foo() {}
 
-    // good
+    // добре
     export default function foo() {}
     ```
 
   <a name="modules--imports-first"></a>
-  - [10.7](#modules--imports-first) Put all `import`s above non-import statements.
+  - [10.7](#modules--imports-first) Зазначайте всі `import` визначення над не імпортами.
  eslint: [`import/first`](https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/first.md)
-    > Why? Since `import`s are hoisted, keeping them all at the top prevents surprising behavior.
+    > Чому? Оскільки `import`и вспливають вгору, то тримати їх зверху убезпечує від неочікуваної поведінки.
 
     ```javascript
-    // bad
+    // погано
     import foo from 'foo';
     foo.init();
 
     import bar from 'bar';
 
-    // good
+    // добре
     import foo from 'foo';
     import bar from 'bar';
 
@@ -1257,15 +1257,15 @@ TODO: FIXME
     ```
 
   <a name="modules--multiline-imports-over-newlines"></a>
-  - [10.8](#modules--multiline-imports-over-newlines) Multiline imports should be indented just like multiline array and object literals.
+  - [10.8](#modules--multiline-imports-over-newlines) Імпорти у кілька рядків мають мати такі самі відступи як і масиви чи об'єктні літерали.
 
-    > Why? The curly braces follow the same indentation rules as every other curly brace block in the style guide, as do the trailing commas.
+    > Чому? Фігурні дужки дотримуються тих самих правил, як і кожен блок з фігурними дужками у цьому керівництві. Те саме стосується і ком у кінці кожного рядка в середині блоку.
 
     ```javascript
-    // bad
+    // погано
     import {longNameA, longNameB, longNameC, longNameD, longNameE} from 'path';
 
-    // good
+    // добре
     import {
       longNameA,
       longNameB,
