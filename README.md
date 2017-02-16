@@ -26,7 +26,7 @@
   1. [Класи та Конструктори](#Класи-та-Конструктори)
   1. [Модулі](#Модулі)
   1. [Ітератори та Генератори](#Ітератори-та-генератори)
-  1. [Властивості](#properties)
+  1. [Властивості](#Властивості)
   1. [Змінні](#variables)
   1. [Підйом (Hoisting)](#hoisting)
   1. [Оператори порівняння і рівності](#comparison-operators--equality)
@@ -1386,10 +1386,10 @@ TODO: FIXME
 **[⬆ вверх](#Зміст)**
 
 
-## Properties
+## Властивості
 
   <a name="properties--dot"></a><a name="12.1"></a>
-  - [12.1](#properties--dot) Use dot notation when accessing properties. eslint: [`dot-notation`](http://eslint.org/docs/rules/dot-notation.html) jscs: [`requireDotNotation`](http://jscs.info/rule/requireDotNotation)
+  - [12.1](#properties--dot) Використовуйте точкову нотацію при доступі до властивостей. eslint: [`dot-notation`](http://eslint.org/docs/rules/dot-notation.html) jscs: [`requireDotNotation`](http://jscs.info/rule/requireDotNotation)
 
     ```javascript
     const luke = {
@@ -1397,15 +1397,15 @@ TODO: FIXME
       age: 28,
     };
 
-    // bad
+    // погано
     const isJedi = luke['jedi'];
 
-    // good
+    // добре
     const isJedi = luke.jedi;
     ```
 
   <a name="properties--bracket"></a><a name="12.2"></a>
-  - [12.2](#properties--bracket) Use bracket notation `[]` when accessing properties with a variable.
+  - [12.2](#properties--bracket) Використовуйте квадратні дужки `[]` при доступі до властивостей через змінні.
 
     ```javascript
     const luke = {
@@ -1420,10 +1420,10 @@ TODO: FIXME
     const isJedi = getProp('jedi');
     ```
 
-**[⬆ back to top](#Зміст)**
+**[⬆ вверх](#Зміст)**
 
 
-## Variables
+## Змінні
 
   <a name="variables--const"></a><a name="13.1"></a>
   - [13.1](#variables--const) Always use `const` to declare variables. Not doing so will result in global variables. We want to avoid polluting the global namespace. Captain Planet warned us of that. eslint: [`no-undef`](http://eslint.org/docs/rules/no-undef) [`prefer-const`](http://eslint.org/docs/rules/prefer-const)
