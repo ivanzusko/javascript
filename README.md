@@ -27,7 +27,7 @@
   1. [Модулі](#Модулі)
   1. [Ітератори та Генератори](#Ітератори-та-генератори)
   1. [Властивості](#Властивості)
-  1. [Змінні](#variables)
+  1. [Змінні](#змінні)
   1. [Підйом (Hoisting)](#hoisting)
   1. [Оператори порівняння і рівності](#comparison-operators--equality)
   1. [Блоки](#blocks)
@@ -1426,58 +1426,58 @@ TODO: FIXME
 ## Змінні
 
   <a name="variables--const"></a><a name="13.1"></a>
-  - [13.1](#variables--const) Always use `const` to declare variables. Not doing so will result in global variables. We want to avoid polluting the global namespace. Captain Planet warned us of that. eslint: [`no-undef`](http://eslint.org/docs/rules/no-undef) [`prefer-const`](http://eslint.org/docs/rules/prefer-const)
+  - [13.1](#variables--const) Завжди використовуйте `const` для оголошення змінних. Недотримання цієї вимоги призведе до глобальних змінних. Ми хочемо уникнути забруднення глобального простору імен. Капітан Планета застерігає нас від цього. eslint: [`no-undef`](http://eslint.org/docs/rules/no-undef) [`prefer-const`](http://eslint.org/docs/rules/prefer-const)
 
     ```javascript
-    // bad
+    // погано
     superPower = new SuperPower();
 
-    // good
+    // добре
     const superPower = new SuperPower();
     ```
 
   <a name="variables--one-const"></a><a name="13.2"></a>
-  - [13.2](#variables--one-const) Use one `const` declaration per variable. eslint: [`one-var`](http://eslint.org/docs/rules/one-var.html) jscs: [`disallowMultipleVarDecl`](http://jscs.info/rule/disallowMultipleVarDecl)
+  - [13.2](#variables--one-const) Використовуйте по одному `const` для кожної змінної. eslint: [`one-var`](http://eslint.org/docs/rules/one-var.html) jscs: [`disallowMultipleVarDecl`](http://jscs.info/rule/disallowMultipleVarDecl)
 
-    > Why? It's easier to add new variable declarations this way, and you never have to worry about swapping out a `;` for a `,` or introducing punctuation-only diffs. You can also step through each declaration with the debugger, instead of jumping through all of them at once.
+    > Чому? Так легше оголошувати змінні таким чином, що вам не потрібно буде хвилюватись, що ви випадково переплутаєте в кінці строки `;` з `,`. Ви також можете пройтись по одному по всім проголошенням за допомогою дебагера, замість того, щоб перестрибувати через всіх них за раз.
 
     ```javascript
-    // bad
+    // погано
     const items = getItems(),
         goSportsTeam = true,
         dragonball = 'z';
 
-    // bad
-    // (compare to above, and try to spot the mistake)
+    // погано
+    // (порівняйте з верхнім і спробуйте знайти помилку)
     const items = getItems(),
         goSportsTeam = true;
         dragonball = 'z';
 
-    // good
+    // добре
     const items = getItems();
     const goSportsTeam = true;
     const dragonball = 'z';
     ```
 
   <a name="variables--const-let-group"></a><a name="13.3"></a>
-  - [13.3](#variables--const-let-group) Group all your `const`s and then group all your `let`s.
+  - [13.3](#variables--const-let-group) Спочатку групуйте всі ваші `const`, а потім вже групуйте всі `let`s.
 
-    > Why? This is helpful when later on you might need to assign a variable depending on one of the previous assigned variables.
+    > Чому? Це дуже зручно у випадку, коли в подальшому вам знадобиться оголосити зміну в залежності від вже оголошених змінних.
 
     ```javascript
-    // bad
+    // погано
     let i, len, dragonball,
         items = getItems(),
         goSportsTeam = true;
 
-    // bad
+    // погано
     let i;
     const items = getItems();
     let dragonball;
     const goSportsTeam = true;
     let len;
 
-    // good
+    // добре
     const goSportsTeam = true;
     const items = getItems();
     let dragonball;
@@ -1486,12 +1486,12 @@ TODO: FIXME
     ```
 
   <a name="variables--define-where-used"></a><a name="13.4"></a>
-  - [13.4](#variables--define-where-used) Assign variables where you need them, but place them in a reasonable place.
+  - [13.4](#variables--define-where-used) Призначайте змінні де вам потрібно, але розміщуйте їх лише у потрібних місцях.
 
-    > Why? `let` and `const` are block scoped and not function scoped.
+    > Чому? `let` і `const` обмежуються блочною зоною видимості, а не функціональною.
 
     ```javascript
-    // bad - unnecessary function call
+    // погано - непотрібний виклик функції
     function checkName(hasName) {
       const name = getName();
 
@@ -1507,7 +1507,7 @@ TODO: FIXME
       return name;
     }
 
-    // good
+    // добре
     function checkName(hasName) {
       if (hasName === 'test') {
         return false;
@@ -1524,17 +1524,17 @@ TODO: FIXME
     }
     ```
   <a name="variables--no-chain-assignment"></a><a name="13.5"></a>
-  - [13.5](#variables--no-chain-assignment) Don't chain variable assignments.
+  - [13.5](#variables--no-chain-assignment) Не поєднуйте в ланцюжки присвоєння змінних.
 
-    > Why? Chaining variable assignments creates implicit global variables.
+    > Чому? Поєднання змінних у ланцюжки створює неявні глобальні змінні.
 
     ```javascript
-    // bad
+    // погано
     (function example() {
-      // JavaScript interprets this as
+      // JavaScript інтерпретує це як
       // let a = ( b = ( c = 1 ) );
-      // The let keyword only applies to variable a; variables b and c become
-      // global variables.
+      // Ключове слово let застосовується до змінної a; змінні b та c стають
+      // глобальними змінними.
       let a = b = c = 1;
     }());
 
@@ -1542,7 +1542,7 @@ TODO: FIXME
     console.log(b); // 1
     console.log(c); // 1
 
-    // good
+    // добре
     (function example() {
       let a = 1;
       let b = a;
@@ -1553,7 +1553,7 @@ TODO: FIXME
     console.log(b); // undefined
     console.log(c); // undefined
 
-    // the same applies for `const`
+    // Те ж саме стосується і `const`
     ```
 
   <a name="variables--unary-increment-decrement"></a><a name="13.6"></a>
