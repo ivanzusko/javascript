@@ -28,7 +28,7 @@
   1. [Ітератори та Генератори](#Ітератори-та-генератори)
   1. [Властивості](#Властивості)
   1. [Змінні](#змінні)
-  1. [Підйом (Hoisting)](#hoisting)
+  1. [Підняття (Hoisting)](#Підняття)
   1. [Оператори порівняння і рівності](#comparison-operators--equality)
   1. [Блоки](#blocks)
   1. [Коментарі](#comments)
@@ -1557,12 +1557,12 @@ TODO: FIXME
     ```
 
   <a name="variables--unary-increment-decrement"></a><a name="13.6"></a>
-  - [13.6](#variables--unary-increment-decrement) Avoid using unary increments and decrements (++, --). eslint [`no-plusplus`](http://eslint.org/docs/rules/no-plusplus)
+  - [13.6](#variables--unary-increment-decrement) Уникайте використання унарних збільшеннь та зменшеннь (++, --). eslint [`no-plusplus`](http://eslint.org/docs/rules/no-plusplus)
 
-    > Why? Per the eslint documentation, unary increment and decrement statements are subject to automatic semicolon insertion and can cause silent errors with incrementing or decrementing values within an application. It is also more expressive to mutate your values with statements like `num += 1` instead of `num++` or `num ++`. Disallowing unary increment and decrement statements also prevents you from pre-incrementing/pre-decrementing values unintentionally which can also cause unexpected behavior in your programs.
+    > Чому? Згідно з документацією **eslint**, унарні збільшення або зменшення спричиняють автоматичну вставку крапки й коми, що, в свою чергу, може призвести до тихих помилок при збільшенні або зменшенні значеннь у рамках програми. Також, більш виразно застосовувати для збільшеннь або зменшень такі вирази як `num += 1` замість `num++` або `num ++`. Заборона унарних збільшеннь або зменшеннь такох захищає вас від випадкових попередніх збільшеннь/зменшень, які накож можуть призвести до непередбачуваної поведінки у ваших програмах.
 
     ```javascript
-      // bad
+      // погано
 
       let array = [1, 2, 3];
       let num = 1;
@@ -1579,7 +1579,7 @@ TODO: FIXME
         }
       }
 
-      // good
+      // добре
 
       let array = [1, 2, 3];
       let num = 1;
@@ -1590,10 +1590,10 @@ TODO: FIXME
       const truthyCount = array.filter(Boolean).length;
     ```
 
-**[⬆ back to top](#Зміст)**
+**[⬆ вверх](#Зміст)**
 
 
-## Hoisting
+## Підняття (Hoisting)
 
   <a name="hoisting--about"></a><a name="14.1"></a>
   - [14.1](#hoisting--about) `var` declarations get hoisted to the top of their scope, their assignment does not. `const` and `let` declarations are blessed with a new concept called [Temporal Dead Zones (TDZ)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let#Temporal_dead_zone_and_errors_with_let). It's important to know why [typeof is no longer safe](http://es-discourse.com/t/why-typeof-is-no-longer-safe/15).
