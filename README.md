@@ -1596,43 +1596,42 @@ TODO: FIXME
 ## Підняття (Hoisting)
 
   <a name="hoisting--about"></a><a name="14.1"></a>
-  - [14.1](#hoisting--about) `var` declarations get hoisted to the top of their scope, their assignment does not. `const` and `let` declarations are blessed with a new concept called [Temporal Dead Zones (TDZ)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let#Temporal_dead_zone_and_errors_with_let). It's important to know why [typeof is no longer safe](http://es-discourse.com/t/why-typeof-is-no-longer-safe/15).
+  - [14.1](#hoisting--about) Оголошенні `var` змінні піднімаються в гору їх обсласті видимості, в той час я привласнені їм значення - ні. Змінні, оголошені за допомогою `const` та `let` отримали нову концепцію - [Тимчасові Мертві Зони (ТМЗ)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let#Temporal_dead_zone_and_errors_with_let). Важливо знати, чому використовувати [typeof тепер небезпечно](http://es-discourse.com/t/why-typeof-is-no-longer-safe/15).
 
     ```javascript
-    // we know this wouldn't work (assuming there
-    // is no notDefined global variable)
+    // ми знаємо, що це не спрацює (припустимо, що
+    // не існує глобальної змінної notDefined)
     function example() {
-      console.log(notDefined); // => throws a ReferenceError
+      console.log(notDefined); // => видасть ReferenceError
     }
 
-    // creating a variable declaration after you
-    // reference the variable will work due to
-    // variable hoisting. Note: the assignment
-    // value of `true` is not hoisted.
+    // створення змінної після того,
+    // як на неї зіслались спрацює завдяки підйому змінної
+    // Зауважте: присвоєне змінній значення `true` не підніметься вгору.
     function example() {
       console.log(declaredButNotAssigned); // => undefined
       var declaredButNotAssigned = true;
     }
 
-    // the interpreter is hoisting the variable
-    // declaration to the top of the scope,
-    // which means our example could be rewritten as:
+    // інтерпретатор піднімає проголошення змінної
+    // вверх області видимості,
+    // що означає, що наш приклад може бути записаним як:
     function example() {
       let declaredButNotAssigned;
       console.log(declaredButNotAssigned); // => undefined
       declaredButNotAssigned = true;
     }
 
-    // using const and let
+    // використовуючи const та let
     function example() {
-      console.log(declaredButNotAssigned); // => throws a ReferenceError
-      console.log(typeof declaredButNotAssigned); // => throws a ReferenceError
+      console.log(declaredButNotAssigned); // => видасть ReferenceError
+      console.log(typeof declaredButNotAssigned); // => видасть ReferenceError
       const declaredButNotAssigned = true;
     }
     ```
 
   <a name="hoisting--anon-expressions"></a><a name="14.2"></a>
-  - [14.2](#hoisting--anon-expressions) Anonymous function expressions hoist their variable name, but not the function assignment.
+  - [14.2](#hoisting--anon-expressions) Анонімні функціональні вирази піднімають ім'я змінної, але не функціональне присвоєння.
 
     ```javascript
     function example() {
@@ -1647,7 +1646,7 @@ TODO: FIXME
     ```
 
   <a name="hoisting--named-expresions"></a><a name="14.3"></a>
-  - [14.3](#hoisting--named-expresions) Named function expressions hoist the variable name, not the function name or the function body.
+  - [14.3](#hoisting--named-expresions) Іменовані функціональні вирази пілнімають ім'я змінної, але не ім'я функції чи тіло функції.
 
     ```javascript
     function example() {
@@ -1662,8 +1661,8 @@ TODO: FIXME
       };
     }
 
-    // the same is true when the function name
-    // is the same as the variable name.
+    // це також стосується і випадку,
+    // коли ім'я функції співпадає з іменем змінної.
     function example() {
       console.log(named); // => undefined
 
@@ -1676,7 +1675,7 @@ TODO: FIXME
     ```
 
   <a name="hoisting--declarations"></a><a name="14.4"></a>
-  - [14.4](#hoisting--declarations) Function declarations hoist their name and the function body.
+  - [14.4](#hoisting--declarations) Функціональне оголошення піднімає ім'я і тіло функції.
 
     ```javascript
     function example() {
@@ -1688,9 +1687,9 @@ TODO: FIXME
     }
     ```
 
-  - For more information refer to [JavaScript Scoping & Hoisting](http://www.adequatelygood.com/2010/2/JavaScript-Scoping-and-Hoisting/) by [Ben Cherry](http://www.adequatelygood.com/).
+  - За більш детальною інформацією звертайтесь до [JavaScript Scoping & Hoisting](http://www.adequatelygood.com/2010/2/JavaScript-Scoping-and-Hoisting/) автор [Ben Cherry](http://www.adequatelygood.com/).
 
-**[⬆ back to top](#Зміст)**
+**[⬆ вверх](#Зміст)**
 
 
 ## Comparison Operators & Equality
