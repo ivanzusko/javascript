@@ -36,7 +36,7 @@
   1. [Коми](#Коми)
   1. [Крапка з комою](#Крапка-з-комою)
   1. [Приведення типів та Примушення (Coercion)](#Приведення-типів-та-Примушення)
-  1. [Угоди про іменування](#naming-conventions)
+  1. [Угоди про іменування](#Угоди-про-іменування)
   1. [Accessors](#accessors)
   1. [Події](#events)
   1. [jQuery](#jquery)
@@ -2596,7 +2596,7 @@ TODO: FIXME
     ```
 
   <a name="coercion--booleans"></a><a name="21.6"></a>
-  - [21.6](#coercion--booleans) Booleans:
+  - [21.6](#coercion--booleans) Булеві значення:
 
     ```javascript
     const age = 0;
@@ -2611,13 +2611,13 @@ TODO: FIXME
     const hasAge = !!age;
     ```
 
-**[⬆ back to top](#Зміст)**
+**[⬆ вверх](#Зміст)**
 
 
-## Naming Conventions
+## Угоди про іменування
 
   <a name="naming--descriptive"></a><a name="22.1"></a>
-  - [22.1](#naming--descriptive) Avoid single letter names. Be descriptive with your naming. eslint: [`id-length`](http://eslint.org/docs/rules/id-length)
+  - [22.1](#naming--descriptive) Уникайте імен в одну літеру. Нехай ваші імена будуть описовими. eslint: [`id-length`](http://eslint.org/docs/rules/id-length)
 
     ```javascript
     // погано
@@ -2632,7 +2632,7 @@ TODO: FIXME
     ```
 
   <a name="naming--camelCase"></a><a name="22.2"></a>
-  - [22.2](#naming--camelCase) Use camelCase when naming objects, functions, and instances. eslint: [`camelcase`](http://eslint.org/docs/rules/camelcase.html) jscs: [`requireCamelCaseOrUpperCaseIdentifiers`](http://jscs.info/rule/requireCamelCaseOrUpperCaseIdentifiers)
+  - [22.2](#naming--camelCase) Використовуйте `camelCase` коли називаєте об'єкти, функції і екземпляри. eslint: [`camelcase`](http://eslint.org/docs/rules/camelcase.html) jscs: [`requireCamelCaseOrUpperCaseIdentifiers`](http://jscs.info/rule/requireCamelCaseOrUpperCaseIdentifiers)
 
     ```javascript
     // погано
