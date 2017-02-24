@@ -2530,26 +2530,26 @@ TODO: FIXME
 ## Приведення типів та Примушення
 
   <a name="coercion--explicit"></a><a name="21.1"></a>
-  - [21.1](#coercion--explicit) Perform type coercion at the beginning of the statement.
+  - [21.1](#coercion--explicit) Виконуйте примусове приведення типу на початку ствердження.
 
   <a name="coercion--strings"></a><a name="21.2"></a>
-  - [21.2](#coercion--strings)  Strings:
+  - [21.2](#coercion--strings)  Строки:
 
     ```javascript
     // => this.reviewScore = 9;
 
     // погано
-    const totalScore = this.reviewScore + ''; // invokes this.reviewScore.valueOf()
+    const totalScore = this.reviewScore + ''; // викликає this.reviewScore.valueOf()
 
     // погано
-    const totalScore = this.reviewScore.toString(); // isn't guaranteed to return a string
+    const totalScore = this.reviewScore.toString(); // не гарантовано, що повернеться строка
 
     // добре
     const totalScore = String(this.reviewScore);
     ```
 
   <a name="coercion--numbers"></a><a name="21.3"></a>
-  - [21.3](#coercion--numbers) Numbers: Use `Number` for type casting and `parseInt` always with a radix for parsing strings. eslint: [`radix`](http://eslint.org/docs/rules/radix)
+  - [21.3](#coercion--numbers) Цифри: Використовуйте `Number` для приведення типу та `parseInt` завжди з десятичною для синтаксичного аналізу строк. eslint: [`radix`](http://eslint.org/docs/rules/radix)
 
     ```javascript
     const inputValue = '4';
@@ -2574,20 +2574,20 @@ TODO: FIXME
     ```
 
   <a name="coercion--comment-deviations"></a><a name="21.4"></a>
-  - [21.4](#coercion--comment-deviations) If for whatever reason you are doing something wild and `parseInt` is your bottleneck and need to use Bitshift for [performance reasons](https://jsperf.com/coercion-vs-casting/3), leave a comment explaining why and what you're doing.
+  - [21.4](#coercion--comment-deviations) Якщо, з якоїсь причини, ви робите щось дике і `parseInt` являється слабкою ланкою і вам потрібно використати бітову операцію заради [ефективності](https://jsperf.com/coercion-vs-casting/3), залиште коментар, який пояснює навіщо і що ви робите.
 
     ```javascript
     // добре
     /**
-     * parseInt was the reason my code was slow.
-     * Bitshifting the String to coerce it to a
-     * Number made it a lot faster.
+     * parseInt сповільнював код.
+     * Застосування бітової операції щодо строки для примусового приведення до
+     * Number робить код набагато швидшим.
      */
     const val = inputValue >> 0;
     ```
 
   <a name="coercion--bitwise"></a><a name="21.5"></a>
-  - [21.5](#coercion--bitwise) **Note:** Be careful when using bitshift operations. Numbers are represented as [64-bit values](https://es5.github.io/#x4.3.19), but bitshift operations always return a 32-bit integer ([source](https://es5.github.io/#x11.7)). Bitshift can lead to unexpected behavior for integer values larger than 32 bits. [Discussion](https://github.com/airbnb/javascript/issues/109). Largest signed 32-bit Int is 2,147,483,647:
+  - [21.5](#coercion--bitwise) **Зауважте:** Будьте обачні при використанні бітових операцій. Цифри представленні як [64-бітні значення](https://es5.github.io/#x4.3.19), але бітові операції завжди повертають 32-bit ціле число ([джерело](https://es5.github.io/#x11.7)). Бітова операція може призвести до непердбачуваної поведінки для цілик значеннь, більших ніж 32-біта. [Обговорення](https://github.com/airbnb/javascript/issues/109). Найбільшим виявленим 32-бітним цілим числом є 2,147,483,647:
 
     ```javascript
     2147483647 >> 0 //=> 2147483647
