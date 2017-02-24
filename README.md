@@ -33,9 +33,9 @@
   1. [Блоки](#Блоки)
   1. [Коментарі](#Коментарі)
   1. [Пробіли](#Пробіли)
-  1. [Коми](#commas)
-  1. [Крапка з комою](#semicolons)
-  1. [Привелення типів та Примушення (Coercion)](#type-casting--coercion)
+  1. [Коми](#Коми)
+  1. [Крапка з комою](#Крапка-з-комою)
+  1. [Приведення типів та Примушення (Coercion)](#Приведення-типів-та-Примушення)
   1. [Угоди про іменування](#naming-conventions)
   1. [Accessors](#accessors)
   1. [Події](#events)
@@ -2039,46 +2039,46 @@ TODO: FIXME
 ## Пробіли
 
   <a name="whitespace--spaces"></a><a name="18.1"></a>
-  - [18.1](#whitespace--spaces) Use soft tabs set to 2 spaces. eslint: [`indent`](http://eslint.org/docs/rules/indent.html) jscs: [`validateIndentation`](http://jscs.info/rule/validateIndentation)
+  - [18.1](#whitespace--spaces) Використовуйте табуляцію у 2 пробіли. eslint: [`indent`](http://eslint.org/docs/rules/indent.html) jscs: [`validateIndentation`](http://jscs.info/rule/validateIndentation)
 
     ```javascript
-    // bad
+    // погано
     function foo() {
     ∙∙∙∙const name;
     }
 
-    // bad
+    // погано
     function bar() {
     ∙const name;
     }
 
-    // good
+    // добре
     function baz() {
     ∙∙const name;
     }
     ```
 
   <a name="whitespace--before-blocks"></a><a name="18.2"></a>
-  - [18.2](#whitespace--before-blocks) Place 1 space before the leading brace. eslint: [`space-before-blocks`](http://eslint.org/docs/rules/space-before-blocks.html) jscs: [`requireSpaceBeforeBlockStatements`](http://jscs.info/rule/requireSpaceBeforeBlockStatements)
+  - [18.2](#whitespace--before-blocks) Ставте 1 пробіл перед ведучою фігурною дужкою. eslint: [`space-before-blocks`](http://eslint.org/docs/rules/space-before-blocks.html) jscs: [`requireSpaceBeforeBlockStatements`](http://jscs.info/rule/requireSpaceBeforeBlockStatements)
 
     ```javascript
-    // bad
+    // погано
     function test(){
       console.log('test');
     }
 
-    // good
+    // добре
     function test() {
       console.log('test');
     }
 
-    // bad
+    // погано
     dog.set('attr',{
       age: '1 year',
       breed: 'Bernese Mountain Dog',
     });
 
-    // good
+    // добре
     dog.set('attr', {
       age: '1 year',
       breed: 'Bernese Mountain Dog',
@@ -2086,53 +2086,53 @@ TODO: FIXME
     ```
 
   <a name="whitespace--around-keywords"></a><a name="18.3"></a>
-  - [18.3](#whitespace--around-keywords) Place 1 space before the opening parenthesis in control statements (`if`, `while` etc.). Place no space between the argument list and the function name in function calls and declarations. eslint: [`keyword-spacing`](http://eslint.org/docs/rules/keyword-spacing.html) jscs: [`requireSpaceAfterKeywords`](http://jscs.info/rule/requireSpaceAfterKeywords)
+  - [18.3](#whitespace--around-keywords) Ставте 1 пробіл перед відкриваючою дужкою у умовах (`if`, `while` і т.д.). Не ставте пробіли між списком аргументів та іменем функції, та між іменем функції та викликами функції і проголошеннями. eslint: [`keyword-spacing`](http://eslint.org/docs/rules/keyword-spacing.html) jscs: [`requireSpaceAfterKeywords`](http://jscs.info/rule/requireSpaceAfterKeywords)
 
     ```javascript
-    // bad
+    // погано
     if(isJedi) {
       fight ();
     }
 
-    // good
+    // добре
     if (isJedi) {
       fight();
     }
 
-    // bad
+    // погано
     function fight () {
       console.log ('Swooosh!');
     }
 
-    // good
+    // добре
     function fight() {
       console.log('Swooosh!');
     }
     ```
 
   <a name="whitespace--infix-ops"></a><a name="18.4"></a>
-  - [18.4](#whitespace--infix-ops) Set off operators with spaces. eslint: [`space-infix-ops`](http://eslint.org/docs/rules/space-infix-ops.html) jscs: [`requireSpaceBeforeBinaryOperators`](http://jscs.info/rule/requireSpaceBeforeBinaryOperators), [`requireSpaceAfterBinaryOperators`](http://jscs.info/rule/requireSpaceAfterBinaryOperators)
+  - [18.4](#whitespace--infix-ops) Розмежовуйте оператори пробілами. eslint: [`space-infix-ops`](http://eslint.org/docs/rules/space-infix-ops.html) jscs: [`requireSpaceBeforeBinaryOperators`](http://jscs.info/rule/requireSpaceBeforeBinaryOperators), [`requireSpaceAfterBinaryOperators`](http://jscs.info/rule/requireSpaceAfterBinaryOperators)
 
     ```javascript
-    // bad
+    // погано
     const x=y+5;
 
-    // good
+    // добре
     const x = y + 5;
     ```
 
   <a name="whitespace--newline-at-end"></a><a name="18.5"></a>
-  - [18.5](#whitespace--newline-at-end) End files with a single newline character. eslint: [`eol-last`](https://github.com/eslint/eslint/blob/master/docs/rules/eol-last.md)
+  - [18.5](#whitespace--newline-at-end) Лишайте символ нового рядку у кінці файлу. eslint: [`eol-last`](https://github.com/eslint/eslint/blob/master/docs/rules/eol-last.md)
 
     ```javascript
-    // bad
+    // погано
     import { es6 } from './AirbnbStyleGuide';
       // ...
     export default es6;
     ```
 
     ```javascript
-    // bad
+    // погано
     import { es6 } from './AirbnbStyleGuide';
       // ...
     export default es6;↵
@@ -2140,21 +2140,20 @@ TODO: FIXME
     ```
 
     ```javascript
-    // good
+    // добре
     import { es6 } from './AirbnbStyleGuide';
       // ...
     export default es6;↵
     ```
 
   <a name="whitespace--chains"></a><a name="18.6"></a>
-  - [18.6](#whitespace--chains) Use indentation when making long method chains (more than 2 method chains). Use a leading dot, which
-    emphasizes that the line is a method call, not a new statement. eslint: [`newline-per-chained-call`](http://eslint.org/docs/rules/newline-per-chained-call) [`no-whitespace-before-property`](http://eslint.org/docs/rules/no-whitespace-before-property)
+  - [18.6](#whitespace--chains) Використовуйте відступи, коли робите ланцюжки методів (більш ніж два методи у ланцюгу). Використовуйте ведучу крапку, яка підкреслює, що на новій лінії відбувається виклик методу, а не нове ствердження. eslint: [`newline-per-chained-call`](http://eslint.org/docs/rules/newline-per-chained-call) [`no-whitespace-before-property`](http://eslint.org/docs/rules/no-whitespace-before-property)
 
     ```javascript
-    // bad
+    // погано
     $('#items').find('.selected').highlight().end().find('.open').updateCount();
 
-    // bad
+    // погано
     $('#items').
       find('.selected').
         highlight().
@@ -2162,7 +2161,7 @@ TODO: FIXME
       find('.open').
         updateCount();
 
-    // good
+    // добре
     $('#items')
       .find('.selected')
         .highlight()
@@ -2170,13 +2169,13 @@ TODO: FIXME
       .find('.open')
         .updateCount();
 
-    // bad
+    // погано
     const leds = stage.selectAll('.led').data(data).enter().append('svg:svg').classed('led', true)
         .attr('width', (radius + margin) * 2).append('svg:g')
         .attr('transform', `translate(${radius + margin},${radius + margin})`)
         .call(tron.led);
 
-    // good
+    // добре
     const leds = stage.selectAll('.led')
         .data(data)
       .enter().append('svg:svg')
@@ -2186,28 +2185,28 @@ TODO: FIXME
         .attr('transform', `translate(${radius + margin},${radius + margin})`)
         .call(tron.led);
 
-    // good
+    // добре
     const leds = stage.selectAll('.led').data(data);
     ```
 
   <a name="whitespace--after-blocks"></a><a name="18.7"></a>
-  - [18.7](#whitespace--after-blocks) Leave a blank line after blocks and before the next statement. jscs: [`requirePaddingNewLinesAfterBlocks`](http://jscs.info/rule/requirePaddingNewLinesAfterBlocks)
+  - [18.7](#whitespace--after-blocks) Лишайте порожній рядок після блоків і перед наступним ствердженням. jscs: [`requirePaddingNewLinesAfterBlocks`](http://jscs.info/rule/requirePaddingNewLinesAfterBlocks)
 
     ```javascript
-    // bad
+    // погано
     if (foo) {
       return bar;
     }
     return baz;
 
-    // good
+    // добре
     if (foo) {
       return bar;
     }
 
     return baz;
 
-    // bad
+    // погано
     const obj = {
       foo() {
       },
@@ -2216,7 +2215,7 @@ TODO: FIXME
     };
     return obj;
 
-    // good
+    // добре
     const obj = {
       foo() {
       },
@@ -2227,7 +2226,7 @@ TODO: FIXME
 
     return obj;
 
-    // bad
+    // погано
     const arr = [
       function foo() {
       },
@@ -2236,7 +2235,7 @@ TODO: FIXME
     ];
     return arr;
 
-    // good
+    // добре
     const arr = [
       function foo() {
       },
@@ -2249,17 +2248,17 @@ TODO: FIXME
     ```
 
   <a name="whitespace--padded-blocks"></a><a name="18.8"></a>
-  - [18.8](#whitespace--padded-blocks) Do not pad your blocks with blank lines. eslint: [`padded-blocks`](http://eslint.org/docs/rules/padded-blocks.html) jscs:  [`disallowPaddingNewlinesInBlocks`](http://jscs.info/rule/disallowPaddingNewlinesInBlocks)
+  - [18.8](#whitespace--padded-blocks) Не насичуйте ваші блоки порожніми лініями. eslint: [`padded-blocks`](http://eslint.org/docs/rules/padded-blocks.html) jscs:  [`disallowPaddingNewlinesInBlocks`](http://jscs.info/rule/disallowPaddingNewlinesInBlocks)
 
     ```javascript
-    // bad
+    // погано
     function bar() {
 
       console.log(foo);
 
     }
 
-    // also bad
+    // також погано
     if (baz) {
 
       console.log(qux);
@@ -2268,12 +2267,12 @@ TODO: FIXME
 
     }
 
-    // good
+    // добре
     function bar() {
       console.log(foo);
     }
 
-    // good
+    // добре
     if (baz) {
       console.log(qux);
     } else {
@@ -2282,67 +2281,67 @@ TODO: FIXME
     ```
 
   <a name="whitespace--in-parens"></a><a name="18.9"></a>
-  - [18.9](#whitespace--in-parens) Do not add spaces inside parentheses. eslint: [`space-in-parens`](http://eslint.org/docs/rules/space-in-parens.html) jscs: [`disallowSpacesInsideParentheses`](http://jscs.info/rule/disallowSpacesInsideParentheses)
+  - [18.9](#whitespace--in-parens) Не додавайте пробілів в середині дужок. eslint: [`space-in-parens`](http://eslint.org/docs/rules/space-in-parens.html) jscs: [`disallowSpacesInsideParentheses`](http://jscs.info/rule/disallowSpacesInsideParentheses)
 
     ```javascript
-    // bad
+    // погано
     function bar( foo ) {
       return foo;
     }
 
-    // good
+    // добре
     function bar(foo) {
       return foo;
     }
 
-    // bad
+    // погано
     if ( foo ) {
       console.log(foo);
     }
 
-    // good
+    // добре
     if (foo) {
       console.log(foo);
     }
     ```
 
   <a name="whitespace--in-brackets"></a><a name="18.10"></a>
-  - [18.10](#whitespace--in-brackets) Do not add spaces inside brackets. eslint: [`array-bracket-spacing`](http://eslint.org/docs/rules/array-bracket-spacing.html) jscs: [`disallowSpacesInsideArrayBrackets`](http://jscs.info/rule/disallowSpacesInsideArrayBrackets)
+  - [18.10](#whitespace--in-brackets) Не ставте зайвих пробілів в середині квадратних дужок. eslint: [`array-bracket-spacing`](http://eslint.org/docs/rules/array-bracket-spacing.html) jscs: [`disallowSpacesInsideArrayBrackets`](http://jscs.info/rule/disallowSpacesInsideArrayBrackets)
 
     ```javascript
-    // bad
+    // погано
     const foo = [ 1, 2, 3 ];
     console.log(foo[ 0 ]);
 
-    // good
+    // добре
     const foo = [1, 2, 3];
     console.log(foo[0]);
     ```
 
   <a name="whitespace--in-braces"></a><a name="18.11"></a>
-  - [18.11](#whitespace--in-braces) Add spaces inside curly braces. eslint: [`object-curly-spacing`](http://eslint.org/docs/rules/object-curly-spacing.html) jscs: [`requireSpacesInsideObjectBrackets`](http://jscs.info/rule/requireSpacesInsideObjectBrackets)
+  - [18.11](#whitespace--in-braces) Додавайте пробіли в середині фігурних дужок. eslint: [`object-curly-spacing`](http://eslint.org/docs/rules/object-curly-spacing.html) jscs: [`requireSpacesInsideObjectBrackets`](http://jscs.info/rule/requireSpacesInsideObjectBrackets)
 
     ```javascript
-    // bad
+    // погано
     const foo = {clark: 'kent'};
 
-    // good
+    // добре
     const foo = { clark: 'kent' };
     ```
 
   <a name="whitespace--max-len"></a><a name="18.12"></a>
-  - [18.12](#whitespace--max-len) Avoid having lines of code that are longer than 100 characters (including whitespace). Note: per [above](#strings--line-length), long strings are exempt from this rule, and should not be broken up. eslint: [`max-len`](http://eslint.org/docs/rules/max-len.html) jscs: [`maximumLineLength`](http://jscs.info/rule/maximumLineLength)
+  - [18.12](#whitespace--max-len) Уникайте ліній коду, що довші за 100 символів (включаючи пробіли). Примітка: [зазначені тут](#strings--line-length) довгі рядки не підпадають під це правило і не повинні розбиватись. eslint: [`max-len`](http://eslint.org/docs/rules/max-len.html) jscs: [`maximumLineLength`](http://jscs.info/rule/maximumLineLength)
 
-    > Why? This ensures readability and maintainability.
+    > Чому? Це забезпечує читаємість та підтримку.
 
     ```javascript
-    // bad
+    // погано
     const foo = jsonData && jsonData.foo && jsonData.foo.bar && jsonData.foo.bar.baz && jsonData.foo.bar.baz.quux && jsonData.foo.bar.baz.quux.xyzzy;
 
-    // bad
+    // погано
     $.ajax({ method: 'POST', url: 'https://airbnb.com/', data: { name: 'John' } }).done(() => console.log('Congratulations!')).fail(() => console.log('You have failed this city.'));
 
-    // good
+    // добре
     const foo = jsonData
       && jsonData.foo
       && jsonData.foo.bar
@@ -2350,7 +2349,7 @@ TODO: FIXME
       && jsonData.foo.bar.baz.quux
       && jsonData.foo.bar.baz.quux.xyzzy;
 
-    // good
+    // добре
     $.ajax({
       method: 'POST',
       url: 'https://airbnb.com/',
@@ -2360,29 +2359,29 @@ TODO: FIXME
       .fail(() => console.log('You have failed this city.'));
     ```
 
-**[⬆ back to top](#Зміст)**
+**[⬆ вверх](#Зміст)**
 
-## Commas
+## Коми
 
 <a name="commas--leading-trailing"></a><a name="19.1"></a>
-  - [19.1](#commas--leading-trailing) Leading commas: **Nope.** eslint: [`comma-style`](http://eslint.org/docs/rules/comma-style.html) jscs: [`requireCommaBeforeLineBreak`](http://jscs.info/rule/requireCommaBeforeLineBreak)
+  - [19.1](#commas--leading-trailing) Направляючі коми: **Ні.** eslint: [`comma-style`](http://eslint.org/docs/rules/comma-style.html) jscs: [`requireCommaBeforeLineBreak`](http://jscs.info/rule/requireCommaBeforeLineBreak)
 
     ```javascript
-    // bad
+    // погано
     const story = [
         once
       , upon
       , aTime
     ];
 
-    // good
+    // добре
     const story = [
       once,
       upon,
       aTime,
     ];
 
-    // bad
+    // погано
     const hero = {
         firstName: 'Ada'
       , lastName: 'Lovelace'
@@ -2390,7 +2389,7 @@ TODO: FIXME
       , superPower: 'computers'
     };
 
-    // good
+    // добре
     const hero = {
       firstName: 'Ada',
       lastName: 'Lovelace',
@@ -2400,12 +2399,12 @@ TODO: FIXME
     ```
 
   <a name="commas--dangling"></a><a name="19.2"></a>
-  - [19.2](#commas--dangling) Additional trailing comma: **Yup.** eslint: [`comma-dangle`](http://eslint.org/docs/rules/comma-dangle.html) jscs: [`requireTrailingComma`](http://jscs.info/rule/requireTrailingComma)
+  - [19.2](#commas--dangling) Додаткова кома в кінці рядку: **Так.** eslint: [`comma-dangle`](http://eslint.org/docs/rules/comma-dangle.html) jscs: [`requireTrailingComma`](http://jscs.info/rule/requireTrailingComma)
 
-    > Why? This leads to cleaner git diffs. Also, transpilers like Babel will remove the additional trailing comma in the transpiled code which means you don't have to worry about the [trailing comma problem](https://github.com/airbnb/javascript/blob/es5-deprecated/es5/README.md#commas) in legacy browsers.
+    > Чому? Це веде до чистіших відмінностей у git. Також, транспайелри, такі як Babel, приберуть додаткому кому в кінці рядку з кінцевого коду, що означає, що ви не повинні перейматись через [проблему завершальної коми](https://github.com/airbnb/javascript/blob/es5-deprecated/es5/README.md#commas) у старих браузерах.
 
     ```diff
-    // bad - git diff without trailing comma
+    // погано - git diff без завершальної коми
     const hero = {
          firstName: 'Florence',
     -    lastName: 'Nightingale'
@@ -2413,7 +2412,7 @@ TODO: FIXME
     +    inventorOf: ['coxcomb chart', 'modern nursing']
     };
 
-    // good - git diff with trailing comma
+    // добре - git diff із завершальною комою
     const hero = {
          firstName: 'Florence',
          lastName: 'Nightingale',
@@ -2422,7 +2421,7 @@ TODO: FIXME
     ```
 
     ```javascript
-    // bad
+    // погано
     const hero = {
       firstName: 'Dana',
       lastName: 'Scully'
@@ -2433,7 +2432,7 @@ TODO: FIXME
       'Superman'
     ];
 
-    // good
+    // добре
     const hero = {
       firstName: 'Dana',
       lastName: 'Scully',
@@ -2444,7 +2443,7 @@ TODO: FIXME
       'Superman',
     ];
 
-    // bad
+    // погано
     function createHero(
       firstName,
       lastName,
@@ -2453,7 +2452,7 @@ TODO: FIXME
       // does nothing
     }
 
-    // good
+    // добре
     function createHero(
       firstName,
       lastName,
@@ -2462,7 +2461,7 @@ TODO: FIXME
       // does nothing
     }
 
-    // good (note that a comma must not appear after a "rest" element)
+    // добре (зауважте, що кома не повинна з'являтись після "rest" елементу)
     function createHero(
       firstName,
       lastName,
@@ -2472,21 +2471,21 @@ TODO: FIXME
       // does nothing
     }
 
-    // bad
+    // погано
     createHero(
       firstName,
       lastName,
       inventorOf
     );
 
-    // good
+    // добре
     createHero(
       firstName,
       lastName,
       inventorOf,
     );
 
-    // good (note that a comma must not appear after a "rest" element)
+    // добре (зауважте, що кома не повинна з'являтись після "rest" елементу)
     createHero(
       firstName,
       lastName,
@@ -2495,40 +2494,40 @@ TODO: FIXME
     )
     ```
 
-**[⬆ back to top](#Зміст)**
+**[⬆ вверх](#Зміст)**
 
 
-## Semicolons
+## Крапка з комою
 
   <a name="semicolons--required"></a><a name="20.1"></a>
-  - [20.1](#20.1) **Yup.** eslint: [`semi`](http://eslint.org/docs/rules/semi.html) jscs: [`requireSemicolons`](http://jscs.info/rule/requireSemicolons)
+  - [20.1](#20.1) **Так.** eslint: [`semi`](http://eslint.org/docs/rules/semi.html) jscs: [`requireSemicolons`](http://jscs.info/rule/requireSemicolons)
 
     ```javascript
-    // bad
+    // погано
     (function () {
       const name = 'Skywalker'
       return name
     })()
 
-    // good
+    // добре
     (function () {
       const name = 'Skywalker';
       return name;
     }());
 
-    // good, but legacy (guards against the function becoming an argument when two files with IIFEs are concatenated)
+    // добре, але застаріло (захист, щоб функція не перетворювалась на аргумент, коли об'єднуються два файли за допомогою IIFEs(негайно виконуваний функціональний вираз (НВФВ)))
     ;(() => {
       const name = 'Skywalker';
       return name;
     }());
     ```
 
-    [Read more](https://stackoverflow.com/questions/7365172/semicolon-before-self-invoking-function/7365214%237365214).
+    [Прочитати більше](https://stackoverflow.com/questions/7365172/semicolon-before-self-invoking-function/7365214%237365214).
 
-**[⬆ back to top](#Зміст)**
+**[⬆ вверх](#Зміст)**
 
 
-## Type Casting & Coercion
+## Приведення типів та Примушення
 
   <a name="coercion--explicit"></a><a name="21.1"></a>
   - [21.1](#coercion--explicit) Perform type coercion at the beginning of the statement.
@@ -2539,13 +2538,13 @@ TODO: FIXME
     ```javascript
     // => this.reviewScore = 9;
 
-    // bad
+    // погано
     const totalScore = this.reviewScore + ''; // invokes this.reviewScore.valueOf()
 
-    // bad
+    // погано
     const totalScore = this.reviewScore.toString(); // isn't guaranteed to return a string
 
-    // good
+    // добре
     const totalScore = String(this.reviewScore);
     ```
 
@@ -2555,22 +2554,22 @@ TODO: FIXME
     ```javascript
     const inputValue = '4';
 
-    // bad
+    // погано
     const val = new Number(inputValue);
 
-    // bad
+    // погано
     const val = +inputValue;
 
-    // bad
+    // погано
     const val = inputValue >> 0;
 
-    // bad
+    // погано
     const val = parseInt(inputValue);
 
-    // good
+    // добре
     const val = Number(inputValue);
 
-    // good
+    // добре
     const val = parseInt(inputValue, 10);
     ```
 
@@ -2578,7 +2577,7 @@ TODO: FIXME
   - [21.4](#coercion--comment-deviations) If for whatever reason you are doing something wild and `parseInt` is your bottleneck and need to use Bitshift for [performance reasons](https://jsperf.com/coercion-vs-casting/3), leave a comment explaining why and what you're doing.
 
     ```javascript
-    // good
+    // добре
     /**
      * parseInt was the reason my code was slow.
      * Bitshifting the String to coerce it to a
@@ -2602,10 +2601,10 @@ TODO: FIXME
     ```javascript
     const age = 0;
 
-    // bad
+    // погано
     const hasAge = new Boolean(age);
 
-    // good
+    // добре
     const hasAge = Boolean(age);
 
     // best
@@ -2621,12 +2620,12 @@ TODO: FIXME
   - [22.1](#naming--descriptive) Avoid single letter names. Be descriptive with your naming. eslint: [`id-length`](http://eslint.org/docs/rules/id-length)
 
     ```javascript
-    // bad
+    // погано
     function q() {
       // ...stuff...
     }
 
-    // good
+    // добре
     function query() {
       // ..stuff..
     }
@@ -2636,12 +2635,12 @@ TODO: FIXME
   - [22.2](#naming--camelCase) Use camelCase when naming objects, functions, and instances. eslint: [`camelcase`](http://eslint.org/docs/rules/camelcase.html) jscs: [`requireCamelCaseOrUpperCaseIdentifiers`](http://jscs.info/rule/requireCamelCaseOrUpperCaseIdentifiers)
 
     ```javascript
-    // bad
+    // погано
     const OBJEcttsssss = {};
     const this_is_my_object = {};
     function c() {}
 
-    // good
+    // добре
     const thisIsMyObject = {};
     function thisIsMyFunction() {}
     ```
@@ -2650,7 +2649,7 @@ TODO: FIXME
   - [22.3](#naming--PascalCase) Use PascalCase only when naming constructors or classes. eslint: [`new-cap`](http://eslint.org/docs/rules/new-cap.html) jscs: [`requireCapitalizedConstructors`](http://jscs.info/rule/requireCapitalizedConstructors)
 
     ```javascript
-    // bad
+    // погано
     function user(options) {
       this.name = options.name;
     }
@@ -2659,7 +2658,7 @@ TODO: FIXME
       name: 'nope',
     });
 
-    // good
+    // добре
     class User {
       constructor(options) {
         this.name = options.name;
@@ -2677,12 +2676,12 @@ TODO: FIXME
     > Why? JavaScript does not have the concept of privacy in terms of properties or methods. Although a leading underscore is a common convention to mean “private”, in fact, these properties are fully public, and as such, are part of your public API contract. This convention might lead developers to wrongly think that a change won't count as breaking, or that tests aren't needed. tl;dr: if you want something to be “private”, it must not be observably present.
 
     ```javascript
-    // bad
+    // погано
     this.__firstName__ = 'Panda';
     this.firstName_ = 'Panda';
     this._firstName = 'Panda';
 
-    // good
+    // добре
     this.firstName = 'Panda';
     ```
 
@@ -2690,7 +2689,7 @@ TODO: FIXME
   - [22.5](#naming--self-this) Don't save references to `this`. Use arrow functions or [Function#bind](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/bind). jscs: [`disallowNodeTypes`](http://jscs.info/rule/disallowNodeTypes)
 
     ```javascript
-    // bad
+    // погано
     function foo() {
       const self = this;
       return function () {
@@ -2698,7 +2697,7 @@ TODO: FIXME
       };
     }
 
-    // bad
+    // погано
     function foo() {
       const that = this;
       return function () {
@@ -2706,7 +2705,7 @@ TODO: FIXME
       };
     }
 
-    // good
+    // добре
     function foo() {
       return () => {
         console.log(this);
@@ -2731,19 +2730,19 @@ TODO: FIXME
     export default function insideDirectory() {}
 
     // in some other file
-    // bad
+    // погано
     import CheckBox from './checkBox'; // PascalCase import/export, camelCase filename
     import FortyTwo from './FortyTwo'; // PascalCase import/filename, camelCase export
     import InsideDirectory from './InsideDirectory'; // PascalCase import/filename, camelCase export
 
-    // bad
+    // погано
     import CheckBox from './check_box'; // PascalCase import/export, snake_case filename
     import forty_two from './forty_two'; // snake_case import/filename, camelCase export
     import inside_directory from './inside_directory'; // snake_case import, camelCase export
     import index from './inside_directory/index'; // requiring the index file explicitly
     import insideDirectory from './insideDirectory/index'; // requiring the index file explicitly
 
-    // good
+    // добре
     import CheckBox from './CheckBox'; // PascalCase export/import/filename
     import fortyTwo from './fortyTwo'; // camelCase export/import/filename
     import insideDirectory from './insideDirectory'; // camelCase export/import/directory name/implicit "index"
@@ -2778,18 +2777,18 @@ TODO: FIXME
     > Why? Names are for readability, not to appease a computer algorithm.
 
     ```javascript
-    // bad
+    // погано
     import SmsContainer from './containers/SmsContainer';
 
-    // bad
+    // погано
     const HttpRequests = [
       // ...
     ];
 
-    // good
+    // добре
     import SMSContainer from './containers/SMSContainer';
 
-    // good
+    // добре
     const HTTPRequests = [
       // ...
     ];
@@ -2815,7 +2814,7 @@ TODO: FIXME
   - [23.2](#accessors--no-getters-setters) Do not use JavaScript getters/setters as they cause unexpected side effects and are harder to test, maintain, and reason about. Instead, if you do make accessor functions, use getVal() and setVal('hello').
 
     ```javascript
-    // bad
+    // погано
     class Dragon {
       get age() {
         // ...
@@ -2826,7 +2825,7 @@ TODO: FIXME
       }
     }
 
-    // good
+    // добре
     class Dragon {
       getAge() {
         // ...
@@ -2842,12 +2841,12 @@ TODO: FIXME
   - [23.3](#accessors--boolean-prefix) If the property/method is a `boolean`, use `isVal()` or `hasVal()`.
 
     ```javascript
-    // bad
+    // погано
     if (!dragon.age()) {
       return false;
     }
 
-    // good
+    // добре
     if (!dragon.hasAge()) {
       return false;
     }
@@ -2882,7 +2881,7 @@ TODO: FIXME
   - [24.1](#events--hash) When attaching data payloads to events (whether DOM events or something more proprietary like Backbone events), pass a hash instead of a raw value. This allows a subsequent contributor to add more data to the event payload without finding and updating every handler for the event. For example, instead of:
 
     ```javascript
-    // bad
+    // погано
     $(this).trigger('listingUpdated', listing.id);
 
     ...
@@ -2895,7 +2894,7 @@ TODO: FIXME
     prefer:
 
     ```javascript
-    // good
+    // добре
     $(this).trigger('listingUpdated', { listingId: listing.id });
 
     ...
@@ -2914,13 +2913,13 @@ TODO: FIXME
   - [25.1](#jquery--dollar-prefix) Prefix jQuery object variables with a `$`. jscs: [`requireDollarBeforejQueryAssignment`](http://jscs.info/rule/requireDollarBeforejQueryAssignment)
 
     ```javascript
-    // bad
+    // погано
     const sidebar = $('.sidebar');
 
-    // good
+    // добре
     const $sidebar = $('.sidebar');
 
-    // good
+    // добре
     const $sidebarBtn = $('.sidebar-btn');
     ```
 
@@ -2928,7 +2927,7 @@ TODO: FIXME
   - [25.2](#jquery--cache) Cache jQuery lookups.
 
     ```javascript
-    // bad
+    // погано
     function setSidebar() {
       $('.sidebar').hide();
 
@@ -2939,7 +2938,7 @@ TODO: FIXME
       });
     }
 
-    // good
+    // добре
     function setSidebar() {
       const $sidebar = $('.sidebar');
       $sidebar.hide();
@@ -2959,19 +2958,19 @@ TODO: FIXME
   - [25.4](#jquery--find) Use `find` with scoped jQuery object queries.
 
     ```javascript
-    // bad
+    // погано
     $('ul', '.sidebar').hide();
 
-    // bad
+    // погано
     $('.sidebar').find('ul').hide();
 
-    // good
+    // добре
     $('.sidebar ul').hide();
 
-    // good
+    // добре
     $('.sidebar > ul').hide();
 
-    // good
+    // добре
     $sidebar.find('ul').hide();
     ```
 
