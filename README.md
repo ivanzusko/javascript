@@ -30,9 +30,9 @@
   1. [Змінні](#Змінні)
   1. [Підняття (Hoisting)](#Підняття-(Hoisting))
   1. [Оператори порівняння і рівності](#Оператори-порівняння-та-рівності)
-  1. [Блоки](#blocks)
-  1. [Коментарі](#comments)
-  1. [Пробіли](#whitespace)
+  1. [Блоки](#Блоки)
+  1. [Коментарі](#Коментарі)
+  1. [Пробіли](#Пробіли)
   1. [Коми](#commas)
   1. [Крапка з комою](#semicolons)
   1. [Привелення типів та Примушення (Coercion)](#type-casting--coercion)
@@ -1755,12 +1755,12 @@ TODO: FIXME
   <a name="comparison--switch-blocks"></a><a name="15.5"></a>
   - [15.5](#comparison--switch-blocks) Використовуйте дужки для створення блоків `case` та `default` що містять лексичні декларації (e.g. `let`, `const`, `function`, та `class`).
 
-  > Чому? Lexical declarations are visible in the entire `switch` block but only get initialized when assigned, which only happens when its `case` is reached. This causes problems when multiple `case` clauses attempt to define the same thing.
+  > Чому? Лесичні проголошення видимі у всьому `switch` блоці, але вони ініціалізуються лише тоді, коли привласнюються, а це стається лише тоді, коли спрацьювує `case`. Це спричиняє проблеми, коли кілька `case` випадків намагаються визначити одну й ту саму річ.
 
   eslint rules: [`no-case-declarations`](http://eslint.org/docs/rules/no-case-declarations.html).
 
     ```javascript
-    // bad
+    // погано
     switch (foo) {
       case 1:
         let x = 1;
@@ -1775,7 +1775,7 @@ TODO: FIXME
         class C {}
     }
 
-    // good
+    // добре
     switch (foo) {
       case 1: {
         let x = 1;
@@ -1799,81 +1799,81 @@ TODO: FIXME
     ```
 
   <a name="comparison--nested-ternaries"></a><a name="15.6"></a>
-  - [15.6](#comparison--nested-ternaries) Ternaries should not be nested and generally be single line expressions.
+  - [15.6](#comparison--nested-ternaries) Тернарні оператори не повинні вкладатись будь яким чином, а мають бути записані в одну строчку.
 
     eslint rules: [`no-nested-ternary`](http://eslint.org/docs/rules/no-nested-ternary.html).
 
     ```javascript
-    // bad
+    // погано
     const foo = maybe1 > maybe2
       ? "bar"
       : value1 > value2 ? "baz" : null;
 
-    // better
+    // краще
     const maybeNull = value1 > value2 ? 'baz' : null;
 
     const foo = maybe1 > maybe2
       ? 'bar'
       : maybeNull;
 
-    // best
+    // найкраще
     const maybeNull = value1 > value2 ? 'baz' : null;
 
     const foo = maybe1 > maybe2 ? 'bar' : maybeNull;
     ```
 
   <a name="comparison--unneeded-ternary"></a><a name="15.7"></a>
-  - [15.7](#comparison--unneeded-ternary) Avoid unneeded ternary statements.
+  - [15.7](#comparison--unneeded-ternary) Уникайте непотрібних тернарних записів.
 
     eslint rules: [`no-unneeded-ternary`](http://eslint.org/docs/rules/no-unneeded-ternary.html).
 
     ```javascript
-    // bad
+    // погано
     const foo = a ? a : b;
     const bar = c ? true : false;
     const baz = c ? false : true;
 
-    // good
+    // добре
     const foo = a || b;
     const bar = !!c;
     const baz = !c;
     ```
 
-**[⬆ back to top](#Зміст)**
+**[⬆ вверх](#Зміст)**
 
 
-## Blocks
+## Блоки
 
   <a name="blocks--braces"></a><a name="16.1"></a>
-  - [16.1](#blocks--braces) Use braces with all multi-line blocks.
+  - [16.1](#blocks--braces) Використовуйте дужки в усіх блоках які записуються у кілька рядків.
 
     ```javascript
-    // bad
+    // погано
     if (test)
       return false;
 
-    // good
+    // добре
     if (test) return false;
 
-    // good
+    // добре
     if (test) {
       return false;
     }
 
-    // bad
+    // погано
     function foo() { return false; }
 
-    // good
+    // добре
     function bar() {
       return false;
     }
     ```
 
   <a name="blocks--cuddled-elses"></a><a name="16.2"></a>
-  - [16.2](#blocks--cuddled-elses) If you're using multi-line blocks with `if` and `else`, put `else` on the same line as your `if` block's closing brace. eslint: [`brace-style`](http://eslint.org/docs/rules/brace-style.html) jscs:  [`disallowNewlineBeforeBlockStatements`](http://jscs.info/rule/disallowNewlineBeforeBlockStatements)
+  - [16.2](#blocks--cuddled-elses) Якщо ви використовуєте блоки у кілька рядків з `if` та `else`, то ставте `else` на тому самому рядку, що і закривающася дужка `if` блоку. eslint: [`brace-style`](http://eslint.org/docs/rules/brace-style.html) jscs:  [`disallowNewlineBeforeBlockStatements`](http://jscs.info/rule/disallowNewlineBeforeBlockStatements)
 
     ```javascript
-    // bad
+    // погано
     if (test) {
       thing1();
       thing2();
@@ -1882,7 +1882,7 @@ TODO: FIXME
       thing3();
     }
 
-    // good
+    // добре
     if (test) {
       thing1();
       thing2();
@@ -1892,16 +1892,16 @@ TODO: FIXME
     ```
 
 
-**[⬆ back to top](#Зміст)**
+**[⬆ вверх](#Зміст)**
 
 
-## Comments
+## Коментарі
 
   <a name="comments--multiline"></a><a name="17.1"></a>
-  - [17.1](#comments--multiline) Use `/** ... */` for multi-line comments.
+  - [17.1](#comments--multiline) Використовуйте `/** ... */` для коментарів у кілька строчок.
 
     ```javascript
-    // bad
+    // погано
     // make() returns a new element
     // based on the passed in tag name
     //
@@ -1914,7 +1914,7 @@ TODO: FIXME
       return element;
     }
 
-    // good
+    // добре
     /**
      * make() returns a new element
      * based on the passed-in tag name
@@ -1928,17 +1928,17 @@ TODO: FIXME
     ```
 
   <a name="comments--singleline"></a><a name="17.2"></a>
-  - [17.2](#comments--singleline) Use `//` for single line comments. Place single line comments on a newline above the subject of the comment. Put an empty line before the comment unless it's on the first line of a block.
+  - [17.2](#comments--singleline) Використовуйте `//` для коментарів в одну строчку. Ставте однорядковий коментар на новий рядок одразу над суб'єктом, до якого відноситься цей коментар. Ставте порожній рядок перед коментарем, якщо тільки це не перший рядок блоку.
 
     ```javascript
-    // bad
+    // погано
     const active = true;  // is current tab
 
-    // good
+    // добре
     // is current tab
     const active = true;
 
-    // bad
+    // погано
     function getType() {
       console.log('fetching type...');
       // set the default type to 'no type'
@@ -1947,7 +1947,7 @@ TODO: FIXME
       return type;
     }
 
-    // good
+    // добре
     function getType() {
       console.log('fetching type...');
 
@@ -1957,7 +1957,7 @@ TODO: FIXME
       return type;
     }
 
-    // also good
+    // також добре
     function getType() {
       // set the default type to 'no type'
       const type = this._type || 'no type';
@@ -1966,18 +1966,18 @@ TODO: FIXME
     }
     ```
 
-  - [17.3](#comments--spaces) Start all comments with a space to make it easier to read. eslint: [`spaced-comment`](http://eslint.org/docs/rules/spaced-comment)
+  - [17.3](#comments--spaces) Починайте всі коментарі з пробілу для більше легкого читання. eslint: [`spaced-comment`](http://eslint.org/docs/rules/spaced-comment)
 
     ```javascript
-    // bad
+    // погано
     //is current tab
     const active = true;
 
-    // good
+    // добре
     // is current tab
     const active = true;
 
-    // bad
+    // погано
     /**
      *make() returns a new element
      *based on the passed-in tag name
@@ -1989,7 +1989,7 @@ TODO: FIXME
       return element;
     }
 
-    // good
+    // добре
     /**
      * make() returns a new element
      * based on the passed-in tag name
@@ -2003,10 +2003,10 @@ TODO: FIXME
     ```
 
   <a name="comments--actionitems"></a><a name="17.3"></a>
-  - [17.4](#comments--actionitems) Prefixing your comments with `FIXME` or `TODO` helps other developers quickly understand if you're pointing out a problem that needs to be revisited, or if you're suggesting a solution to the problem that needs to be implemented. These are different than regular comments because they are actionable. The actions are `FIXME: -- need to figure this out` or `TODO: -- need to implement`.
+  - [17.4](#comments--actionitems) Починати ваш коментар зі слів `FIXME` чи `TODO` добре, оскільки це допомогає ншим розробникам швидко розуміти, чи ви відзначаєте проблемне місце в коді, яке треба переглянути, чи ви пропонуєте вирішення проблеми, яке має бути запроваджене. Вони відрізняються від звичайних коментарів, оскільки вони вимагають дії. Дія може бути `FIXME: -- потрібно в цьому розібратись і виправити` or `TODO: -- потрібно запровадити`.
 
   <a name="comments--fixme"></a><a name="17.4"></a>
-  - [17.5](#comments--fixme) Use `// FIXME:` to annotate problems.
+  - [17.5](#comments--fixme) Використовуйте `// FIXME:` для описання проблеми.
 
     ```javascript
     class Calculator extends Abacus {
@@ -2020,7 +2020,7 @@ TODO: FIXME
     ```
 
   <a name="comments--todo"></a><a name="17.5"></a>
-  - [17.6](#comments--todo) Use `// TODO:` to annotate solutions to problems.
+  - [17.6](#comments--todo) Використовуйте `// TODO:` для описання способів вирішення проблеми.
 
     ```javascript
     class Calculator extends Abacus {
@@ -2033,10 +2033,10 @@ TODO: FIXME
     }
     ```
 
-**[⬆ back to top](#Зміст)**
+**[⬆ вверх](#Зміст)**
 
 
-## Whitespace
+## Пробіли
 
   <a name="whitespace--spaces"></a><a name="18.1"></a>
   - [18.1](#whitespace--spaces) Use soft tabs set to 2 spaces. eslint: [`indent`](http://eslint.org/docs/rules/indent.html) jscs: [`validateIndentation`](http://jscs.info/rule/validateIndentation)
