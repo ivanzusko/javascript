@@ -29,7 +29,7 @@
   1. [Властивості](#Властивості)
   1. [Змінні](#Змінні)
   1. [Підняття (Hoisting)](#Підняття-(Hoisting))
-  1. [Оператори порівняння і рівності](#comparison-operators--equality)
+  1. [Оператори порівняння і рівності](#Оператори-порівняння-та-рівності)
   1. [Блоки](#blocks)
   1. [Коментарі](#comments)
   1. [Пробіли](#whitespace)
@@ -1692,70 +1692,70 @@ TODO: FIXME
 **[⬆ вверх](#Зміст)**
 
 
-## Comparison Operators & Equality
+## Оператори порівняння та рівності
 
   <a name="comparison--eqeqeq"></a><a name="15.1"></a>
-  - [15.1](#comparison--eqeqeq) Use `===` and `!==` over `==` and `!=`. eslint: [`eqeqeq`](http://eslint.org/docs/rules/eqeqeq.html)
+  - [15.1](#comparison--eqeqeq) Використовуйте `===` та `!==` а не `==` і не `!=`. eslint: [`eqeqeq`](http://eslint.org/docs/rules/eqeqeq.html)
 
   <a name="comparison--if"></a><a name="15.2"></a>
-  - [15.2](#comparison--if) Conditional statements such as the `if` statement evaluate their expression using coercion with the `ToBoolean` abstract method and always follow these simple rules:
+  - [15.2](#comparison--if) Умовні оператори, такі як `if` вираховують вираз за допомогою примусового приведення до логічного виразу `ToBoolean` і завжди слідують цим простим правилам:
 
-    + **Objects** evaluate to **true**
-    + **Undefined** evaluates to **false**
-    + **Null** evaluates to **false**
-    + **Booleans** evaluate to **the value of the boolean**
-    + **Numbers** evaluate to **false** if **+0, -0, or NaN**, otherwise **true**
-    + **Strings** evaluate to **false** if an empty string `''`, otherwise **true**
+    + **Objects** оцінюється як **true**
+    + **Undefined** оцінюється як **false**
+    + **Null** оцінюється як **false**
+    + **Booleans** оцінюються як **the value of the boolean**
+    + **Numbers** оцінюється як **false**, якщо **+0, -0, or NaN**, в усіх інших випадках як **true**
+    + **Strings** оцінюється як **false** якщо строка порожня `''`, в усіх інших випадках як **true**
 
     ```javascript
     if ([0] && []) {
       // true
-      // an array (even an empty one) is an object, objects will evaluate to true
+      // масив (навіть якщо він порожній) - це об'єкт, а об'єкт завжди оцінюється як true
     }
     ```
 
   <a name="comparison--shortcuts"></a><a name="15.3"></a>
-  - [15.3](#comparison--shortcuts) Use shortcuts for booleans, but explicit comparisons for strings and numbers.
+  - [15.3](#comparison--shortcuts) Використовуйте скорочення для логічних значеннь, але явно зазначайте, коли порівнюєте строки та числа.
 
     ```javascript
-    // bad
+    // погано
     if (isValid === true) {
       // ...stuff...
     }
 
-    // good
+    // добре
     if (isValid) {
       // ...stuff...
     }
 
-    // bad
+    // погано
     if (name) {
       // ...stuff...
     }
 
-    // good
+    // добре
     if (name !== '') {
       // ...stuff...
     }
 
-    // bad
+    // погано
     if (collection.length) {
       // ...stuff...
     }
 
-    // good
+    // добре
     if (collection.length > 0) {
       // ...stuff...
     }
     ```
 
   <a name="comparison--moreinfo"></a><a name="15.4"></a>
-  - [15.4](#comparison--moreinfo) For more information see [Truth Equality and JavaScript](https://javascriptweblog.wordpress.com/2011/02/07/truth-equality-and-javascript/#more-2108) by Angus Croll.
+  - [15.4](#comparison--moreinfo) Більш детальну інформацію дивіться у статті [Truth Equality and JavaScript](https://javascriptweblog.wordpress.com/2011/02/07/truth-equality-and-javascript/#more-2108) автора Angus Croll.
 
   <a name="comparison--switch-blocks"></a><a name="15.5"></a>
-  - [15.5](#comparison--switch-blocks) Use braces to create blocks in `case` and `default` clauses that contain lexical declarations (e.g. `let`, `const`, `function`, and `class`).
+  - [15.5](#comparison--switch-blocks) Використовуйте дужки для створення блоків `case` та `default` що містять лексичні декларації (e.g. `let`, `const`, `function`, та `class`).
 
-  > Why? Lexical declarations are visible in the entire `switch` block but only get initialized when assigned, which only happens when its `case` is reached. This causes problems when multiple `case` clauses attempt to define the same thing.
+  > Чому? Lexical declarations are visible in the entire `switch` block but only get initialized when assigned, which only happens when its `case` is reached. This causes problems when multiple `case` clauses attempt to define the same thing.
 
   eslint rules: [`no-case-declarations`](http://eslint.org/docs/rules/no-case-declarations.html).
 
