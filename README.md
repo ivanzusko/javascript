@@ -37,8 +37,8 @@
   1. [Крапка з комою](#Крапка-з-комою)
   1. [Приведення типів та Примушення (Coercion)](#Приведення-типів-та-Примушення)
   1. [Угоди про іменування](#Угоди-про-іменування)
-  1. [Accessors](#accessors)
-  1. [Події](#events)
+  1. [Аксессори](#Аксессори)
+  1. [Події](#Події)
   1. [jQuery](#jquery)
   1. [ECMAScript 5 сумісність](#ecmascript-5-compatibility)
   1. [ECMAScript 6+ (ES 2015+) стилі](#ecmascript-6-es-2015-styles)
@@ -2646,7 +2646,7 @@ TODO: FIXME
     ```
 
   <a name="naming--PascalCase"></a><a name="22.3"></a>
-  - [22.3](#naming--PascalCase) Use PascalCase only when naming constructors or classes. eslint: [`new-cap`](http://eslint.org/docs/rules/new-cap.html) jscs: [`requireCapitalizedConstructors`](http://jscs.info/rule/requireCapitalizedConstructors)
+  - [22.3](#naming--PascalCase) Використовуйте PascalCase лише коли називаєте конструктори чи класи. eslint: [`new-cap`](http://eslint.org/docs/rules/new-cap.html) jscs: [`requireCapitalizedConstructors`](http://jscs.info/rule/requireCapitalizedConstructors)
 
     ```javascript
     // погано
@@ -2671,9 +2671,9 @@ TODO: FIXME
     ```
 
   <a name="naming--leading-underscore"></a><a name="22.4"></a>
-  - [22.4](#naming--leading-underscore) Do not use trailing or leading underscores. eslint: [`no-underscore-dangle`](http://eslint.org/docs/rules/no-underscore-dangle.html) jscs: [`disallowDanglingUnderscores`](http://jscs.info/rule/disallowDanglingUnderscores)
+  - [22.4](#naming--leading-underscore) Не використовуйте завершальних чи лідуючих нижніх підкресленнь(underscores). eslint: [`no-underscore-dangle`](http://eslint.org/docs/rules/no-underscore-dangle.html) jscs: [`disallowDanglingUnderscores`](http://jscs.info/rule/disallowDanglingUnderscores)
 
-    > Why? JavaScript does not have the concept of privacy in terms of properties or methods. Although a leading underscore is a common convention to mean “private”, in fact, these properties are fully public, and as such, are part of your public API contract. This convention might lead developers to wrongly think that a change won't count as breaking, or that tests aren't needed. tl;dr: if you want something to be “private”, it must not be observably present.
+    > Чому? В JavaScript немає поняття приватності властивостей чи методів. Хоча, лідуюче нижнє підкреслення і прийнято використовувати для позначення "приватності", насправді, ці властивості всі публічні, і тому являються частиною вашого публічного API. Такий підхід може ввести розробниців в оману, що зміна не буде критичною, чи що не потрібні тести. tl;dr: якщо ви хочете зробити щось "приватним", воно не має бути видимим для сторонніх.
 
     ```javascript
     // погано
@@ -2686,7 +2686,7 @@ TODO: FIXME
     ```
 
   <a name="naming--self-this"></a><a name="22.5"></a>
-  - [22.5](#naming--self-this) Don't save references to `this`. Use arrow functions or [Function#bind](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/bind). jscs: [`disallowNodeTypes`](http://jscs.info/rule/disallowNodeTypes)
+  - [22.5](#naming--self-this) Не зберігайте посиланнь на `this`. Використовуйте arrow-функції чи [Function#bind](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/bind). jscs: [`disallowNodeTypes`](http://jscs.info/rule/disallowNodeTypes)
 
     ```javascript
     // погано
@@ -2714,22 +2714,22 @@ TODO: FIXME
     ```
 
   <a name="naming--filename-matches-export"></a><a name="22.6"></a>
-  - [22.6](#naming--filename-matches-export) A base filename should exactly match the name of its default export.
+  - [22.6](#naming--filename-matches-export) Базове ім'я файлу має співпадати з експортом за замовчуванням.
 
     ```javascript
-    // file 1 contents
+    // файл 1 містить
     class CheckBox {
       // ...
     }
     export default CheckBox;
 
-    // file 2 contents
+    // файл 2 містить
     export default function fortyTwo() { return 42; }
 
-    // file 3 contents
+    // файл 3 містить
     export default function insideDirectory() {}
 
-    // in some other file
+    // у якомусь іншому файлі
     // погано
     import CheckBox from './checkBox'; // PascalCase import/export, camelCase filename
     import FortyTwo from './FortyTwo'; // PascalCase import/filename, camelCase export
@@ -2750,7 +2750,7 @@ TODO: FIXME
     ```
 
   <a name="naming--camelCase-default-export"></a><a name="22.7"></a>
-  - [22.7](#naming--camelCase-default-export) Use camelCase when you export-default a function. Your filename should be identical to your function's name.
+  - [22.7](#naming--camelCase-default-export) Використовуйте camelCase коли ви експортуєте за замовчуванням function. Ім'я файлу повинно співпадати з іменем функції.
 
     ```javascript
     function makeStyleGuide() {
@@ -2760,7 +2760,7 @@ TODO: FIXME
     ```
 
   <a name="naming--PascalCase-singleton"></a><a name="22.8"></a>
-  - [22.8](#naming--PascalCase-singleton) Use PascalCase when you export a constructor / class / singleton / function library / bare object.
+  - [22.8](#naming--PascalCase-singleton) Використовуйте PascalCase коли ви експортуєте конструктор / клас / функціональну бібліотеку / чистий об'єкт.
 
     ```javascript
     const AirbnbStyleGuide = {
@@ -2772,9 +2772,9 @@ TODO: FIXME
     ```
 
   <a name="naming--Acronyms-and-Initialisms"></a>
-  - [22.9](#naming--Acronyms-and-Initialisms) Acronyms and initialisms should always be all capitalized, or all lowercased.
+  - [22.9](#naming--Acronyms-and-Initialisms) Скорочення або абревійтури повинні завжди всі писатись або великими або маленькими літерами.
 
-    > Why? Names are for readability, not to appease a computer algorithm.
+    > Чому? Імена для зручності читання, а де для вдоволення комп'ютерного алгоритму.
 
     ```javascript
     // погано
@@ -2793,25 +2793,25 @@ TODO: FIXME
       // ...
     ];
 
-    // best
+    // найкраще
     import TextMessageContainer from './containers/TextMessageContainer';
 
-    // best
+    // найкраще
     const Requests = [
       // ...
     ];
     ```
 
-**[⬆ back to top](#Зміст)**
+**[⬆ вверх](#Зміст)**
 
 
-## Accessors
+## Аксессори
 
   <a name="accessors--not-required"></a><a name="23.1"></a>
-  - [23.1](#accessors--not-required) Accessor functions for properties are not required.
+  - [23.1](#accessors--not-required) Функції аксессори для доступу до властивостей не потрібні.
 
   <a name="accessors--no-getters-setters"></a><a name="23.2"></a>
-  - [23.2](#accessors--no-getters-setters) Do not use JavaScript getters/setters as they cause unexpected side effects and are harder to test, maintain, and reason about. Instead, if you do make accessor functions, use getVal() and setVal('hello').
+  - [23.2](#accessors--no-getters-setters) Не використовуйте геттери/сеттери JavaScript оскільки вони викликають неочікуванні побічні ефекти і їх важко тестувати, підтримувати і аргументувати їхню необхідність. Натомість, якщо ви робити функцію доступу - використовуйте getVal() та setVal('hello').
 
     ```javascript
     // погано
@@ -2838,7 +2838,7 @@ TODO: FIXME
     ```
 
   <a name="accessors--boolean-prefix"></a><a name="23.3"></a>
-  - [23.3](#accessors--boolean-prefix) If the property/method is a `boolean`, use `isVal()` or `hasVal()`.
+  - [23.3](#accessors--boolean-prefix) Якщо властивість/метод являються `boolean`, використовуйте `isVal()` або `hasVal()`.
 
     ```javascript
     // погано
@@ -2853,7 +2853,7 @@ TODO: FIXME
     ```
 
   <a name="accessors--consistent"></a><a name="23.4"></a>
-  - [23.4](#accessors--consistent) It's okay to create get() and set() functions, but be consistent.
+  - [23.4](#accessors--consistent) Це нормально створювати get() та set() функції, але будьте послідовні.
 
     ```javascript
     class Jedi {
@@ -2872,10 +2872,10 @@ TODO: FIXME
     }
     ```
 
-**[⬆ back to top](#Зміст)**
+**[⬆ вверх](#Зміст)**
 
 
-## Events
+## Події
 
   <a name="events--hash"></a><a name="24.1"></a>
   - [24.1](#events--hash) When attaching data payloads to events (whether DOM events or something more proprietary like Backbone events), pass a hash instead of a raw value. This allows a subsequent contributor to add more data to the event payload without finding and updating every handler for the event. For example, instead of:
