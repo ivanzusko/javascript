@@ -43,10 +43,10 @@
   1. [ECMAScript 5 сумісність](#ecmascript-5-сумісність)
   1. [ECMAScript 6+ (ES 2015+) стилі](#ecmascript-6-es-2015-стилі)
   1. [Тестування](#Тестування)
-  1. [Продуктивність](#performance)
-  1. [Ресурсии](#resources)
-  1. [В реальному Світі](#in-the-wild)
-  1. [Переклад](#translation)
+  1. [Продуктивність](#Продуктивність)
+  1. [Ресурси](#Ресурси)
+  1. [В реальному Світі](#В-реальному-світі)
+  1. [Переклад](#Переклад)
   1. [Керівництво зі стилю написання JavaScript](#the-javascript-style-guide-guide)
   1. [Поговоріть з нами про JavaScript](#chat-with-us-about-javascript)
   1. [Автори](#contributors)
@@ -3024,17 +3024,17 @@ TODO: FIXME
 
   <a name="testing--for-real"></a><a name="28.2"></a>
   - [28.2](#testing--for-real) **Ні, але серйозно**:
-   - Whichever testing framework you use, you should be writing tests!
-   - Strive to write many small pure functions, and minimize where mutations occur.
-   - Be cautious about stubs and mocks - they can make your tests more brittle.
-   - We primarily use [`mocha`](https://www.npmjs.com/package/mocha) at Airbnb. [`tape`](https://www.npmjs.com/package/tape) is also used occasionally for small, separate modules.
-   - 100% test coverage is a good goal to strive for, even if it's not always practical to reach it.
-   - Whenever you fix a bug, _write a regression test_. A bug fixed without a regression test is almost certainly going to break again in the future.
+   - Який би тестувальний фреймфорк ви б не використовували - ви повинні писати тести!
+   - Намагайтесь писати багато дрібних функцій та зводити до мінімуму місця, де відбуваються мутації.
+   - Будьте обережними з stubs та mocks, оскільки вони можуть зробити ваші тести більш крихкими.
+   - Ми в першу чергу використовуємо [`mocha`](https://www.npmjs.com/package/mocha) у Airbnb. [`tape`](https://www.npmjs.com/package/tape) також час від часу використовується для малньких, окремих модулів.
+   - 100% покриття тестами - це гарна мета до якої варто прагнути, навіть якщо це не завжди практично.
+   - Кожного разу, коли ви виправляєте помилку, _пишіть тест регресії_. Помилка виправлена без написання регресивного тесту майже точно виникне в майбутньому знову.
 
-**[⬆ back to top](#Зміст)**
+**[⬆ вверх](#Зміст)**
 
 
-## Performance
+## Продуктивність
 
   - [On Layout & Web Performance](https://www.kellegous.com/j/2013/01/26/layout-performance/)
   - [String vs Array Concat](https://jsperf.com/string-vs-array-concat/2)
@@ -3046,43 +3046,43 @@ TODO: FIXME
   - [Are Javascript functions like `map()`, `reduce()`, and `filter()` optimized for traversing arrays?](https://www.quora.com/JavaScript-programming-language-Are-Javascript-functions-like-map-reduce-and-filter-already-optimized-for-traversing-array/answer/Quildreen-Motta)
   - Loading...
 
-**[⬆ back to top](#Зміст)**
+**[⬆ вверх](#Зміст)**
 
 
-## Resources
+## Ресурси
 
-**Learning ES6**
+**Вивчення ES6**
 
   - [Draft ECMA 2015 (ES6) Spec](https://people.mozilla.org/~jorendorff/es6-draft.html)
   - [ExploringJS](http://exploringjs.com/)
   - [ES6 Compatibility Table](https://kangax.github.io/compat-table/es6/)
   - [Comprehensive Overview of ES6 Features](http://es6-features.org/)
 
-**Read This**
+**Прочитайте це**
 
   - [Standard ECMA-262](http://www.ecma-international.org/ecma-262/6.0/index.html)
 
-**Tools**
+**Інструменти**
 
   - Code Style Linters
     + [ESlint](http://eslint.org/) - [Airbnb Style .eslintrc](https://github.com/airbnb/javascript/blob/master/linters/.eslintrc)
     + [JSHint](http://jshint.com/) - [Airbnb Style .jshintrc](https://github.com/airbnb/javascript/blob/master/linters/.jshintrc)
     + [JSCS](https://github.com/jscs-dev/node-jscs) - [Airbnb Style Preset](https://github.com/jscs-dev/node-jscs/blob/master/presets/airbnb.json)
 
-**Other Style Guides**
+**Інші керівництва**
 
   - [Google JavaScript Style Guide](https://google.github.io/styleguide/javascriptguide.xml)
   - [jQuery Core Style Guidelines](https://contribute.jquery.org/style-guide/js/)
   - [Principles of Writing Consistent, Idiomatic JavaScript](https://github.com/rwaldron/idiomatic.js)
 
-**Other Styles**
+**Інші стилі**
 
   - [Naming this in nested functions](https://gist.github.com/cjohansen/4135065) - Christian Johansen
   - [Conditional Callbacks](https://github.com/airbnb/javascript/issues/52) - Ross Allen
   - [Popular JavaScript Coding Conventions on GitHub](http://sideeffect.kr/popularconvention/#javascript) - JeongHoon Byun
   - [Multiple var statements in JavaScript, not superfluous](http://benalman.com/news/2012/05/multiple-var-statements-javascript/) - Ben Alman
 
-**Further Reading**
+**Подальше читання**
 
   - [Understanding JavaScript Closures](https://javascriptweblog.wordpress.com/2010/10/25/understanding-javascript-closures/) - Angus Croll
   - [Basic JavaScript for the impatient programmer](http://www.2ality.com/2013/06/basic-javascript.html) - Dr. Axel Rauschmayer
@@ -3090,7 +3090,7 @@ TODO: FIXME
   - [ES6 Features](https://github.com/lukehoban/es6features) - Luke Hoban
   - [Frontend Guidelines](https://github.com/bendc/frontend-guidelines) - Benjamin De Cock
 
-**Books**
+**Книжки**
 
   - [JavaScript: The Good Parts](https://www.amazon.com/JavaScript-Good-Parts-Douglas-Crockford/dp/0596517742) - Douglas Crockford
   - [JavaScript Patterns](https://www.amazon.com/JavaScript-Patterns-Stoyan-Stefanov/dp/0596806752) - Stoyan Stefanov
@@ -3109,7 +3109,7 @@ TODO: FIXME
   - [Eloquent JavaScript](http://eloquentjavascript.net/) - Marijn Haverbeke
   - [You Don't Know JS: ES6 & Beyond](http://shop.oreilly.com/product/0636920033769.do) - Kyle Simpson
 
-**Blogs**
+**Блоги**
 
   - [JavaScript Weekly](http://javascriptweekly.com/)
   - [JavaScript, JavaScript...](https://javascriptweblog.wordpress.com/)
@@ -3122,17 +3122,17 @@ TODO: FIXME
   - [Dustin Diaz](http://dustindiaz.com/)
   - [nettuts](http://code.tutsplus.com/?s=javascript)
 
-**Podcasts**
+**Подкасти**
 
   - [JavaScript Air](https://javascriptair.com/)
   - [JavaScript Jabber](https://devchat.tv/js-jabber/)
 
 
-**[⬆ back to top](#Зміст)**
+**[⬆ вверх](#Зміст)**
 
-## In the Wild
+## В реальному Світі
 
-  This is a list of organizations that are using this style guide. Send us a pull request and we'll add you to the list.
+  Це перелік організацій які використовують це керівництво. Надішліть нам pull request і ми додамо вас до цього списку.
 
   - **4Catalyzer**: [4Catalyzer/javascript](https://github.com/4Catalyzer/javascript)
   - **Aan Zee**: [AanZee/javascript](https://github.com/AanZee/javascript)
@@ -3214,7 +3214,7 @@ TODO: FIXME
   - **Zillow**: [zillow/javascript](https://github.com/zillow/javascript)
   - **ZocDoc**: [ZocDoc/javascript](https://github.com/ZocDoc/javascript)
 
-**[⬆ back to top](#Зміст)**
+**[⬆ вверх](#Зміст)**
 
 ## Translation
 
@@ -3274,7 +3274,7 @@ CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
 TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
 SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-**[⬆ back to top](#Зміст)**
+**[⬆ вверх](#Зміст)**
 
 ## Amendments
 
