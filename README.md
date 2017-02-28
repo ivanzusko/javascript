@@ -1,61 +1,61 @@
-# Airbnb JavaScript Style Guide() {
+# Стиль написання JavaScript від компанії Airbnb
 
-*A mostly reasonable approach to JavaScript*
+*Найбільш обгрунтований підхід до JavaScript*
 
 [![Downloads](https://img.shields.io/npm/dm/eslint-config-airbnb.svg)](https://www.npmjs.com/package/eslint-config-airbnb)
 [![Downloads](https://img.shields.io/npm/dm/eslint-config-airbnb-base.svg)](https://www.npmjs.com/package/eslint-config-airbnb-base)
 [![Gitter](https://badges.gitter.im/Join Chat.svg)](https://gitter.im/airbnb/javascript?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 
-Other Style Guides
+Інші керівництва по стилю
  - [ES5 (Deprecated)](https://github.com/airbnb/javascript/tree/es5-deprecated/es5)
  - [React](react/)
  - [CSS-in-JavaScript](css-in-javascript/)
  - [CSS & Sass](https://github.com/airbnb/css)
  - [Ruby](https://github.com/airbnb/ruby)
 
-## Table of Contents
+## Зміст
 
-  1. [Types](#types)
-  1. [References](#references)
-  1. [Objects](#objects)
-  1. [Arrays](#arrays)
-  1. [Destructuring](#destructuring)
-  1. [Strings](#strings)
-  1. [Functions](#functions)
-  1. [Arrow Functions](#arrow-functions)
-  1. [Classes & Constructors](#classes--constructors)
-  1. [Modules](#modules)
-  1. [Iterators and Generators](#iterators-and-generators)
-  1. [Properties](#properties)
-  1. [Variables](#variables)
-  1. [Hoisting](#hoisting)
-  1. [Comparison Operators & Equality](#comparison-operators--equality)
-  1. [Blocks](#blocks)
-  1. [Comments](#comments)
-  1. [Whitespace](#whitespace)
-  1. [Commas](#commas)
-  1. [Semicolons](#semicolons)
-  1. [Type Casting & Coercion](#type-casting--coercion)
-  1. [Naming Conventions](#naming-conventions)
-  1. [Accessors](#accessors)
-  1. [Events](#events)
+  1. [Типи](#Типи)
+  1. [Посилання](#Посилання)
+  1. [Об'єкти](#Об'єкти)
+  1. [Масиви](#Масиви)
+  1. [Деструктурування](#Деструктурування)
+  1. [Строки](#Строки)
+  1. [Функції](#Функції)
+  1. [Arrow-функції](#Arrow-функції)
+  1. [Класи та Конструктори](#Класи-та-Конструктори)
+  1. [Модулі](#Модулі)
+  1. [Ітератори та Генератори](#Ітератори-та-генератори)
+  1. [Властивості](#Властивості)
+  1. [Змінні](#Змінні)
+  1. [Підняття (Hoisting)](#Підняття-(Hoisting))
+  1. [Оператори порівняння і рівності](#Оператори-порівняння-та-рівності)
+  1. [Блоки](#Блоки)
+  1. [Коментарі](#Коментарі)
+  1. [Пробіли](#Пробіли)
+  1. [Коми](#Коми)
+  1. [Крапка з комою](#Крапка-з-комою)
+  1. [Приведення типів та Примушення (Coercion)](#Приведення-типів-та-Примушення)
+  1. [Угоди про іменування](#Угоди-про-іменування)
+  1. [Аксессори](#Аксессори)
+  1. [Події](#Події)
   1. [jQuery](#jquery)
-  1. [ECMAScript 5 Compatibility](#ecmascript-5-compatibility)
-  1. [ECMAScript 6+ (ES 2015+) Styles](#ecmascript-6-es-2015-styles)
-  1. [Testing](#testing)
-  1. [Performance](#performance)
-  1. [Resources](#resources)
-  1. [In the Wild](#in-the-wild)
-  1. [Translation](#translation)
-  1. [The JavaScript Style Guide Guide](#the-javascript-style-guide-guide)
-  1. [Chat With Us About JavaScript](#chat-with-us-about-javascript)
-  1. [Contributors](#contributors)
+  1. [ECMAScript 5 сумісність](#ecmascript-5-сумісність)
+  1. [ECMAScript 6+ (ES 2015+) стилі](#ecmascript-6-es-2015-стилі)
+  1. [Тестування](#Тестування)
+  1. [Продуктивність](#Продуктивність)
+  1. [Ресурси](#Ресурси)
+  1. [В реальному Світі](#В-реальному-світі)
+  1. [Переклад](#Переклад)
+  1. [Керівництво зі стилю написання JavaScript](#the-javascript-style-guide-guide)
+  1. [Поговоріть з нами про JavaScript](#chat-with-us-about-javascript)
+  1. [Автори](#contributors)
   1. [License](#license)
 
-## Types
+## Типи
 
   <a name="types--primitives"></a><a name="1.1"></a>
-  - [1.1](#types--primitives) **Primitives**: When you access a primitive type you work directly on its value.
+  - [1.1](#types--primitives) **Примітиви**: Коли ви отримуєте доступ до примітиву, ви працюєте напряму з його значенням.
 
     + `string`
     + `number`
@@ -73,7 +73,7 @@ Other Style Guides
     ```
 
   <a name="types--complex"></a><a name="1.2"></a>
-  - [1.2](#types--complex)  **Complex**: When you access a complex type you work on a reference to its value.
+  - [1.2](#types--complex)  **Складні типи**: Коли ви отримуєте доступ до складного типу, ви працюєте з посиланням на його значення.
 
     + `object`
     + `array`
@@ -88,38 +88,38 @@ Other Style Guides
     console.log(foo[0], bar[0]); // => 9, 9
     ```
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ вверх](#Зміст)**
 
-## References
+## Посилання
 
   <a name="references--prefer-const"></a><a name="2.1"></a>
-  - [2.1](#references--prefer-const) Use `const` for all of your references; avoid using `var`. eslint: [`prefer-const`](http://eslint.org/docs/rules/prefer-const.html), [`no-const-assign`](http://eslint.org/docs/rules/no-const-assign.html)
+  - [2.1](#references--prefer-const) Використовуйте `const` для всіх посиланнь; уникайте використання `var`. eslint: [`prefer-const`](http://eslint.org/docs/rules/prefer-const.html), [`no-const-assign`](http://eslint.org/docs/rules/no-const-assign.html)
 
-    > Why? This ensures that you can't reassign your references, which can lead to bugs and difficult to comprehend code.
+    > Чому? Це убезпечить вас від переприсвоєння значення для вашого посилання, що може призвести до багів та важкості розуміння коду.
 
     ```javascript
-    // bad
+    // погано
     var a = 1;
     var b = 2;
 
-    // good
+    // добре
     const a = 1;
     const b = 2;
     ```
 
   <a name="references--disallow-var"></a><a name="2.2"></a>
-  - [2.2](#references--disallow-var) If you must reassign references, use `let` instead of `var`. eslint: [`no-var`](http://eslint.org/docs/rules/no-var.html) jscs: [`disallowVar`](http://jscs.info/rule/disallowVar)
+  - [2.2](#references--disallow-var) Якщо ви пеприсвоюєте посилання -  використовуйте `let` замість `var`. eslint: [`no-var`](http://eslint.org/docs/rules/no-var.html) jscs: [`disallowVar`](http://jscs.info/rule/disallowVar)
 
-    > Why? `let` is block-scoped rather than function-scoped like `var`.
+    > Чому? `let` має блочну область видимості, на відміну від `var`, область видимості котрого обмежена функцією.
 
     ```javascript
-    // bad
+    // погано
     var count = 1;
     if (true) {
       count += 1;
     }
 
-    // good, use the let.
+    // добре, використовуйте let.
     let count = 1;
     if (true) {
       count += 1;
@@ -127,10 +127,10 @@ Other Style Guides
     ```
 
   <a name="references--block-scope"></a><a name="2.3"></a>
-  - [2.3](#references--block-scope) Note that both `let` and `const` are block-scoped.
+  - [2.3](#references--block-scope) Зауважте, що і `let` і `const` мають блочну область видимості.
 
     ```javascript
-    // const and let only exist in the blocks they are defined in.
+    // const та let існують лише в межах блоку, в якому вони були визначені.
     {
       let a = 1;
       const b = 1;
@@ -139,25 +139,25 @@ Other Style Guides
     console.log(b); // ReferenceError
     ```
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ вверх](#Зміст)**
 
-## Objects
+## Об'єкти
 
   <a name="objects--no-new"></a><a name="3.1"></a>
-  - [3.1](#objects--no-new) Use the literal syntax for object creation. eslint: [`no-new-object`](http://eslint.org/docs/rules/no-new-object.html)
+  - [3.1](#objects--no-new) Використовуйте літерали (фігурні скобки) для створення нового об'єкта. Не використовуйте для створення нового об'єкта конструктор `new Object`. eslint: [`no-new-object`](http://eslint.org/docs/rules/no-new-object.html)
 
     ```javascript
-    // bad
+    // погано
     const item = new Object();
 
-    // good
+    // добре
     const item = {};
     ```
 
   <a name="es6-computed-properties"></a><a name="3.4"></a>
-  - [3.2](#es6-computed-properties) Use computed property names when creating objects with dynamic property names.
+  - [3.2](#es6-computed-properties) Використовуйте вираховані імена властивостей, при створенні об'єктів з динамічними іменами властивостей.
 
-    > Why? They allow you to define all the properties of an object in one place.
+    > Чому? Вони дозволяють визначати всі властивості об'єкта в одному місці.
 
     ```javascript
 
@@ -165,14 +165,14 @@ Other Style Guides
       return `a key named ${k}`;
     }
 
-    // bad
+    // погано
     const obj = {
       id: 5,
       name: 'San Francisco',
     };
     obj[getKey('enabled')] = true;
 
-    // good
+    // добре
     const obj = {
       id: 5,
       name: 'San Francisco',
@@ -181,10 +181,10 @@ Other Style Guides
     ```
 
   <a name="es6-object-shorthand"></a><a name="3.5"></a>
-  - [3.3](#es6-object-shorthand) Use object method shorthand. eslint: [`object-shorthand`](http://eslint.org/docs/rules/object-shorthand.html) jscs: [`requireEnhancedObjectLiterals`](http://jscs.info/rule/requireEnhancedObjectLiterals)
+  - [3.3](#es6-object-shorthand) Використовуйте скорочення для метода об'єкта. eslint: [`object-shorthand`](http://eslint.org/docs/rules/object-shorthand.html) jscs: [`requireEnhancedObjectLiterals`](http://jscs.info/rule/requireEnhancedObjectLiterals)
 
     ```javascript
-    // bad
+    // погано
     const atom = {
       value: 1,
 
@@ -193,7 +193,7 @@ Other Style Guides
       },
     };
 
-    // good
+    // добре
     const atom = {
       value: 1,
 
@@ -204,34 +204,34 @@ Other Style Guides
     ```
 
   <a name="es6-object-concise"></a><a name="3.6"></a>
-  - [3.4](#es6-object-concise) Use property value shorthand. eslint: [`object-shorthand`](http://eslint.org/docs/rules/object-shorthand.html) jscs: [`requireEnhancedObjectLiterals`](http://jscs.info/rule/requireEnhancedObjectLiterals)
+  - [3.4](#es6-object-concise) Використовуйте скорочення значення властивості. eslint: [`object-shorthand`](http://eslint.org/docs/rules/object-shorthand.html) jscs: [`requireEnhancedObjectLiterals`](http://jscs.info/rule/requireEnhancedObjectLiterals)
 
-    > Why? It is shorter to write and descriptive.
+    > Чому? Так менше писати і більш зрозуміло.
 
     ```javascript
     const lukeSkywalker = 'Luke Skywalker';
 
-    // bad
+    // погано
     const obj = {
       lukeSkywalker: lukeSkywalker,
     };
 
-    // good
+    // добре
     const obj = {
       lukeSkywalker,
     };
     ```
 
   <a name="objects--grouped-shorthand"></a><a name="3.7"></a>
-  - [3.5](#objects--grouped-shorthand) Group your shorthand properties at the beginning of your object declaration.
+  - [3.5](#objects--grouped-shorthand) Групуйте ваші скорочені властивості на початку оголошення вашого об'єкту.
 
-    > Why? It's easier to tell which properties are using the shorthand.
+    > Чому? Так легше сказати які властивості використовують скорочення.
 
     ```javascript
     const anakinSkywalker = 'Anakin Skywalker';
     const lukeSkywalker = 'Luke Skywalker';
 
-    // bad
+    // погано
     const obj = {
       episodeOne: 1,
       twoJediWalkIntoACantina: 2,
@@ -241,7 +241,7 @@ Other Style Guides
       anakinSkywalker,
     };
 
-    // good
+    // добре
     const obj = {
       lukeSkywalker,
       anakinSkywalker,
@@ -253,19 +253,19 @@ Other Style Guides
     ```
 
   <a name="objects--quoted-props"></a><a name="3.8"></a>
-  - [3.6](#objects--quoted-props) Only quote properties that are invalid identifiers. eslint: [`quote-props`](http://eslint.org/docs/rules/quote-props.html) jscs: [`disallowQuotedKeysInObjects`](http://jscs.info/rule/disallowQuotedKeysInObjects)
+  - [3.6](#objects--quoted-props) Беріть в лапки лише ті властивості, які є неприпустимими ідентифікаторами. eslint: [`quote-props`](http://eslint.org/docs/rules/quote-props.html) jscs: [`disallowQuotedKeysInObjects`](http://jscs.info/rule/disallowQuotedKeysInObjects)
 
-  > Why? In general we consider it subjectively easier to read. It improves syntax highlighting, and is also more easily optimized by many JS engines.
+  > Чому? В загальному, ми вважаємо, що так суб'єктивно легше читати. Це покращує підсвітку синтаксису, а також більш легко оптимізується багатьма JS двигунами.
 
   ```javascript
-  // bad
+  // погано
   const bad = {
     'foo': 3,
     'bar': 4,
     'data-blah': 5,
   };
 
-  // good
+  // добре
   const good = {
     foo: 3,
     bar: 4,
@@ -274,78 +274,78 @@ Other Style Guides
   ```
 
   <a name="objects--prototype-builtins"></a>
-  - [3.7](#objects--prototype-builtins) Do not call `Object.prototype` methods directly, such as `hasOwnProperty`, `propertyIsEnumerable`, and `isPrototypeOf`.
-
-  > Why? These methods may be shadowed by properties on the object in question - consider `{ hasOwnProperty: false }` - or, the object may be a null object (`Object.create(null)`).
+  - [3.7](#objects--prototype-builtins) Не використовуйте напряму методи `Object.prototype`, такі як `hasOwnProperty`, `propertyIsEnumerable`, і `isPrototypeOf`.
+TODO: FIXME
+  > Чому? These methods may be shadowed by properties on the object in question - consider `{ hasOwnProperty: false }` - or, the object may be a null object (`Object.create(null)`).
 
   ```javascript
-  // bad
+  // погано
   console.log(object.hasOwnProperty(key));
 
-  // good
+  // добре
   console.log(Object.prototype.hasOwnProperty.call(object, key));
 
-  // best
-  const has = Object.prototype.hasOwnProperty; // cache the lookup once, in module scope.
-  /* or */
+  // найкраще
+  const has = Object.prototype.hasOwnProperty; // закешовуємо результати пошуку у скоупі модуля.
+  /* або */
   import has from 'has';
   …
   console.log(has.call(object, key));
   ```
 
   <a name="objects--rest-spread"></a>
-  - [3.8](#objects--rest-spread) Prefer the object spread operator over [`Object.assign`](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Object/assign) to shallow-copy objects. Use the object rest operator to get a new object with certain properties omitted.
+  - [3.8](#objects--rest-spread) Віддавайте перевагу `spread` оператору над [`Object.assign`](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Object/assign) для дрібного копіювання об'єктів. Використовуйте `rest` оператор для отримання нового об'єкта з певними відсутніми властивостями.
 
   ```javascript
-  // very bad
+  // дуже погано
   const original = { a: 1, b: 2 };
-  const copy = Object.assign(original, { c: 3 }); // this mutates `original` ಠ_ಠ
-  delete copy.a; // so does this
+  const copy = Object.assign(original, { c: 3 }); // це мутує `original` ಠ_ಠ
+  delete copy.a; // це також
 
-  // bad
+  // погано
   const original = { a: 1, b: 2 };
   const copy = Object.assign({}, original, { c: 3 }); // copy => { a: 1, b: 2, c: 3 }
 
-  // good
+  // добре
   const original = { a: 1, b: 2 };
   const copy = { ...original, c: 3 }; // copy => { a: 1, b: 2, c: 3 }
 
   const { a, ...noA } = copy; // noA => { b: 2, c: 3 }
   ```
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ вверх](#Зміст)**
 
-## Arrays
+## Масиви
 
   <a name="arrays--literals"></a><a name="4.1"></a>
-  - [4.1](#arrays--literals) Use the literal syntax for array creation. eslint: [`no-array-constructor`](http://eslint.org/docs/rules/no-array-constructor.html)
+  - [4.1](#arrays--literals) Використовуйте синтаксис літерала для створення масиву. eslint: [`no-array-constructor`](http://eslint.org/docs/rules/no-array-constructor.html)
 
     ```javascript
-    // bad
+    // погано
     const items = new Array();
 
-    // good
+    // добре
     const items = [];
     ```
 
   <a name="arrays--push"></a><a name="4.2"></a>
-  - [4.2](#arrays--push) Use [Array#push](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Array/push) instead of direct assignment to add items to an array.
+  - [4.2](#arrays--push) Використовуйте [Array#push](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Array/push) замість прямого запису елементів у масив.
 
     ```javascript
     const someStack = [];
 
-    // bad
+    // погано
     someStack[someStack.length] = 'abracadabra';
 
-    // good
+    // добре
     someStack.push('abracadabra');
     ```
 
   <a name="es6-array-spreads"></a><a name="4.3"></a>
-  - [4.3](#es6-array-spreads) Use array spreads `...` to copy arrays.
+  - [4.3](#es6-array-spreads) Використовуйте `...`( `spreads` ) оператор масива для копіювання масивів.
 
     ```javascript
-    // bad
+    // погано
     const len = items.length;
     const itemsCopy = [];
     let i;
@@ -354,12 +354,12 @@ Other Style Guides
       itemsCopy[i] = items[i];
     }
 
-    // good
+    // добре
     const itemsCopy = [...items];
     ```
 
   <a name="arrays--from"></a><a name="4.4"></a>
-  - [4.4](#arrays--from) To convert an array-like object to an array, use [Array.from](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Array/from).
+  - [4.4](#arrays--from) Для конвертації масивоподібних об'єктів в масив, використовуйте [Array.from](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Array/from).
 
     ```javascript
     const foo = document.querySelectorAll('.foo');
@@ -367,26 +367,26 @@ Other Style Guides
     ```
 
   <a name="arrays--callback-return"></a><a name="4.5"></a>
-  - [4.5](#arrays--callback-return) Use return statements in array method callbacks. It's ok to omit the return if the function body consists of a single statement following [8.2](#8.2). eslint: [`array-callback-return`](http://eslint.org/docs/rules/array-callback-return)
+  - [4.5](#arrays--callback-return) Використовуйте оператор `return` у функціях зворотнього виклику методу масива. Це нормально не робити повернення, якщо тіло функції складається з одного визначення згідно з [8.2](#8.2). eslint: [`array-callback-return`](http://eslint.org/docs/rules/array-callback-return)
 
     ```javascript
-    // good
+    // добре
     [1, 2, 3].map((x) => {
       const y = x + 1;
       return x * y;
     });
 
-    // good
+    // добре
     [1, 2, 3].map(x => x + 1);
 
-    // bad
+    // погано
     const flat = {};
     [[0, 1], [2, 3], [4, 5]].reduce((memo, item, index) => {
       const flatten = memo.concat(item);
       flat[index] = flatten;
     });
 
-    // good
+    // добре
     const flat = {};
     [[0, 1], [2, 3], [4, 5]].reduce((memo, item, index) => {
       const flatten = memo.concat(item);
@@ -394,7 +394,7 @@ Other Style Guides
       return flatten;
     });
 
-    // bad
+    // погано
     inbox.filter((msg) => {
       const { subject, author } = msg;
       if (subject === 'Mockingbird') {
@@ -404,7 +404,7 @@ Other Style Guides
       }
     });
 
-    // good
+    // добре
     inbox.filter((msg) => {
       const { subject, author } = msg;
       if (subject === 'Mockingbird') {
@@ -415,17 +415,17 @@ Other Style Guides
     });
     ```
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ вверх](#Зміст)**
 
-## Destructuring
+## Деструктурування
 
   <a name="destructuring--object"></a><a name="5.1"></a>
-  - [5.1](#destructuring--object) Use object destructuring when accessing and using multiple properties of an object. jscs: [`requireObjectDestructuring`](http://jscs.info/rule/requireObjectDestructuring)
+  - [5.1](#destructuring--object) Використовуйте деструктурування об'єкта, коли отримуєте доступ і використовуєте декілька властивостей об'єкта. jscs: [`requireObjectDestructuring`](http://jscs.info/rule/requireObjectDestructuring)
 
-    > Why? Destructuring saves you from creating temporary references for those properties.
+    > Чому? Деструктурування вберігаж вас від створення тимчасових посиланнь на ті властивості.
 
     ```javascript
-    // bad
+    // погано
     function getFullName(user) {
       const firstName = user.firstName;
       const lastName = user.lastName;
@@ -433,192 +433,192 @@ Other Style Guides
       return `${firstName} ${lastName}`;
     }
 
-    // good
+    // добре
     function getFullName(user) {
       const { firstName, lastName } = user;
       return `${firstName} ${lastName}`;
     }
 
-    // best
+    // найкраще
     function getFullName({ firstName, lastName }) {
       return `${firstName} ${lastName}`;
     }
     ```
 
   <a name="destructuring--array"></a><a name="5.2"></a>
-  - [5.2](#destructuring--array) Use array destructuring. jscs: [`requireArrayDestructuring`](http://jscs.info/rule/requireArrayDestructuring)
+  - [5.2](#destructuring--array) Використовуйте деструктурування масивів. jscs: [`requireArrayDestructuring`](http://jscs.info/rule/requireArrayDestructuring)
 
     ```javascript
     const arr = [1, 2, 3, 4];
 
-    // bad
+    // погано
     const first = arr[0];
     const second = arr[1];
 
-    // good
+    // добре
     const [first, second] = arr;
     ```
 
   <a name="destructuring--object-over-array"></a><a name="5.3"></a>
-  - [5.3](#destructuring--object-over-array) Use object destructuring for multiple return values, not array destructuring. jscs: [`disallowArrayDestructuringReturn`](http://jscs.info/rule/disallowArrayDestructuringReturn)
+  - [5.3](#destructuring--object-over-array) Використовуйте деструктурування об'єкта, а не масива, для декількох повертаємих значеннь . jscs: [`disallowArrayDestructuringReturn`](http://jscs.info/rule/disallowArrayDestructuringReturn)
 
-    > Why? You can add new properties over time or change the order of things without breaking call sites.
+    > Чому? Ви зможете з часом додати нові властивості або змінити послідовність речей не порушуючи розташування викликів.
 
     ```javascript
-    // bad
+    // погано
     function processInput(input) {
-      // then a miracle occurs
+      // то відбувається чудо
       return [left, right, top, bottom];
     }
 
-    // the caller needs to think about the order of return data
+    // Виклик повинен подумати про послідовність повертаємих даних
     const [left, __, top] = processInput(input);
 
-    // good
+    // добре
     function processInput(input) {
-      // then a miracle occurs
+      // то відбувається чудо
       return { left, right, top, bottom };
     }
 
-    // the caller selects only the data they need
+    // виклик обирає лише необхідні йому данні
     const { left, top } = processInput(input);
     ```
 
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ вверх](#Зміст)**
 
-## Strings
+## Строки
 
   <a name="strings--quotes"></a><a name="6.1"></a>
-  - [6.1](#strings--quotes) Use single quotes `''` for strings. eslint: [`quotes`](http://eslint.org/docs/rules/quotes.html) jscs: [`validateQuoteMarks`](http://jscs.info/rule/validateQuoteMarks)
+  - [6.1](#strings--quotes) Використовуйте одинарні лапки `''` для строк. eslint: [`quotes`](http://eslint.org/docs/rules/quotes.html) jscs: [`validateQuoteMarks`](http://jscs.info/rule/validateQuoteMarks)
 
     ```javascript
-    // bad
+    // погано
     const name = "Capt. Janeway";
 
-    // bad - template literals should contain interpolation or newlines
+    // погано - літеральні шаблони мають містити інтерполяцію чи нові строки
     const name = `Capt. Janeway`;
 
-    // good
+    // добре
     const name = 'Capt. Janeway';
     ```
 
   <a name="strings--line-length"></a><a name="6.2"></a>
-  - [6.2](#strings--line-length) Strings that cause the line to go over 100 characters should not be written across multiple lines using string concatenation.
+  - [6.2](#strings--line-length) Строки, які подовжують лінію більше ніж на 100 символів не повинні записуватись у кілька рядків за допомогою конкатенації
 
-    > Why? Broken strings are painful to work with and make code less searchable.
+    > Чому? З розбитими таким чином строками болючіше працювати і вони роблять код важко читаємим.
 
     ```javascript
-    // bad
+    // погано
     const errorMessage = 'This is a super long error that was thrown because \
     of Batman. When you stop to think about how Batman had anything to do \
     with this, you would get nowhere \
     fast.';
 
-    // bad
+    // погано
     const errorMessage = 'This is a super long error that was thrown because ' +
       'of Batman. When you stop to think about how Batman had anything to do ' +
       'with this, you would get nowhere fast.';
 
-    // good
+    // добре
     const errorMessage = 'This is a super long error that was thrown because of Batman. When you stop to think about how Batman had anything to do with this, you would get nowhere fast.';
     ```
 
   <a name="es6-template-literals"></a><a name="6.4"></a>
-  - [6.3](#es6-template-literals) When programmatically building up strings, use template strings instead of concatenation. eslint: [`prefer-template`](http://eslint.org/docs/rules/prefer-template.html) [`template-curly-spacing`](http://eslint.org/docs/rules/template-curly-spacing) jscs: [`requireTemplateStrings`](http://jscs.info/rule/requireTemplateStrings)
+  - [6.3](#es6-template-literals) Коли програмно будуєте строки, використовуйте строчні шаблони замість конкатенації. eslint: [`prefer-template`](http://eslint.org/docs/rules/prefer-template.html) [`template-curly-spacing`](http://eslint.org/docs/rules/template-curly-spacing) jscs: [`requireTemplateStrings`](http://jscs.info/rule/requireTemplateStrings)
 
-    > Why? Template strings give you a readable, concise syntax with proper newlines and string interpolation features.
+    > Чому? Строчні шаблони дають читабельність, короткий синтаксис з переносом нових ліній та функціями інтерполяції строки.
 
     ```javascript
-    // bad
+    // погано
     function sayHi(name) {
       return 'How are you, ' + name + '?';
     }
 
-    // bad
+    // погано
     function sayHi(name) {
       return ['How are you, ', name, '?'].join();
     }
 
-    // bad
+    // погано
     function sayHi(name) {
       return `How are you, ${ name }?`;
     }
 
-    // good
+    // добре
     function sayHi(name) {
       return `How are you, ${name}?`;
     }
     ```
 
   <a name="strings--eval"></a><a name="6.5"></a>
-  - [6.4](#strings--eval) Never use `eval()` on a string, it opens too many vulnerabilities.
+  - [6.4](#strings--eval) Ніколи не використовуйте `eval()` на строці, це відкриває дуже багато вразливостей.
 
   <a name="strings--escaping"></a>
-  - [6.5](#strings--escaping) Do not unnecessarily escape characters in strings. eslint: [`no-useless-escape`](http://eslint.org/docs/rules/no-useless-escape)
+  - [6.5](#strings--escaping) Не зловживайте символами екранування у строках. eslint: [`no-useless-escape`](http://eslint.org/docs/rules/no-useless-escape)
 
-    > Why? Backslashes harm readability, thus they should only be present when necessary.
+    > Чому? Зворотні слеші ('\') шкодять читаємості, тому вони мають використовуватись лише там де дійсно необхідно.
 
     ```javascript
-    // bad
+    // погано
     const foo = '\'this\' \i\s \"quoted\"';
 
-    // good
+    // добре
     const foo = '\'this\' is "quoted"';
     const foo = `my name is '${name}'`;
     ```
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ вверх](#Зміст)**
 
 
-## Functions
+## Функції
 
   <a name="functions--declarations"></a><a name="7.1"></a>
-  - [7.1](#functions--declarations) Use named function expressions instead of function declarations. eslint: [`func-style`](http://eslint.org/docs/rules/func-style) jscs: [`disallowFunctionDeclarations`](http://jscs.info/rule/disallowFunctionDeclarations)
+  - [7.1](#functions--declarations) Використовуйте іменовані функціональні вирази замість функціональних оголошеннь. eslint: [`func-style`](http://eslint.org/docs/rules/func-style) jscs: [`disallowFunctionDeclarations`](http://jscs.info/rule/disallowFunctionDeclarations)
 
-    > Why? Function declarations are hoisted, which means that it’s easy - too easy - to reference the function before it is defined in the file. This harms readability and maintainability. If you find that a function’s definition is large or complex enough that it is interfering with understanding the rest of the file, then perhaps it’s time to extract it to its own module! Don’t forget to name the expression - anonymous functions can make it harder to locate the problem in an Error's call stack. ([Discussion](https://github.com/airbnb/javascript/issues/794))
+    > Чому? Функціональні оголошення хойстяться (вспливають уверх), що означає, що це лугко, дуже легко послатися на функцію до того, як вона оголошена у файлі. Це шкодить читаємості та підтримуємості. Якщо вам здається, що визначення функції досить велике чи воно ускладнює розуміння іншої частини файлу, то, можливо, прийшов час, щоб виокремити це в окремий модуль! Не забувайте іменувати вирази - анонімні функції можуть ускладнити локалізацію проблеми у стеку викликів. ([Discussion](https://github.com/airbnb/javascript/issues/794))
 
     ```javascript
-    // bad
+    // погано
     const foo = function () {
     };
 
-    // bad
+    // погано
     function foo() {
     }
 
-    // good
+    // добре
     const foo = function bar() {
     };
     ```
 
   <a name="functions--iife"></a><a name="7.2"></a>
-  - [7.2](#functions--iife) Wrap immediately invoked function expressions in parentheses. eslint: [`wrap-iife`](http://eslint.org/docs/rules/wrap-iife.html) jscs: [`requireParenthesesAroundIIFE`](http://jscs.info/rule/requireParenthesesAroundIIFE)
+  - [7.2](#functions--iife) Огортайте негайно виконувані функціональні вирази (НВФВ) у дужки. eslint: [`wrap-iife`](http://eslint.org/docs/rules/wrap-iife.html) jscs: [`requireParenthesesAroundIIFE`](http://jscs.info/rule/requireParenthesesAroundIIFE)
 
-    > Why? An immediately invoked function expression is a single unit - wrapping both it, and its invocation parens, in parens, cleanly expresses this. Note that in a world with modules everywhere, you almost never need an IIFE.
+    > Чому? Негайно виконуваний функціональний вираз являє собою єдиний блок - огортання обох, і його і його виклику чітко це показує. Варто зауважити, що у світі де модулі повсюди, вам майже ніколи не потрібен НВФВ.
 
     ```javascript
-    // immediately-invoked function expression (IIFE)
+    // Негайно виконуваний функціональний вираз (НВФВ)
     (function () {
       console.log('Welcome to the Internet. Please follow me.');
     }());
     ```
 
   <a name="functions--in-blocks"></a><a name="7.3"></a>
-  - [7.3](#functions--in-blocks) Never declare a function in a non-function block (if, while, etc). Assign the function to a variable instead. Browsers will allow you to do it, but they all interpret it differently, which is bad news bears. eslint: [`no-loop-func`](http://eslint.org/docs/rules/no-loop-func.html)
+  - [7.3](#functions--in-blocks) Ніколи не оголошуйте функцію у нефункціональному блоці(if, while, etc). Натомість, призначте функцію змінній. Браузери дозволять вам це зробити, але всі вони інтерпретують це по-різному, що є поганими новинами. eslint: [`no-loop-func`](http://eslint.org/docs/rules/no-loop-func.html)
 
   <a name="functions--note-on-blocks"></a><a name="7.4"></a>
-  - [7.4](#functions--note-on-blocks) **Note:** ECMA-262 defines a `block` as a list of statements. A function declaration is not a statement. [Read ECMA-262's note on this issue](http://www.ecma-international.org/publications/files/ECMA-ST/Ecma-262.pdf#page=97).
+  - [7.4](#functions--note-on-blocks) **Увага:** ECMA-262 визначає `block` як список визначеннь. Оголошення функції не є визначенням. [Read ECMA-262's note on this issue](http://www.ecma-international.org/publications/files/ECMA-ST/Ecma-262.pdf#page=97).
 
     ```javascript
-    // bad
+    // погано
     if (currentUser) {
       function test() {
         console.log('Nope.');
       }
     }
 
-    // good
+    // добре
     let test;
     if (currentUser) {
       test = () => {
@@ -628,52 +628,52 @@ Other Style Guides
     ```
 
   <a name="functions--arguments-shadow"></a><a name="7.5"></a>
-  - [7.5](#functions--arguments-shadow) Never name a parameter `arguments`. This will take precedence over the `arguments` object that is given to every function scope.
+  - [7.5](#functions--arguments-shadow) Ніколи не називайте параметр як `arguments`. Це матиме пріоритет над `arguments` об'єкта, який надається області видимості кожної функції.
 
     ```javascript
-    // bad
+    // погано
     function nope(name, options, arguments) {
-      // ...stuff...
+      // ...щось відбувається...
     }
 
-    // good
+    // добре
     function yup(name, options, args) {
-      // ...stuff...
+      // ...щось відбувається...
     }
     ```
 
   <a name="es6-rest"></a><a name="7.6"></a>
-  - [7.6](#es6-rest) Never use `arguments`, opt to use rest syntax `...` instead. eslint: [`prefer-rest-params`](http://eslint.org/docs/rules/prefer-rest-params)
+  - [7.6](#es6-rest) Ннколи не використовуйте `arguments`, краще натомість використовуйте `rest` синтаксис (`...`). eslint: [`prefer-rest-params`](http://eslint.org/docs/rules/prefer-rest-params)
 
-    > Why? `...` is explicit about which arguments you want pulled. Plus, rest arguments are a real Array, and not merely Array-like like `arguments`.
+    > Чому? `...` оператор явно зазначає, що ви хочете щось витягти. Крім того, rest аргументи являються реальним масивом, а не масивоподібністю, як `arguments`.
 
     ```javascript
-    // bad
+    // погано
     function concatenateAll() {
       const args = Array.prototype.slice.call(arguments);
       return args.join('');
     }
 
-    // good
+    // добре
     function concatenateAll(...args) {
       return args.join('');
     }
     ```
 
   <a name="es6-default-parameters"></a><a name="7.7"></a>
-  - [7.7](#es6-default-parameters) Use default parameter syntax rather than mutating function arguments.
+  - [7.7](#es6-default-parameters) Використовуйте синтаксис "параметру за замовчуванням", а не мутуйте аргументи функції.
 
     ```javascript
-    // really bad
+    // насправді погано
     function handleThings(opts) {
-      // No! We shouldn't mutate function arguments.
-      // Double bad: if opts is falsy it'll be set to an object which may
-      // be what you want but it can introduce subtle bugs.
+      // Ні! Ми не повинні мутувати аргументи функції.
+      // Двічі погано: якщо `opts` є направдивим(`falsy` - прим. прекладача), то воно так і буде задано об'єкту. Це, звісно, може бути тим, що
+      // вам саме потрібно, але це може призвести до тонких багів.
       opts = opts || {};
       // ...
     }
 
-    // still bad
+    // все ще погано
     function handleThings(opts) {
       if (opts === void 0) {
         opts = {};
@@ -681,20 +681,20 @@ Other Style Guides
       // ...
     }
 
-    // good
+    // добре
     function handleThings(opts = {}) {
       // ...
     }
     ```
 
   <a name="functions--default-side-effects"></a><a name="7.8"></a>
-  - [7.8](#functions--default-side-effects) Avoid side effects with default parameters.
+  - [7.8](#functions--default-side-effects) Уникайте сторонніх ефектів при використанні параметрів за замовчуванням.
 
-    > Why? They are confusing to reason about.
+    > Чому? Вони збентежують.
 
     ```javascript
     var b = 1;
-    // bad
+    // погано
     function count(a = b++) {
       console.log(a);
     }
@@ -705,73 +705,73 @@ Other Style Guides
     ```
 
   <a name="functions--defaults-last"></a><a name="7.9"></a>
-  - [7.9](#functions--defaults-last) Always put default parameters last.
+  - [7.9](#functions--defaults-last) Завжди зазначайте параметри за замовчуванням останніми.
 
     ```javascript
-    // bad
+    // погано
     function handleThings(opts = {}, name) {
       // ...
     }
 
-    // good
+    // добре
     function handleThings(name, opts = {}) {
       // ...
     }
     ```
 
   <a name="functions--constructor"></a><a name="7.10"></a>
-  - [7.10](#functions--constructor) Never use the Function constructor to create a new function. eslint: [`no-new-func`](http://eslint.org/docs/rules/no-new-func)
+  - [7.10](#functions--constructor) Ніколи не використовуйте конструктор функцій для створення нової функції. eslint: [`no-new-func`](http://eslint.org/docs/rules/no-new-func)
 
-    > Why? Creating a function in this way evaluates a string similarly to eval(), which opens vulnerabilities.
+    > Чому? Створення функції таким чином обчислює строку аналогічно eval(), що, в свою чергу, відкриває вразливості.
 
     ```javascript
-    // bad
+    // погано
     var add = new Function('a', 'b', 'return a + b');
 
-    // still bad
+    // досі погано
     var subtract = Function('a', 'b', 'return a - b');
     ```
 
   <a name="functions--signature-spacing"></a><a name="7.11"></a>
-  - [7.11](#functions--signature-spacing) Spacing in a function signature. eslint: [`space-before-function-paren`](http://eslint.org/docs/rules/space-before-function-paren) [`space-before-blocks`](http://eslint.org/docs/rules/space-before-blocks)
+  - [7.11](#functions--signature-spacing) Відступи у сигнатурі функції. eslint: [`space-before-function-paren`](http://eslint.org/docs/rules/space-before-function-paren) [`space-before-blocks`](http://eslint.org/docs/rules/space-before-blocks)
 
-    > Why? Consistency is good, and you shouldn’t have to add or remove a space when adding or removing a name.
+    > Чому? Постійність - це добре, і ви не повинні додавати або видаляти пробіл при додаванні або видаленні імені.
 
     ```javascript
-    // bad
+    // погано
     const f = function(){};
     const g = function (){};
     const h = function() {};
 
-    // good
+    // добре
     const x = function () {};
     const y = function a() {};
     ```
 
   <a name="functions--mutate-params"></a><a name="7.12"></a>
-  - [7.12](#functions--mutate-params) Never mutate parameters. eslint: [`no-param-reassign`](http://eslint.org/docs/rules/no-param-reassign.html)
+  - [7.12](#functions--mutate-params) Ніколи не мутуйте параметри. eslint: [`no-param-reassign`](http://eslint.org/docs/rules/no-param-reassign.html)
 
-    > Why? Manipulating objects passed in as parameters can cause unwanted variable side effects in the original caller.
+    > Чому? Маніпулювання об'єктами, які були передані як параметри, може призвести до небажаних побічних ефектів у змінних, у місці звідки відбувся початковий виклик.
 
     ```javascript
-    // bad
+    // погано
     function f1(obj) {
       obj.key = 1;
     };
 
-    // good
+    // добре
     function f2(obj) {
       const key = Object.prototype.hasOwnProperty.call(obj, 'key') ? obj.key : 1;
     };
     ```
 
   <a name="functions--reassign-params"></a><a name="7.13"></a>
-  - [7.13](#functions--reassign-params) Never reassign parameters. eslint: [`no-param-reassign`](http://eslint.org/docs/rules/no-param-reassign.html)
+  - [7.13](#functions--reassign-params) Ніколи не перепризначайте параметри. eslint: [`no-param-reassign`](http://eslint.org/docs/rules/no-param-reassign.html)
 
-    > Why? Reassigning parameters can lead to unexpected behavior, especially when accessing the `arguments` object. It can also cause optimization issues, especially in V8.
+    > Чому? Перепризначення параметрів може призвести до неочікуваної поведінки, особливо, при доступі до об'єкту аргументів. Це також може викликати оптимізаційні проблеми, особливо у V8.
 
     ```javascript
-    // bad
+    // погано
     function f1(a) {
       a = 1;
     }
@@ -780,7 +780,7 @@ Other Style Guides
       if (!a) { a = 1; }
     }
 
-    // good
+    // добре
     function f3(a) {
       const b = a || 1;
     }
@@ -790,52 +790,52 @@ Other Style Guides
     ```
 
   <a name="functions--spread-vs-apply"></a><a name="7.14"></a>
-  - [7.14](#functions--spread-vs-apply) Prefer the use of the spread operator `...` to call variadic functions. eslint: [`prefer-spread`](http://eslint.org/docs/rules/prefer-spread)
+  - [7.14](#functions--spread-vs-apply) Віддавайте перевагу використанню `...` (оператор `spread`) при виклику функцій зі змінним числом параметрів . eslint: [`prefer-spread`](http://eslint.org/docs/rules/prefer-spread)
 
-    > Why? It's cleaner, you don't need to supply a context, and you can not easily compose `new` with `apply`.
+    > Чому? Так чистіше, вам не потрібно надавати контекст і ви не можете легко створити `new` за допомогою `apply`.
 
     ```javascript
-    // bad
+    // погано
     const x = [1, 2, 3, 4, 5];
     console.log.apply(console, x);
 
-    // good
+    // добре
     const x = [1, 2, 3, 4, 5];
     console.log(...x);
 
-    // bad
+    // погано
     new (Function.prototype.bind.apply(Date, [null, 2016, 08, 05]));
 
-    // good
+    // добре
     new Date(...[2016, 08, 05]);
     ```
 
   <a name="functions--signature-invocation-indentation"></a>
-  - [7.15](#functions--signature-invocation-indentation) Functions with multiline signatures, or invocations, should be indented just like every other multiline list in this guide: with each item on a line by itself, with a trailing comma on the last item.
+  - [7.15](#functions--signature-invocation-indentation) Функції з кількома сигнатурами, чи викликами, повинні бути з відступами, так само як і будь-який інший список у кілька рядків у цьому керівництві: з кожним елементом на своєму рядку, з комою у кінці кожного рядка.
 
     ```javascript
-    // bad
+    // погано
     function foo(bar,
                  baz,
                  quux) {
-      // body
+      // тіло функції
     }
 
-    // good
+    // добре
     function foo(
       bar,
       baz,
       quux,
     ) {
-      // body
+      // тіло функції
     }
 
-    // bad
+    // погано
     console.log(foo,
       bar,
       baz);
 
-    // good
+    // добре
     console.log(
       foo,
       bar,
@@ -843,25 +843,25 @@ Other Style Guides
     );
     ```
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ вверх](#Зміст)**
 
-## Arrow Functions
+## Arrow-функції
 
   <a name="arrows--use-them"></a><a name="8.1"></a>
-  - [8.1](#arrows--use-them) When you must use function expressions (as when passing an anonymous function), use arrow function notation. eslint: [`prefer-arrow-callback`](http://eslint.org/docs/rules/prefer-arrow-callback.html), [`arrow-spacing`](http://eslint.org/docs/rules/arrow-spacing.html) jscs: [`requireArrowFunctions`](http://jscs.info/rule/requireArrowFunctions)
+  - [8.1](#arrows--use-them) Коли вам потрібно використати функціональний вираз (так само якщо потрібно передати анонімну функцію) - використовуйте позначення arrow-функції. eslint: [`prefer-arrow-callback`](http://eslint.org/docs/rules/prefer-arrow-callback.html), [`arrow-spacing`](http://eslint.org/docs/rules/arrow-spacing.html) jscs: [`requireArrowFunctions`](http://jscs.info/rule/requireArrowFunctions)
 
-    > Why? It creates a version of the function that executes in the context of `this`, which is usually what you want, and is a more concise syntax.
+    > Чому? Це створює версію функції, яка виконується у контексті `this`, що вам зазвичай і потрібно, і має коротший синтаксис.
 
-    > Why not? If you have a fairly complicated function, you might move that logic out into its own function declaration.
+    > Чому ні? Якщо у вас є досить складна функція, ви можете винести складну логіку з неї у її власну оголошену функцію.
 
     ```javascript
-    // bad
+    // погано
     [1, 2, 3].map(function (x) {
       const y = x + 1;
       return x * y;
     });
 
-    // good
+    // добре
     [1, 2, 3].map((x) => {
       const y = x + 1;
       return x * y;
@@ -869,46 +869,46 @@ Other Style Guides
     ```
 
   <a name="arrows--implicit-return"></a><a name="8.2"></a>
-  - [8.2](#arrows--implicit-return) If the function body consists of a single expression, omit the braces and use the implicit return. Otherwise, keep the braces and use a `return` statement. eslint: [`arrow-parens`](http://eslint.org/docs/rules/arrow-parens.html), [`arrow-body-style`](http://eslint.org/docs/rules/arrow-body-style.html) jscs:  [`disallowParenthesesAroundArrowParam`](http://jscs.info/rule/disallowParenthesesAroundArrowParam), [`requireShorthandArrowFunctions`](http://jscs.info/rule/requireShorthandArrowFunctions)
+  - [8.2](#arrows--implicit-return) Якщо тіло функцій складається з одного виразу - не застосовуйте фігурні дужки, а одразу використовуйте неявне повернення. Або, лишіть фігурні дужки і використайте оператор `return`. eslint: [`arrow-parens`](http://eslint.org/docs/rules/arrow-parens.html), [`arrow-body-style`](http://eslint.org/docs/rules/arrow-body-style.html) jscs:  [`disallowParenthesesAroundArrowParam`](http://jscs.info/rule/disallowParenthesesAroundArrowParam), [`requireShorthandArrowFunctions`](http://jscs.info/rule/requireShorthandArrowFunctions)
 
-    > Why? Syntactic sugar. It reads well when multiple functions are chained together.
+    > Чому? Синтаксичний цукор. Це гарно читається, особливо коли в функції вилаштовуються у послідовну ціпочку.
 
     ```javascript
-    // bad
+    // погано
     [1, 2, 3].map(number => {
       const nextNumber = number + 1;
       `A string containing the ${nextNumber}.`;
     });
 
-    // good
+    // добре
     [1, 2, 3].map(number => `A string containing the ${number}.`);
 
-    // good
+    // добре
     [1, 2, 3].map((number) => {
       const nextNumber = number + 1;
       return `A string containing the ${nextNumber}.`;
     });
 
-    // good
+    // добре
     [1, 2, 3].map((number, index) => ({
       [index]: number
     }));
     ```
 
   <a name="arrows--paren-wrap"></a><a name="8.3"></a>
-  - [8.3](#arrows--paren-wrap) In case the expression spans over multiple lines, wrap it in parentheses for better readability.
+  - [8.3](#arrows--paren-wrap) У випадку, коли вираз розбивається на декілька рядків, огорніть його у дужки для кращої читаємості.
 
-    > Why? It shows clearly where the function starts and ends.
+    > Чому? Це чітко показує де функція починається і де закінчується.
 
     ```js
-    // bad
+    // погано
     ['get', 'post', 'put'].map(httpMethod => Object.prototype.hasOwnProperty.call(
         httpMagicObjectWithAVeryLongName,
         httpMethod
-      )
+
     );
 
-    // good
+    // добре
     ['get', 'post', 'put'].map(httpMethod => (
       Object.prototype.hasOwnProperty.call(
         httpMagicObjectWithAVeryLongName,
@@ -918,29 +918,29 @@ Other Style Guides
     ```
 
   <a name="arrows--one-arg-parens"></a><a name="8.4"></a>
-  - [8.4](#arrows--one-arg-parens) If your function takes a single argument and doesn’t use braces, omit the parentheses. Otherwise, always include parentheses around arguments. eslint: [`arrow-parens`](http://eslint.org/docs/rules/arrow-parens.html) jscs:  [`disallowParenthesesAroundArrowParam`](http://jscs.info/rule/disallowParenthesesAroundArrowParam)
+  - [8.4](#arrows--one-arg-parens) Якщо ваша функція приймає єдиний аргумент і ви не використовуєте дужки - не використайте в такому разі і фігурні дужки. В іншому випадку, завжди огортайте аргументи дужками. eslint: [`arrow-parens`](http://eslint.org/docs/rules/arrow-parens.html) jscs:  [`disallowParenthesesAroundArrowParam`](http://jscs.info/rule/disallowParenthesesAroundArrowParam)
 
-    > Why? Less visual clutter.
+    > Чому? Менше візуального безладу.
 
     ```js
-    // bad
+    // погано
     [1, 2, 3].map((x) => x * x);
 
-    // good
+    // добре
     [1, 2, 3].map(x => x * x);
 
-    // good
+    // добре
     [1, 2, 3].map(number => (
       `A long string with the ${number}. It’s so long that we don’t want it to take up space on the .map line!`
     ));
 
-    // bad
+    // погано
     [1, 2, 3].map(x => {
       const y = x + 1;
       return x * y;
     });
 
-    // good
+    // добре
     [1, 2, 3].map((x) => {
       const y = x + 1;
       return x * y;
@@ -948,37 +948,37 @@ Other Style Guides
     ```
 
   <a name="arrows--confusing"></a><a name="8.5"></a>
-  - [8.5](#arrows--confusing) Avoid confusing arrow function syntax (`=>`) with comparison operators (`<=`, `>=`). eslint: [`no-confusing-arrow`](http://eslint.org/docs/rules/no-confusing-arrow)
+  - [8.5](#arrows--confusing) Уникайте синтаксису arrow-функції (`=>`) з операторами порівняння (`<=`, `>=`), оскільки це може збити з пантелику. eslint: [`no-confusing-arrow`](http://eslint.org/docs/rules/no-confusing-arrow)
 
     ```js
-    // bad
+    // погано
     const itemHeight = item => item.height > 256 ? item.largeSize : item.smallSize;
 
-    // bad
+    // погано
     const itemHeight = (item) => item.height > 256 ? item.largeSize : item.smallSize;
 
-    // good
+    // добре
     const itemHeight = item => (item.height > 256 ? item.largeSize : item.smallSize);
 
-    // good
+    // добре
     const itemHeight = (item) => {
       const { height, largeSize, smallSize } = item;
       return height > 256 ? largeSize : smallSize;
     };
     ```
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ вверх](#Зміст)**
 
 
-## Classes & Constructors
+## Класи та Конструктори
 
   <a name="constructors--use-class"></a><a name="9.1"></a>
-  - [9.1](#constructors--use-class) Always use `class`. Avoid manipulating `prototype` directly.
+  - [9.1](#constructors--use-class) Завжди використовуйте `class`. Уникайте маніпулювати `prototype` напряму.
 
-    > Why? `class` syntax is more concise and easier to reason about.
+    > Чому? `class` синтаксис коротший і його легше зрозуміти.
 
     ```javascript
-    // bad
+    // погано
     function Queue(contents = []) {
       this.queue = [...contents];
     }
@@ -989,7 +989,7 @@ Other Style Guides
     };
 
 
-    // good
+    // добре
     class Queue {
       constructor(contents = []) {
         this.queue = [...contents];
@@ -1003,12 +1003,12 @@ Other Style Guides
     ```
 
   <a name="constructors--extends"></a><a name="9.2"></a>
-  - [9.2](#constructors--extends) Use `extends` for inheritance.
+  - [9.2](#constructors--extends) Використовуйте `extends` для наслідування.
 
-    > Why? It is a built-in way to inherit prototype functionality without breaking `instanceof`.
+    > Чому? Це вбудований спосіб щоб наслідувати функціональність прототипу, не порушуючи `instanceof`.
 
     ```javascript
-    // bad
+    // погано
     const inherits = require('inherits');
     function PeekableQueue(contents) {
       Queue.apply(this, contents);
@@ -1018,7 +1018,7 @@ Other Style Guides
       return this._queue[0];
     }
 
-    // good
+    // добре
     class PeekableQueue extends Queue {
       peek() {
         return this._queue[0];
@@ -1027,10 +1027,10 @@ Other Style Guides
     ```
 
   <a name="constructors--chaining"></a><a name="9.3"></a>
-  - [9.3](#constructors--chaining) Methods can return `this` to help with method chaining.
+  - [9.3](#constructors--chaining) Методи можуть повертати `this`, щоб допомогти методу з побудовою ланцюжка.
 
     ```javascript
-    // bad
+    // погано
     Jedi.prototype.jump = function () {
       this.jumping = true;
       return true;
@@ -1044,7 +1044,7 @@ Other Style Guides
     luke.jump(); // => true
     luke.setHeight(20); // => undefined
 
-    // good
+    // добре
     class Jedi {
       jump() {
         this.jumping = true;
@@ -1065,7 +1065,7 @@ Other Style Guides
 
 
   <a name="constructors--tostring"></a><a name="9.4"></a>
-  - [9.4](#constructors--tostring) It's okay to write a custom toString() method, just make sure it works successfully and causes no side effects.
+  - [9.4](#constructors--tostring) Це нормально писати власний toString() метод, просто переконайтесь, що він працює вдало і без побічних ефектів.
 
     ```javascript
     class Jedi {
@@ -1084,10 +1084,10 @@ Other Style Guides
     ```
 
   <a name="constructors--no-useless"></a><a name="9.5"></a>
-  - [9.5](#constructors--no-useless) Classes have a default constructor if one is not specified. An empty constructor function or one that just delegates to a parent class is unnecessary. eslint: [`no-useless-constructor`](http://eslint.org/docs/rules/no-useless-constructor)
+  - [9.5](#constructors--no-useless) Класи мають конструктор за замовчуванням, якщо не вказано іншого. Порожній конструктор функції або конструктор, який просто посилається на батьківський клас не є необхідними. eslint: [`no-useless-constructor`](http://eslint.org/docs/rules/no-useless-constructor)
 
     ```javascript
-    // bad
+    // погано
     class Jedi {
       constructor() {}
 
@@ -1096,14 +1096,14 @@ Other Style Guides
       }
     }
 
-    // bad
+    // погано
     class Rey extends Jedi {
       constructor(...args) {
         super(...args);
       }
     }
 
-    // good
+    // добре
     class Rey extends Jedi {
       constructor(...args) {
         super(...args);
@@ -1113,97 +1113,97 @@ Other Style Guides
     ```
 
   <a name="classes--no-duplicate-members"></a>
-  - [9.6](#classes--no-duplicate-members) Avoid duplicate class members. eslint: [`no-dupe-class-members`](http://eslint.org/docs/rules/no-dupe-class-members)
+  - [9.6](#classes--no-duplicate-members) Уникайте дублювання членів класу. eslint: [`no-dupe-class-members`](http://eslint.org/docs/rules/no-dupe-class-members)
 
-    > Why? Duplicate class member declarations will silently prefer the last one - having duplicates is almost certainly a bug.
+    > Чому? Продублтовані оголошення членів класу будуть нишком віддавати перевагу останньому, тому наявність дублікатів майже напевно - помилка.
 
     ```javascript
-    // bad
+    // погано
     class Foo {
       bar() { return 1; }
       bar() { return 2; }
     }
 
-    // good
+    // добре
     class Foo {
       bar() { return 1; }
     }
 
-    // good
+    // добре
     class Foo {
       bar() { return 2; }
     }
     ```
 
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ вверх](#Зміст)**
 
 
-## Modules
+## Модулі
 
   <a name="modules--use-them"></a><a name="10.1"></a>
-  - [10.1](#modules--use-them) Always use modules (`import`/`export`) over a non-standard module system. You can always transpile to your preferred module system.
+  - [10.1](#modules--use-them) Завжди віддавайте перевагу використанню (`import`/`export`) модуля, а не нестандартній модульній системі. Ви завжди можете зконвертувати(transpile) до вашої улюбленої модульної системи.
 
-    > Why? Modules are the future, let's start using the future now.
+    > Чому? Модулі - це майбутнє, тож давайте використовувати майбутнє вже зараз.
 
     ```javascript
-    // bad
+    // погано
     const AirbnbStyleGuide = require('./AirbnbStyleGuide');
     module.exports = AirbnbStyleGuide.es6;
 
-    // ok
+    // нормально
     import AirbnbStyleGuide from './AirbnbStyleGuide';
     export default AirbnbStyleGuide.es6;
 
-    // best
+    // найкраще
     import { es6 } from './AirbnbStyleGuide';
     export default es6;
     ```
 
   <a name="modules--no-wildcard"></a><a name="10.2"></a>
-  - [10.2](#modules--no-wildcard) Do not use wildcard imports.
+  - [10.2](#modules--no-wildcard) Ніколи не вживайте непередбачувані імпортів.
 
-    > Why? This makes sure you have a single default export.
+    > Чому? Це гарантує, що у вас по замовчуванню експортується лише один модуль.
 
     ```javascript
-    // bad
+    // погано
     import * as AirbnbStyleGuide from './AirbnbStyleGuide';
 
-    // good
+    // добре
     import AirbnbStyleGuide from './AirbnbStyleGuide';
     ```
 
   <a name="modules--no-export-from-import"></a><a name="10.3"></a>
-  - [10.3](#modules--no-export-from-import) And do not export directly from an import.
+  - [10.3](#modules--no-export-from-import) І не експортуйте напряму з імпорту.
 
-    > Why? Although the one-liner is concise, having one clear way to import and one clear way to export makes things consistent.
+    > Чому? Не дивлячись на те, що одна строка це досить коротко, мати один чіткий шлях для імпорта і один чіткий шлях для експорта робить речі більш зрозумілими.
 
     ```javascript
-    // bad
+    // погано
     // filename es6.js
     export { es6 as default } from './AirbnbStyleGuide';
 
-    // good
+    // добре
     // filename es6.js
     import { es6 } from './AirbnbStyleGuide';
     export default es6;
     ```
 
   <a name="modules--no-duplicate-imports"></a>
-  - [10.4](#modules--no-duplicate-imports) Only import from a path in one place.
+  - [10.4](#modules--no-duplicate-imports) Імпортуйте з одного місця лише раз.
  eslint: [`no-duplicate-imports`](http://eslint.org/docs/rules/no-duplicate-imports)
-    > Why? Having multiple lines that import from the same path can make code harder to maintain.
+    > Чому? Коли є кілька рядків, які імпортують з одного шляху - це ускладнює підтримку коду.
 
     ```javascript
-    // bad
+    // погано
     import foo from 'foo';
     // … some other imports … //
     import { named1, named2 } from 'foo';
 
-    // good
+    // добре
     import foo, { named1, named2 } from 'foo';
 
-    // good
+    // добре
     import foo, {
       named1,
       named2,
@@ -1211,45 +1211,45 @@ Other Style Guides
     ```
 
   <a name="modules--no-mutable-exports"></a>
-  - [10.5](#modules--no-mutable-exports) Do not export mutable bindings.
+  - [10.5](#modules--no-mutable-exports) Не експортуйте мутабельні прив'язки.
  eslint: [`import/no-mutable-exports`](https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-mutable-exports.md)
-    > Why? Mutation should be avoided in general, but in particular when exporting mutable bindings. While this technique may be needed for some special cases, in general, only constant references should be exported.
+    > Чому? Взагалі, мутацій потрібно уникати, особливо при експорті мутабельних прив'язок. Хоча цей прийом(мутація) може бути потрібним в деяких особливих ситуаціях, але в загальному потрібно експортувати лише постійні посилання.
 
     ```javascript
-    // bad
+    // погано
     let foo = 3;
     export { foo }
 
-    // good
+    // добре
     const foo = 3;
     export { foo }
     ```
 
   <a name="modules--prefer-default-export"></a>
-  - [10.6](#modules--prefer-default-export) In modules with a single export, prefer default export over named export.
+  - [10.6](#modules--prefer-default-export) У модулі з єдиним експортом віддавайте превагу експорту за замовчуванням (`default`), а не іменованому експорту.
  eslint: [`import/prefer-default-export`](https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/prefer-default-export.md)
 
     ```javascript
-    // bad
+    // погано
     export function foo() {}
 
-    // good
+    // добре
     export default function foo() {}
     ```
 
   <a name="modules--imports-first"></a>
-  - [10.7](#modules--imports-first) Put all `import`s above non-import statements.
+  - [10.7](#modules--imports-first) Зазначайте всі `import` визначення над не імпортами.
  eslint: [`import/first`](https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/first.md)
-    > Why? Since `import`s are hoisted, keeping them all at the top prevents surprising behavior.
+    > Чому? Оскільки `import`и вспливають вгору, то тримати їх зверху убезпечує від неочікуваної поведінки.
 
     ```javascript
-    // bad
+    // погано
     import foo from 'foo';
     foo.init();
 
     import bar from 'bar';
 
-    // good
+    // добре
     import foo from 'foo';
     import bar from 'bar';
 
@@ -1257,15 +1257,15 @@ Other Style Guides
     ```
 
   <a name="modules--multiline-imports-over-newlines"></a>
-  - [10.8](#modules--multiline-imports-over-newlines) Multiline imports should be indented just like multiline array and object literals.
+  - [10.8](#modules--multiline-imports-over-newlines) Імпорти у кілька рядків мають мати такі самі відступи як і масиви чи об'єктні літерали.
 
-    > Why? The curly braces follow the same indentation rules as every other curly brace block in the style guide, as do the trailing commas.
+    > Чому? Фігурні дужки дотримуються тих самих правил, як і кожен блок з фігурними дужками у цьому керівництві. Те саме стосується і ком у кінці кожного рядка в середині блоку.
 
     ```javascript
-    // bad
+    // погано
     import {longNameA, longNameB, longNameC, longNameD, longNameE} from 'path';
 
-    // good
+    // добре
     import {
       longNameA,
       longNameB,
@@ -1276,76 +1276,76 @@ Other Style Guides
     ```
 
   <a name="modules--no-webpack-loader-syntax"></a>
-  - [10.9](#modules--no-webpack-loader-syntax) Disallow Webpack loader syntax in module import statements.
+  - [10.9](#modules--no-webpack-loader-syntax) Забороняти `Webpack loader` синтаксис у оголошенні модульного імпорту.
  eslint: [`import/no-webpack-loader-syntax`](https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-webpack-loader-syntax.md)
-    > Why? Since using Webpack syntax in the imports couples the code to a module bundler. Prefer using the loader syntax in `webpack.config.js`.
+    > Чому? TODO: COMPLETE Since using Webpack syntax in the imports couples the code to a module bundler. Prefer using the loader syntax in `webpack.config.js`.
 
     ```javascript
-    // bad
+    // погано
     import fooSass from 'css!sass!foo.scss';
     import barCss from 'style!css!bar.css';
 
-    // good
+    // добре
     import fooSass from 'foo.scss';
     import barCss from 'bar.css';
     ```
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ вверх](#Зміст)**
 
-## Iterators and Generators
+## Ітератори та генератори
 
   <a name="iterators--nope"></a><a name="11.1"></a>
-  - [11.1](#iterators--nope) Don't use iterators. Prefer JavaScript's higher-order functions instead of loops like `for-in` or `for-of`. eslint: [`no-iterator`](http://eslint.org/docs/rules/no-iterator.html) [`no-restricted-syntax`](http://eslint.org/docs/rules/no-restricted-syntax)
+  - [11.1](#iterators--nope) Не використовуйте ітератори. Віддавайте перевагу функціям вищого порядку замість циклів, таких як `for-in` чи `for-of`. eslint: [`no-iterator`](http://eslint.org/docs/rules/no-iterator.html) [`no-restricted-syntax`](http://eslint.org/docs/rules/no-restricted-syntax)
 
-    > Why? This enforces our immutable rule. Dealing with pure functions that return values is easier to reason about than side effects.
+    > Чому? Це примушує дотримуватись нашого правила не мутувати дані. Легше працювати з чистими функціями які повертають значення, а не побічні ефекти.
 
-    > Use `map()` / `every()` / `filter()` / `find()` / `findIndex()` / `reduce()` / `some()` / ... to iterate over arrays, and `Object.keys()` / `Object.values()` / `Object.entries()` to produce arrays so you can iterate over objects.
+    > Використовуйте `map()` / `every()` / `filter()` / `find()` / `findIndex()` / `reduce()` / `some()` / ... щоб перебирати масиви, і `Object.keys()` / `Object.values()` / `Object.entries()` для створення масивів, щоб мати змогу далі їх перебирати.
 
     ```javascript
     const numbers = [1, 2, 3, 4, 5];
 
-    // bad
+    // погано
     let sum = 0;
     for (let num of numbers) {
       sum += num;
     }
     sum === 15;
 
-    // good
+    // добре
     let sum = 0;
     numbers.forEach(num => sum += num);
     sum === 15;
 
-    // best (use the functional force)
+    // найкраще (використовуйте функціональну силу)
     const sum = numbers.reduce((total, num) => total + num, 0);
     sum === 15;
 
-    // bad
+    // погано
     const increasedByOne = [];
     for (let i = 0; i < numbers.length; i++) {
       increasedByOne.push(numbers[i] + 1);
     }
 
-    // good
+    // добре
     const increasedByOne = [];
     numbers.forEach(num => increasedByOne.push(num + 1));
 
-    // best (keeping it functional)
+    // найкраще (притримуйтесь функціонального стилю)
     const increasedByOne = numbers.map(num => num + 1);
     ```
 
   <a name="generators--nope"></a><a name="11.2"></a>
-  - [11.2](#generators--nope) Don't use generators for now.
+  - [11.2](#generators--nope) Покищо не використовуйте генератори.
 
-    > Why? They don't transpile well to ES5.
+    > Чому? Вони не досить добре перетворюються в ES5.
 
   <a name="generators--spacing"></a>
-  - [11.3](#generators--spacing) If you must use generators, or if you disregard [our advice](#generators--nope), make sure their function signature is spaced properly. eslint: [`generator-star-spacing`](http://eslint.org/docs/rules/generator-star-spacing)
+  - [11.3](#generators--spacing) Якщо вам потрібно використати генератори, або якщо ви вирішили не скористатись нашою порадою [our advice](#generators--nope), переконайтесь, що сигнатура функції має правильні фідступи. eslint: [`generator-star-spacing`](http://eslint.org/docs/rules/generator-star-spacing)
 
-    > Why? `function` and `*` are part of the same conceptual keyword - `*` is not a modifier for `function`, `function*` is a unique construct, different from `function`.
+    > Чому? `function` і `*` є частиною одного концептуального ключового слова - `*` це не модифікатор `function`, `function*` - це унікальна конструкція, відмінна від `function`.
 
     ```js
-    // bad
+    // погано
     function * foo() {
     }
 
@@ -1364,7 +1364,7 @@ Other Style Guides
     function *foo() {
     }
 
-    // very bad
+    // дуже погано
     function
     *
     foo() {
@@ -1375,7 +1375,7 @@ Other Style Guides
     () {
     }
 
-    // good
+    // добре
     function* foo() {
     }
 
@@ -1383,13 +1383,13 @@ Other Style Guides
     }
     ```
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ вверх](#Зміст)**
 
 
-## Properties
+## Властивості
 
   <a name="properties--dot"></a><a name="12.1"></a>
-  - [12.1](#properties--dot) Use dot notation when accessing properties. eslint: [`dot-notation`](http://eslint.org/docs/rules/dot-notation.html) jscs: [`requireDotNotation`](http://jscs.info/rule/requireDotNotation)
+  - [12.1](#properties--dot) Використовуйте точкову нотацію при доступі до властивостей. eslint: [`dot-notation`](http://eslint.org/docs/rules/dot-notation.html) jscs: [`requireDotNotation`](http://jscs.info/rule/requireDotNotation)
 
     ```javascript
     const luke = {
@@ -1397,15 +1397,15 @@ Other Style Guides
       age: 28,
     };
 
-    // bad
+    // погано
     const isJedi = luke['jedi'];
 
-    // good
+    // добре
     const isJedi = luke.jedi;
     ```
 
   <a name="properties--bracket"></a><a name="12.2"></a>
-  - [12.2](#properties--bracket) Use bracket notation `[]` when accessing properties with a variable.
+  - [12.2](#properties--bracket) Використовуйте квадратні дужки `[]` при доступі до властивостей через змінні.
 
     ```javascript
     const luke = {
@@ -1420,64 +1420,64 @@ Other Style Guides
     const isJedi = getProp('jedi');
     ```
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ вверх](#Зміст)**
 
 
-## Variables
+## Змінні
 
   <a name="variables--const"></a><a name="13.1"></a>
-  - [13.1](#variables--const) Always use `const` to declare variables. Not doing so will result in global variables. We want to avoid polluting the global namespace. Captain Planet warned us of that. eslint: [`no-undef`](http://eslint.org/docs/rules/no-undef) [`prefer-const`](http://eslint.org/docs/rules/prefer-const)
+  - [13.1](#variables--const) Завжди використовуйте `const` для оголошення змінних. Недотримання цієї вимоги призведе до глобальних змінних. Ми хочемо уникнути забруднення глобального простору імен. Капітан Планета застерігає нас від цього. eslint: [`no-undef`](http://eslint.org/docs/rules/no-undef) [`prefer-const`](http://eslint.org/docs/rules/prefer-const)
 
     ```javascript
-    // bad
+    // погано
     superPower = new SuperPower();
 
-    // good
+    // добре
     const superPower = new SuperPower();
     ```
 
   <a name="variables--one-const"></a><a name="13.2"></a>
-  - [13.2](#variables--one-const) Use one `const` declaration per variable. eslint: [`one-var`](http://eslint.org/docs/rules/one-var.html) jscs: [`disallowMultipleVarDecl`](http://jscs.info/rule/disallowMultipleVarDecl)
+  - [13.2](#variables--one-const) Використовуйте по одному `const` для кожної змінної. eslint: [`one-var`](http://eslint.org/docs/rules/one-var.html) jscs: [`disallowMultipleVarDecl`](http://jscs.info/rule/disallowMultipleVarDecl)
 
-    > Why? It's easier to add new variable declarations this way, and you never have to worry about swapping out a `;` for a `,` or introducing punctuation-only diffs. You can also step through each declaration with the debugger, instead of jumping through all of them at once.
+    > Чому? Так легше оголошувати змінні таким чином, що вам не потрібно буде хвилюватись, що ви випадково переплутаєте в кінці строки `;` з `,`. Ви також можете пройтись по одному по всім проголошенням за допомогою дебагера, замість того, щоб перестрибувати через всіх них за раз.
 
     ```javascript
-    // bad
+    // погано
     const items = getItems(),
         goSportsTeam = true,
         dragonball = 'z';
 
-    // bad
-    // (compare to above, and try to spot the mistake)
+    // погано
+    // (порівняйте з верхнім і спробуйте знайти помилку)
     const items = getItems(),
         goSportsTeam = true;
         dragonball = 'z';
 
-    // good
+    // добре
     const items = getItems();
     const goSportsTeam = true;
     const dragonball = 'z';
     ```
 
   <a name="variables--const-let-group"></a><a name="13.3"></a>
-  - [13.3](#variables--const-let-group) Group all your `const`s and then group all your `let`s.
+  - [13.3](#variables--const-let-group) Спочатку групуйте всі ваші `const`, а потім вже групуйте всі `let`s.
 
-    > Why? This is helpful when later on you might need to assign a variable depending on one of the previous assigned variables.
+    > Чому? Це дуже зручно у випадку, коли в подальшому вам знадобиться оголосити зміну в залежності від вже оголошених змінних.
 
     ```javascript
-    // bad
+    // погано
     let i, len, dragonball,
         items = getItems(),
         goSportsTeam = true;
 
-    // bad
+    // погано
     let i;
     const items = getItems();
     let dragonball;
     const goSportsTeam = true;
     let len;
 
-    // good
+    // добре
     const goSportsTeam = true;
     const items = getItems();
     let dragonball;
@@ -1486,12 +1486,12 @@ Other Style Guides
     ```
 
   <a name="variables--define-where-used"></a><a name="13.4"></a>
-  - [13.4](#variables--define-where-used) Assign variables where you need them, but place them in a reasonable place.
+  - [13.4](#variables--define-where-used) Призначайте змінні де вам потрібно, але розміщуйте їх лише у потрібних місцях.
 
-    > Why? `let` and `const` are block scoped and not function scoped.
+    > Чому? `let` і `const` обмежуються блочною зоною видимості, а не функціональною.
 
     ```javascript
-    // bad - unnecessary function call
+    // погано - непотрібний виклик функції
     function checkName(hasName) {
       const name = getName();
 
@@ -1507,7 +1507,7 @@ Other Style Guides
       return name;
     }
 
-    // good
+    // добре
     function checkName(hasName) {
       if (hasName === 'test') {
         return false;
@@ -1524,17 +1524,17 @@ Other Style Guides
     }
     ```
   <a name="variables--no-chain-assignment"></a><a name="13.5"></a>
-  - [13.5](#variables--no-chain-assignment) Don't chain variable assignments.
+  - [13.5](#variables--no-chain-assignment) Не поєднуйте в ланцюжки присвоєння змінних.
 
-    > Why? Chaining variable assignments creates implicit global variables.
+    > Чому? Поєднання змінних у ланцюжки створює неявні глобальні змінні.
 
     ```javascript
-    // bad
+    // погано
     (function example() {
-      // JavaScript interprets this as
+      // JavaScript інтерпретує це як
       // let a = ( b = ( c = 1 ) );
-      // The let keyword only applies to variable a; variables b and c become
-      // global variables.
+      // Ключове слово let застосовується до змінної a; змінні b та c стають
+      // глобальними змінними.
       let a = b = c = 1;
     }());
 
@@ -1542,7 +1542,7 @@ Other Style Guides
     console.log(b); // 1
     console.log(c); // 1
 
-    // good
+    // добре
     (function example() {
       let a = 1;
       let b = a;
@@ -1553,16 +1553,16 @@ Other Style Guides
     console.log(b); // undefined
     console.log(c); // undefined
 
-    // the same applies for `const`
+    // Те ж саме стосується і `const`
     ```
 
   <a name="variables--unary-increment-decrement"></a><a name="13.6"></a>
-  - [13.6](#variables--unary-increment-decrement) Avoid using unary increments and decrements (++, --). eslint [`no-plusplus`](http://eslint.org/docs/rules/no-plusplus)
+  - [13.6](#variables--unary-increment-decrement) Уникайте використання унарних збільшеннь та зменшеннь (++, --). eslint [`no-plusplus`](http://eslint.org/docs/rules/no-plusplus)
 
-    > Why? Per the eslint documentation, unary increment and decrement statements are subject to automatic semicolon insertion and can cause silent errors with incrementing or decrementing values within an application. It is also more expressive to mutate your values with statements like `num += 1` instead of `num++` or `num ++`. Disallowing unary increment and decrement statements also prevents you from pre-incrementing/pre-decrementing values unintentionally which can also cause unexpected behavior in your programs.
+    > Чому? Згідно з документацією **eslint**, унарні збільшення або зменшення спричиняють автоматичну вставку крапки й коми, що, в свою чергу, може призвести до тихих помилок при збільшенні або зменшенні значеннь у рамках програми. Також, більш виразно застосовувати для збільшеннь або зменшень такі вирази як `num += 1` замість `num++` або `num ++`. Заборона унарних збільшеннь або зменшеннь такох захищає вас від випадкових попередніх збільшеннь/зменшень, які накож можуть призвести до непередбачуваної поведінки у ваших програмах.
 
     ```javascript
-      // bad
+      // погано
 
       let array = [1, 2, 3];
       let num = 1;
@@ -1579,7 +1579,7 @@ Other Style Guides
         }
       }
 
-      // good
+      // добре
 
       let array = [1, 2, 3];
       let num = 1;
@@ -1590,49 +1590,48 @@ Other Style Guides
       const truthyCount = array.filter(Boolean).length;
     ```
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ вверх](#Зміст)**
 
 
-## Hoisting
+## Підняття (Hoisting)
 
   <a name="hoisting--about"></a><a name="14.1"></a>
-  - [14.1](#hoisting--about) `var` declarations get hoisted to the top of their scope, their assignment does not. `const` and `let` declarations are blessed with a new concept called [Temporal Dead Zones (TDZ)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let#Temporal_dead_zone_and_errors_with_let). It's important to know why [typeof is no longer safe](http://es-discourse.com/t/why-typeof-is-no-longer-safe/15).
+  - [14.1](#hoisting--about) Оголошенні `var` змінні піднімаються в гору їх обсласті видимості, в той час я привласнені їм значення - ні. Змінні, оголошені за допомогою `const` та `let` отримали нову концепцію - [Тимчасові Мертві Зони (ТМЗ)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let#Temporal_dead_zone_and_errors_with_let). Важливо знати, чому використовувати [typeof тепер небезпечно](http://es-discourse.com/t/why-typeof-is-no-longer-safe/15).
 
     ```javascript
-    // we know this wouldn't work (assuming there
-    // is no notDefined global variable)
+    // ми знаємо, що це не спрацює (припустимо, що
+    // не існує глобальної змінної notDefined)
     function example() {
-      console.log(notDefined); // => throws a ReferenceError
+      console.log(notDefined); // => видасть ReferenceError
     }
 
-    // creating a variable declaration after you
-    // reference the variable will work due to
-    // variable hoisting. Note: the assignment
-    // value of `true` is not hoisted.
+    // створення змінної після того,
+    // як на неї зіслались спрацює завдяки підйому змінної
+    // Зауважте: присвоєне змінній значення `true` не підніметься вгору.
     function example() {
       console.log(declaredButNotAssigned); // => undefined
       var declaredButNotAssigned = true;
     }
 
-    // the interpreter is hoisting the variable
-    // declaration to the top of the scope,
-    // which means our example could be rewritten as:
+    // інтерпретатор піднімає проголошення змінної
+    // вверх області видимості,
+    // що означає, що наш приклад може бути записаним як:
     function example() {
       let declaredButNotAssigned;
       console.log(declaredButNotAssigned); // => undefined
       declaredButNotAssigned = true;
     }
 
-    // using const and let
+    // використовуючи const та let
     function example() {
-      console.log(declaredButNotAssigned); // => throws a ReferenceError
-      console.log(typeof declaredButNotAssigned); // => throws a ReferenceError
+      console.log(declaredButNotAssigned); // => видасть ReferenceError
+      console.log(typeof declaredButNotAssigned); // => видасть ReferenceError
       const declaredButNotAssigned = true;
     }
     ```
 
   <a name="hoisting--anon-expressions"></a><a name="14.2"></a>
-  - [14.2](#hoisting--anon-expressions) Anonymous function expressions hoist their variable name, but not the function assignment.
+  - [14.2](#hoisting--anon-expressions) Анонімні функціональні вирази піднімають ім'я змінної, але не функціональне присвоєння.
 
     ```javascript
     function example() {
@@ -1647,7 +1646,7 @@ Other Style Guides
     ```
 
   <a name="hoisting--named-expresions"></a><a name="14.3"></a>
-  - [14.3](#hoisting--named-expresions) Named function expressions hoist the variable name, not the function name or the function body.
+  - [14.3](#hoisting--named-expresions) Іменовані функціональні вирази пілнімають ім'я змінної, але не ім'я функції чи тіло функції.
 
     ```javascript
     function example() {
@@ -1662,8 +1661,8 @@ Other Style Guides
       };
     }
 
-    // the same is true when the function name
-    // is the same as the variable name.
+    // це також стосується і випадку,
+    // коли ім'я функції співпадає з іменем змінної.
     function example() {
       console.log(named); // => undefined
 
@@ -1676,7 +1675,7 @@ Other Style Guides
     ```
 
   <a name="hoisting--declarations"></a><a name="14.4"></a>
-  - [14.4](#hoisting--declarations) Function declarations hoist their name and the function body.
+  - [14.4](#hoisting--declarations) Функціональне оголошення піднімає ім'я і тіло функції.
 
     ```javascript
     function example() {
@@ -1688,80 +1687,80 @@ Other Style Guides
     }
     ```
 
-  - For more information refer to [JavaScript Scoping & Hoisting](http://www.adequatelygood.com/2010/2/JavaScript-Scoping-and-Hoisting/) by [Ben Cherry](http://www.adequatelygood.com/).
+  - За більш детальною інформацією звертайтесь до [JavaScript Scoping & Hoisting](http://www.adequatelygood.com/2010/2/JavaScript-Scoping-and-Hoisting/) автор [Ben Cherry](http://www.adequatelygood.com/).
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ вверх](#Зміст)**
 
 
-## Comparison Operators & Equality
+## Оператори порівняння та рівності
 
   <a name="comparison--eqeqeq"></a><a name="15.1"></a>
-  - [15.1](#comparison--eqeqeq) Use `===` and `!==` over `==` and `!=`. eslint: [`eqeqeq`](http://eslint.org/docs/rules/eqeqeq.html)
+  - [15.1](#comparison--eqeqeq) Використовуйте `===` та `!==` а не `==` і не `!=`. eslint: [`eqeqeq`](http://eslint.org/docs/rules/eqeqeq.html)
 
   <a name="comparison--if"></a><a name="15.2"></a>
-  - [15.2](#comparison--if) Conditional statements such as the `if` statement evaluate their expression using coercion with the `ToBoolean` abstract method and always follow these simple rules:
+  - [15.2](#comparison--if) Умовні оператори, такі як `if` вираховують вираз за допомогою примусового приведення до логічного виразу `ToBoolean` і завжди слідують цим простим правилам:
 
-    + **Objects** evaluate to **true**
-    + **Undefined** evaluates to **false**
-    + **Null** evaluates to **false**
-    + **Booleans** evaluate to **the value of the boolean**
-    + **Numbers** evaluate to **false** if **+0, -0, or NaN**, otherwise **true**
-    + **Strings** evaluate to **false** if an empty string `''`, otherwise **true**
+    + **Objects** оцінюється як **true**
+    + **Undefined** оцінюється як **false**
+    + **Null** оцінюється як **false**
+    + **Booleans** оцінюються як **the value of the boolean**
+    + **Numbers** оцінюється як **false**, якщо **+0, -0, or NaN**, в усіх інших випадках як **true**
+    + **Strings** оцінюється як **false** якщо строка порожня `''`, в усіх інших випадках як **true**
 
     ```javascript
     if ([0] && []) {
       // true
-      // an array (even an empty one) is an object, objects will evaluate to true
+      // масив (навіть якщо він порожній) - це об'єкт, а об'єкт завжди оцінюється як true
     }
     ```
 
   <a name="comparison--shortcuts"></a><a name="15.3"></a>
-  - [15.3](#comparison--shortcuts) Use shortcuts for booleans, but explicit comparisons for strings and numbers.
+  - [15.3](#comparison--shortcuts) Використовуйте скорочення для логічних значеннь, але явно зазначайте, коли порівнюєте строки та числа.
 
     ```javascript
-    // bad
+    // погано
     if (isValid === true) {
       // ...stuff...
     }
 
-    // good
+    // добре
     if (isValid) {
       // ...stuff...
     }
 
-    // bad
+    // погано
     if (name) {
       // ...stuff...
     }
 
-    // good
+    // добре
     if (name !== '') {
       // ...stuff...
     }
 
-    // bad
+    // погано
     if (collection.length) {
       // ...stuff...
     }
 
-    // good
+    // добре
     if (collection.length > 0) {
       // ...stuff...
     }
     ```
 
   <a name="comparison--moreinfo"></a><a name="15.4"></a>
-  - [15.4](#comparison--moreinfo) For more information see [Truth Equality and JavaScript](https://javascriptweblog.wordpress.com/2011/02/07/truth-equality-and-javascript/#more-2108) by Angus Croll.
+  - [15.4](#comparison--moreinfo) Більш детальну інформацію дивіться у статті [Truth Equality and JavaScript](https://javascriptweblog.wordpress.com/2011/02/07/truth-equality-and-javascript/#more-2108) автора Angus Croll.
 
   <a name="comparison--switch-blocks"></a><a name="15.5"></a>
-  - [15.5](#comparison--switch-blocks) Use braces to create blocks in `case` and `default` clauses that contain lexical declarations (e.g. `let`, `const`, `function`, and `class`).
+  - [15.5](#comparison--switch-blocks) Використовуйте дужки для створення блоків `case` та `default` що містять лексичні декларації (e.g. `let`, `const`, `function`, та `class`).
 
-  > Why? Lexical declarations are visible in the entire `switch` block but only get initialized when assigned, which only happens when its `case` is reached. This causes problems when multiple `case` clauses attempt to define the same thing.
+  > Чому? Лесичні проголошення видимі у всьому `switch` блоці, але вони ініціалізуються лише тоді, коли привласнюються, а це стається лише тоді, коли спрацьювує `case`. Це спричиняє проблеми, коли кілька `case` випадків намагаються визначити одну й ту саму річ.
 
   eslint rules: [`no-case-declarations`](http://eslint.org/docs/rules/no-case-declarations.html).
 
     ```javascript
-    // bad
+    // погано
     switch (foo) {
       case 1:
         let x = 1;
@@ -1776,7 +1775,7 @@ Other Style Guides
         class C {}
     }
 
-    // good
+    // добре
     switch (foo) {
       case 1: {
         let x = 1;
@@ -1800,81 +1799,81 @@ Other Style Guides
     ```
 
   <a name="comparison--nested-ternaries"></a><a name="15.6"></a>
-  - [15.6](#comparison--nested-ternaries) Ternaries should not be nested and generally be single line expressions.
+  - [15.6](#comparison--nested-ternaries) Тернарні оператори не повинні вкладатись будь яким чином, а мають бути записані в одну строчку.
 
     eslint rules: [`no-nested-ternary`](http://eslint.org/docs/rules/no-nested-ternary.html).
 
     ```javascript
-    // bad
+    // погано
     const foo = maybe1 > maybe2
       ? "bar"
       : value1 > value2 ? "baz" : null;
 
-    // better
+    // краще
     const maybeNull = value1 > value2 ? 'baz' : null;
 
     const foo = maybe1 > maybe2
       ? 'bar'
       : maybeNull;
 
-    // best
+    // найкраще
     const maybeNull = value1 > value2 ? 'baz' : null;
 
     const foo = maybe1 > maybe2 ? 'bar' : maybeNull;
     ```
 
   <a name="comparison--unneeded-ternary"></a><a name="15.7"></a>
-  - [15.7](#comparison--unneeded-ternary) Avoid unneeded ternary statements.
+  - [15.7](#comparison--unneeded-ternary) Уникайте непотрібних тернарних записів.
 
     eslint rules: [`no-unneeded-ternary`](http://eslint.org/docs/rules/no-unneeded-ternary.html).
 
     ```javascript
-    // bad
+    // погано
     const foo = a ? a : b;
     const bar = c ? true : false;
     const baz = c ? false : true;
 
-    // good
+    // добре
     const foo = a || b;
     const bar = !!c;
     const baz = !c;
     ```
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ вверх](#Зміст)**
 
 
-## Blocks
+## Блоки
 
   <a name="blocks--braces"></a><a name="16.1"></a>
-  - [16.1](#blocks--braces) Use braces with all multi-line blocks.
+  - [16.1](#blocks--braces) Використовуйте дужки в усіх блоках які записуються у кілька рядків.
 
     ```javascript
-    // bad
+    // погано
     if (test)
       return false;
 
-    // good
+    // добре
     if (test) return false;
 
-    // good
+    // добре
     if (test) {
       return false;
     }
 
-    // bad
+    // погано
     function foo() { return false; }
 
-    // good
+    // добре
     function bar() {
       return false;
     }
     ```
 
   <a name="blocks--cuddled-elses"></a><a name="16.2"></a>
-  - [16.2](#blocks--cuddled-elses) If you're using multi-line blocks with `if` and `else`, put `else` on the same line as your `if` block's closing brace. eslint: [`brace-style`](http://eslint.org/docs/rules/brace-style.html) jscs:  [`disallowNewlineBeforeBlockStatements`](http://jscs.info/rule/disallowNewlineBeforeBlockStatements)
+  - [16.2](#blocks--cuddled-elses) Якщо ви використовуєте блоки у кілька рядків з `if` та `else`, то ставте `else` на тому самому рядку, що і закривающася дужка `if` блоку. eslint: [`brace-style`](http://eslint.org/docs/rules/brace-style.html) jscs:  [`disallowNewlineBeforeBlockStatements`](http://jscs.info/rule/disallowNewlineBeforeBlockStatements)
 
     ```javascript
-    // bad
+    // погано
     if (test) {
       thing1();
       thing2();
@@ -1883,7 +1882,7 @@ Other Style Guides
       thing3();
     }
 
-    // good
+    // добре
     if (test) {
       thing1();
       thing2();
@@ -1893,16 +1892,16 @@ Other Style Guides
     ```
 
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ вверх](#Зміст)**
 
 
-## Comments
+## Коментарі
 
   <a name="comments--multiline"></a><a name="17.1"></a>
-  - [17.1](#comments--multiline) Use `/** ... */` for multi-line comments.
+  - [17.1](#comments--multiline) Використовуйте `/** ... */` для коментарів у кілька строчок.
 
     ```javascript
-    // bad
+    // погано
     // make() returns a new element
     // based on the passed in tag name
     //
@@ -1915,7 +1914,7 @@ Other Style Guides
       return element;
     }
 
-    // good
+    // добре
     /**
      * make() returns a new element
      * based on the passed-in tag name
@@ -1929,17 +1928,17 @@ Other Style Guides
     ```
 
   <a name="comments--singleline"></a><a name="17.2"></a>
-  - [17.2](#comments--singleline) Use `//` for single line comments. Place single line comments on a newline above the subject of the comment. Put an empty line before the comment unless it's on the first line of a block.
+  - [17.2](#comments--singleline) Використовуйте `//` для коментарів в одну строчку. Ставте однорядковий коментар на новий рядок одразу над суб'єктом, до якого відноситься цей коментар. Ставте порожній рядок перед коментарем, якщо тільки це не перший рядок блоку.
 
     ```javascript
-    // bad
+    // погано
     const active = true;  // is current tab
 
-    // good
+    // добре
     // is current tab
     const active = true;
 
-    // bad
+    // погано
     function getType() {
       console.log('fetching type...');
       // set the default type to 'no type'
@@ -1948,7 +1947,7 @@ Other Style Guides
       return type;
     }
 
-    // good
+    // добре
     function getType() {
       console.log('fetching type...');
 
@@ -1958,7 +1957,7 @@ Other Style Guides
       return type;
     }
 
-    // also good
+    // також добре
     function getType() {
       // set the default type to 'no type'
       const type = this._type || 'no type';
@@ -1967,18 +1966,18 @@ Other Style Guides
     }
     ```
 
-  - [17.3](#comments--spaces) Start all comments with a space to make it easier to read. eslint: [`spaced-comment`](http://eslint.org/docs/rules/spaced-comment)
+  - [17.3](#comments--spaces) Починайте всі коментарі з пробілу для більше легкого читання. eslint: [`spaced-comment`](http://eslint.org/docs/rules/spaced-comment)
 
     ```javascript
-    // bad
+    // погано
     //is current tab
     const active = true;
 
-    // good
+    // добре
     // is current tab
     const active = true;
 
-    // bad
+    // погано
     /**
      *make() returns a new element
      *based on the passed-in tag name
@@ -1990,7 +1989,7 @@ Other Style Guides
       return element;
     }
 
-    // good
+    // добре
     /**
      * make() returns a new element
      * based on the passed-in tag name
@@ -2004,10 +2003,10 @@ Other Style Guides
     ```
 
   <a name="comments--actionitems"></a><a name="17.3"></a>
-  - [17.4](#comments--actionitems) Prefixing your comments with `FIXME` or `TODO` helps other developers quickly understand if you're pointing out a problem that needs to be revisited, or if you're suggesting a solution to the problem that needs to be implemented. These are different than regular comments because they are actionable. The actions are `FIXME: -- need to figure this out` or `TODO: -- need to implement`.
+  - [17.4](#comments--actionitems) Починати ваш коментар зі слів `FIXME` чи `TODO` добре, оскільки це допомогає ншим розробникам швидко розуміти, чи ви відзначаєте проблемне місце в коді, яке треба переглянути, чи ви пропонуєте вирішення проблеми, яке має бути запроваджене. Вони відрізняються від звичайних коментарів, оскільки вони вимагають дії. Дія може бути `FIXME: -- потрібно в цьому розібратись і виправити` or `TODO: -- потрібно запровадити`.
 
   <a name="comments--fixme"></a><a name="17.4"></a>
-  - [17.5](#comments--fixme) Use `// FIXME:` to annotate problems.
+  - [17.5](#comments--fixme) Використовуйте `// FIXME:` для описання проблеми.
 
     ```javascript
     class Calculator extends Abacus {
@@ -2021,7 +2020,7 @@ Other Style Guides
     ```
 
   <a name="comments--todo"></a><a name="17.5"></a>
-  - [17.6](#comments--todo) Use `// TODO:` to annotate solutions to problems.
+  - [17.6](#comments--todo) Використовуйте `// TODO:` для описання способів вирішення проблеми.
 
     ```javascript
     class Calculator extends Abacus {
@@ -2034,52 +2033,52 @@ Other Style Guides
     }
     ```
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ вверх](#Зміст)**
 
 
-## Whitespace
+## Пробіли
 
   <a name="whitespace--spaces"></a><a name="18.1"></a>
-  - [18.1](#whitespace--spaces) Use soft tabs set to 2 spaces. eslint: [`indent`](http://eslint.org/docs/rules/indent.html) jscs: [`validateIndentation`](http://jscs.info/rule/validateIndentation)
+  - [18.1](#whitespace--spaces) Використовуйте табуляцію у 2 пробіли. eslint: [`indent`](http://eslint.org/docs/rules/indent.html) jscs: [`validateIndentation`](http://jscs.info/rule/validateIndentation)
 
     ```javascript
-    // bad
+    // погано
     function foo() {
     ∙∙∙∙const name;
     }
 
-    // bad
+    // погано
     function bar() {
     ∙const name;
     }
 
-    // good
+    // добре
     function baz() {
     ∙∙const name;
     }
     ```
 
   <a name="whitespace--before-blocks"></a><a name="18.2"></a>
-  - [18.2](#whitespace--before-blocks) Place 1 space before the leading brace. eslint: [`space-before-blocks`](http://eslint.org/docs/rules/space-before-blocks.html) jscs: [`requireSpaceBeforeBlockStatements`](http://jscs.info/rule/requireSpaceBeforeBlockStatements)
+  - [18.2](#whitespace--before-blocks) Ставте 1 пробіл перед ведучою фігурною дужкою. eslint: [`space-before-blocks`](http://eslint.org/docs/rules/space-before-blocks.html) jscs: [`requireSpaceBeforeBlockStatements`](http://jscs.info/rule/requireSpaceBeforeBlockStatements)
 
     ```javascript
-    // bad
+    // погано
     function test(){
       console.log('test');
     }
 
-    // good
+    // добре
     function test() {
       console.log('test');
     }
 
-    // bad
+    // погано
     dog.set('attr',{
       age: '1 year',
       breed: 'Bernese Mountain Dog',
     });
 
-    // good
+    // добре
     dog.set('attr', {
       age: '1 year',
       breed: 'Bernese Mountain Dog',
@@ -2087,53 +2086,53 @@ Other Style Guides
     ```
 
   <a name="whitespace--around-keywords"></a><a name="18.3"></a>
-  - [18.3](#whitespace--around-keywords) Place 1 space before the opening parenthesis in control statements (`if`, `while` etc.). Place no space between the argument list and the function name in function calls and declarations. eslint: [`keyword-spacing`](http://eslint.org/docs/rules/keyword-spacing.html) jscs: [`requireSpaceAfterKeywords`](http://jscs.info/rule/requireSpaceAfterKeywords)
+  - [18.3](#whitespace--around-keywords) Ставте 1 пробіл перед відкриваючою дужкою у умовах (`if`, `while` і т.д.). Не ставте пробіли між списком аргументів та іменем функції, та між іменем функції та викликами функції і проголошеннями. eslint: [`keyword-spacing`](http://eslint.org/docs/rules/keyword-spacing.html) jscs: [`requireSpaceAfterKeywords`](http://jscs.info/rule/requireSpaceAfterKeywords)
 
     ```javascript
-    // bad
+    // погано
     if(isJedi) {
       fight ();
     }
 
-    // good
+    // добре
     if (isJedi) {
       fight();
     }
 
-    // bad
+    // погано
     function fight () {
       console.log ('Swooosh!');
     }
 
-    // good
+    // добре
     function fight() {
       console.log('Swooosh!');
     }
     ```
 
   <a name="whitespace--infix-ops"></a><a name="18.4"></a>
-  - [18.4](#whitespace--infix-ops) Set off operators with spaces. eslint: [`space-infix-ops`](http://eslint.org/docs/rules/space-infix-ops.html) jscs: [`requireSpaceBeforeBinaryOperators`](http://jscs.info/rule/requireSpaceBeforeBinaryOperators), [`requireSpaceAfterBinaryOperators`](http://jscs.info/rule/requireSpaceAfterBinaryOperators)
+  - [18.4](#whitespace--infix-ops) Розмежовуйте оператори пробілами. eslint: [`space-infix-ops`](http://eslint.org/docs/rules/space-infix-ops.html) jscs: [`requireSpaceBeforeBinaryOperators`](http://jscs.info/rule/requireSpaceBeforeBinaryOperators), [`requireSpaceAfterBinaryOperators`](http://jscs.info/rule/requireSpaceAfterBinaryOperators)
 
     ```javascript
-    // bad
+    // погано
     const x=y+5;
 
-    // good
+    // добре
     const x = y + 5;
     ```
 
   <a name="whitespace--newline-at-end"></a><a name="18.5"></a>
-  - [18.5](#whitespace--newline-at-end) End files with a single newline character. eslint: [`eol-last`](https://github.com/eslint/eslint/blob/master/docs/rules/eol-last.md)
+  - [18.5](#whitespace--newline-at-end) Лишайте символ нового рядку у кінці файлу. eslint: [`eol-last`](https://github.com/eslint/eslint/blob/master/docs/rules/eol-last.md)
 
     ```javascript
-    // bad
+    // погано
     import { es6 } from './AirbnbStyleGuide';
       // ...
     export default es6;
     ```
 
     ```javascript
-    // bad
+    // погано
     import { es6 } from './AirbnbStyleGuide';
       // ...
     export default es6;↵
@@ -2141,21 +2140,20 @@ Other Style Guides
     ```
 
     ```javascript
-    // good
+    // добре
     import { es6 } from './AirbnbStyleGuide';
       // ...
     export default es6;↵
     ```
 
   <a name="whitespace--chains"></a><a name="18.6"></a>
-  - [18.6](#whitespace--chains) Use indentation when making long method chains (more than 2 method chains). Use a leading dot, which
-    emphasizes that the line is a method call, not a new statement. eslint: [`newline-per-chained-call`](http://eslint.org/docs/rules/newline-per-chained-call) [`no-whitespace-before-property`](http://eslint.org/docs/rules/no-whitespace-before-property)
+  - [18.6](#whitespace--chains) Використовуйте відступи, коли робите ланцюжки методів (більш ніж два методи у ланцюгу). Використовуйте ведучу крапку, яка підкреслює, що на новій лінії відбувається виклик методу, а не нове ствердження. eslint: [`newline-per-chained-call`](http://eslint.org/docs/rules/newline-per-chained-call) [`no-whitespace-before-property`](http://eslint.org/docs/rules/no-whitespace-before-property)
 
     ```javascript
-    // bad
+    // погано
     $('#items').find('.selected').highlight().end().find('.open').updateCount();
 
-    // bad
+    // погано
     $('#items').
       find('.selected').
         highlight().
@@ -2163,7 +2161,7 @@ Other Style Guides
       find('.open').
         updateCount();
 
-    // good
+    // добре
     $('#items')
       .find('.selected')
         .highlight()
@@ -2171,13 +2169,13 @@ Other Style Guides
       .find('.open')
         .updateCount();
 
-    // bad
+    // погано
     const leds = stage.selectAll('.led').data(data).enter().append('svg:svg').classed('led', true)
         .attr('width', (radius + margin) * 2).append('svg:g')
         .attr('transform', `translate(${radius + margin},${radius + margin})`)
         .call(tron.led);
 
-    // good
+    // добре
     const leds = stage.selectAll('.led')
         .data(data)
       .enter().append('svg:svg')
@@ -2187,28 +2185,28 @@ Other Style Guides
         .attr('transform', `translate(${radius + margin},${radius + margin})`)
         .call(tron.led);
 
-    // good
+    // добре
     const leds = stage.selectAll('.led').data(data);
     ```
 
   <a name="whitespace--after-blocks"></a><a name="18.7"></a>
-  - [18.7](#whitespace--after-blocks) Leave a blank line after blocks and before the next statement. jscs: [`requirePaddingNewLinesAfterBlocks`](http://jscs.info/rule/requirePaddingNewLinesAfterBlocks)
+  - [18.7](#whitespace--after-blocks) Лишайте порожній рядок після блоків і перед наступним ствердженням. jscs: [`requirePaddingNewLinesAfterBlocks`](http://jscs.info/rule/requirePaddingNewLinesAfterBlocks)
 
     ```javascript
-    // bad
+    // погано
     if (foo) {
       return bar;
     }
     return baz;
 
-    // good
+    // добре
     if (foo) {
       return bar;
     }
 
     return baz;
 
-    // bad
+    // погано
     const obj = {
       foo() {
       },
@@ -2217,7 +2215,7 @@ Other Style Guides
     };
     return obj;
 
-    // good
+    // добре
     const obj = {
       foo() {
       },
@@ -2228,7 +2226,7 @@ Other Style Guides
 
     return obj;
 
-    // bad
+    // погано
     const arr = [
       function foo() {
       },
@@ -2237,7 +2235,7 @@ Other Style Guides
     ];
     return arr;
 
-    // good
+    // добре
     const arr = [
       function foo() {
       },
@@ -2250,17 +2248,17 @@ Other Style Guides
     ```
 
   <a name="whitespace--padded-blocks"></a><a name="18.8"></a>
-  - [18.8](#whitespace--padded-blocks) Do not pad your blocks with blank lines. eslint: [`padded-blocks`](http://eslint.org/docs/rules/padded-blocks.html) jscs:  [`disallowPaddingNewlinesInBlocks`](http://jscs.info/rule/disallowPaddingNewlinesInBlocks)
+  - [18.8](#whitespace--padded-blocks) Не насичуйте ваші блоки порожніми лініями. eslint: [`padded-blocks`](http://eslint.org/docs/rules/padded-blocks.html) jscs:  [`disallowPaddingNewlinesInBlocks`](http://jscs.info/rule/disallowPaddingNewlinesInBlocks)
 
     ```javascript
-    // bad
+    // погано
     function bar() {
 
       console.log(foo);
 
     }
 
-    // also bad
+    // також погано
     if (baz) {
 
       console.log(qux);
@@ -2269,12 +2267,12 @@ Other Style Guides
 
     }
 
-    // good
+    // добре
     function bar() {
       console.log(foo);
     }
 
-    // good
+    // добре
     if (baz) {
       console.log(qux);
     } else {
@@ -2283,67 +2281,67 @@ Other Style Guides
     ```
 
   <a name="whitespace--in-parens"></a><a name="18.9"></a>
-  - [18.9](#whitespace--in-parens) Do not add spaces inside parentheses. eslint: [`space-in-parens`](http://eslint.org/docs/rules/space-in-parens.html) jscs: [`disallowSpacesInsideParentheses`](http://jscs.info/rule/disallowSpacesInsideParentheses)
+  - [18.9](#whitespace--in-parens) Не додавайте пробілів в середині дужок. eslint: [`space-in-parens`](http://eslint.org/docs/rules/space-in-parens.html) jscs: [`disallowSpacesInsideParentheses`](http://jscs.info/rule/disallowSpacesInsideParentheses)
 
     ```javascript
-    // bad
+    // погано
     function bar( foo ) {
       return foo;
     }
 
-    // good
+    // добре
     function bar(foo) {
       return foo;
     }
 
-    // bad
+    // погано
     if ( foo ) {
       console.log(foo);
     }
 
-    // good
+    // добре
     if (foo) {
       console.log(foo);
     }
     ```
 
   <a name="whitespace--in-brackets"></a><a name="18.10"></a>
-  - [18.10](#whitespace--in-brackets) Do not add spaces inside brackets. eslint: [`array-bracket-spacing`](http://eslint.org/docs/rules/array-bracket-spacing.html) jscs: [`disallowSpacesInsideArrayBrackets`](http://jscs.info/rule/disallowSpacesInsideArrayBrackets)
+  - [18.10](#whitespace--in-brackets) Не ставте зайвих пробілів в середині квадратних дужок. eslint: [`array-bracket-spacing`](http://eslint.org/docs/rules/array-bracket-spacing.html) jscs: [`disallowSpacesInsideArrayBrackets`](http://jscs.info/rule/disallowSpacesInsideArrayBrackets)
 
     ```javascript
-    // bad
+    // погано
     const foo = [ 1, 2, 3 ];
     console.log(foo[ 0 ]);
 
-    // good
+    // добре
     const foo = [1, 2, 3];
     console.log(foo[0]);
     ```
 
   <a name="whitespace--in-braces"></a><a name="18.11"></a>
-  - [18.11](#whitespace--in-braces) Add spaces inside curly braces. eslint: [`object-curly-spacing`](http://eslint.org/docs/rules/object-curly-spacing.html) jscs: [`requireSpacesInsideObjectBrackets`](http://jscs.info/rule/requireSpacesInsideObjectBrackets)
+  - [18.11](#whitespace--in-braces) Додавайте пробіли в середині фігурних дужок. eslint: [`object-curly-spacing`](http://eslint.org/docs/rules/object-curly-spacing.html) jscs: [`requireSpacesInsideObjectBrackets`](http://jscs.info/rule/requireSpacesInsideObjectBrackets)
 
     ```javascript
-    // bad
+    // погано
     const foo = {clark: 'kent'};
 
-    // good
+    // добре
     const foo = { clark: 'kent' };
     ```
 
   <a name="whitespace--max-len"></a><a name="18.12"></a>
-  - [18.12](#whitespace--max-len) Avoid having lines of code that are longer than 100 characters (including whitespace). Note: per [above](#strings--line-length), long strings are exempt from this rule, and should not be broken up. eslint: [`max-len`](http://eslint.org/docs/rules/max-len.html) jscs: [`maximumLineLength`](http://jscs.info/rule/maximumLineLength)
+  - [18.12](#whitespace--max-len) Уникайте ліній коду, що довші за 100 символів (включаючи пробіли). Примітка: [зазначені тут](#strings--line-length) довгі рядки не підпадають під це правило і не повинні розбиватись. eslint: [`max-len`](http://eslint.org/docs/rules/max-len.html) jscs: [`maximumLineLength`](http://jscs.info/rule/maximumLineLength)
 
-    > Why? This ensures readability and maintainability.
+    > Чому? Це забезпечує читаємість та підтримку.
 
     ```javascript
-    // bad
+    // погано
     const foo = jsonData && jsonData.foo && jsonData.foo.bar && jsonData.foo.bar.baz && jsonData.foo.bar.baz.quux && jsonData.foo.bar.baz.quux.xyzzy;
 
-    // bad
+    // погано
     $.ajax({ method: 'POST', url: 'https://airbnb.com/', data: { name: 'John' } }).done(() => console.log('Congratulations!')).fail(() => console.log('You have failed this city.'));
 
-    // good
+    // добре
     const foo = jsonData
       && jsonData.foo
       && jsonData.foo.bar
@@ -2351,7 +2349,7 @@ Other Style Guides
       && jsonData.foo.bar.baz.quux
       && jsonData.foo.bar.baz.quux.xyzzy;
 
-    // good
+    // добре
     $.ajax({
       method: 'POST',
       url: 'https://airbnb.com/',
@@ -2361,29 +2359,29 @@ Other Style Guides
       .fail(() => console.log('You have failed this city.'));
     ```
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ вверх](#Зміст)**
 
-## Commas
+## Коми
 
 <a name="commas--leading-trailing"></a><a name="19.1"></a>
-  - [19.1](#commas--leading-trailing) Leading commas: **Nope.** eslint: [`comma-style`](http://eslint.org/docs/rules/comma-style.html) jscs: [`requireCommaBeforeLineBreak`](http://jscs.info/rule/requireCommaBeforeLineBreak)
+  - [19.1](#commas--leading-trailing) Направляючі коми: **Ні.** eslint: [`comma-style`](http://eslint.org/docs/rules/comma-style.html) jscs: [`requireCommaBeforeLineBreak`](http://jscs.info/rule/requireCommaBeforeLineBreak)
 
     ```javascript
-    // bad
+    // погано
     const story = [
         once
       , upon
       , aTime
     ];
 
-    // good
+    // добре
     const story = [
       once,
       upon,
       aTime,
     ];
 
-    // bad
+    // погано
     const hero = {
         firstName: 'Ada'
       , lastName: 'Lovelace'
@@ -2391,7 +2389,7 @@ Other Style Guides
       , superPower: 'computers'
     };
 
-    // good
+    // добре
     const hero = {
       firstName: 'Ada',
       lastName: 'Lovelace',
@@ -2401,12 +2399,12 @@ Other Style Guides
     ```
 
   <a name="commas--dangling"></a><a name="19.2"></a>
-  - [19.2](#commas--dangling) Additional trailing comma: **Yup.** eslint: [`comma-dangle`](http://eslint.org/docs/rules/comma-dangle.html) jscs: [`requireTrailingComma`](http://jscs.info/rule/requireTrailingComma)
+  - [19.2](#commas--dangling) Додаткова кома в кінці рядку: **Так.** eslint: [`comma-dangle`](http://eslint.org/docs/rules/comma-dangle.html) jscs: [`requireTrailingComma`](http://jscs.info/rule/requireTrailingComma)
 
-    > Why? This leads to cleaner git diffs. Also, transpilers like Babel will remove the additional trailing comma in the transpiled code which means you don't have to worry about the [trailing comma problem](https://github.com/airbnb/javascript/blob/es5-deprecated/es5/README.md#commas) in legacy browsers.
+    > Чому? Це веде до чистіших відмінностей у git. Також, транспайелри, такі як Babel, приберуть додаткому кому в кінці рядку з кінцевого коду, що означає, що ви не повинні перейматись через [проблему завершальної коми](https://github.com/airbnb/javascript/blob/es5-deprecated/es5/README.md#commas) у старих браузерах.
 
     ```diff
-    // bad - git diff without trailing comma
+    // погано - git diff без завершальної коми
     const hero = {
          firstName: 'Florence',
     -    lastName: 'Nightingale'
@@ -2414,7 +2412,7 @@ Other Style Guides
     +    inventorOf: ['coxcomb chart', 'modern nursing']
     };
 
-    // good - git diff with trailing comma
+    // добре - git diff із завершальною комою
     const hero = {
          firstName: 'Florence',
          lastName: 'Nightingale',
@@ -2423,7 +2421,7 @@ Other Style Guides
     ```
 
     ```javascript
-    // bad
+    // погано
     const hero = {
       firstName: 'Dana',
       lastName: 'Scully'
@@ -2434,7 +2432,7 @@ Other Style Guides
       'Superman'
     ];
 
-    // good
+    // добре
     const hero = {
       firstName: 'Dana',
       lastName: 'Scully',
@@ -2445,7 +2443,7 @@ Other Style Guides
       'Superman',
     ];
 
-    // bad
+    // погано
     function createHero(
       firstName,
       lastName,
@@ -2454,7 +2452,7 @@ Other Style Guides
       // does nothing
     }
 
-    // good
+    // добре
     function createHero(
       firstName,
       lastName,
@@ -2463,7 +2461,7 @@ Other Style Guides
       // does nothing
     }
 
-    // good (note that a comma must not appear after a "rest" element)
+    // добре (зауважте, що кома не повинна з'являтись після "rest" елементу)
     function createHero(
       firstName,
       lastName,
@@ -2473,21 +2471,21 @@ Other Style Guides
       // does nothing
     }
 
-    // bad
+    // погано
     createHero(
       firstName,
       lastName,
       inventorOf
     );
 
-    // good
+    // добре
     createHero(
       firstName,
       lastName,
       inventorOf,
     );
 
-    // good (note that a comma must not appear after a "rest" element)
+    // добре (зауважте, що кома не повинна з'являтись після "rest" елементу)
     createHero(
       firstName,
       lastName,
@@ -2496,100 +2494,100 @@ Other Style Guides
     )
     ```
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ вверх](#Зміст)**
 
 
-## Semicolons
+## Крапка з комою
 
   <a name="semicolons--required"></a><a name="20.1"></a>
-  - [20.1](#20.1) **Yup.** eslint: [`semi`](http://eslint.org/docs/rules/semi.html) jscs: [`requireSemicolons`](http://jscs.info/rule/requireSemicolons)
+  - [20.1](#20.1) **Так.** eslint: [`semi`](http://eslint.org/docs/rules/semi.html) jscs: [`requireSemicolons`](http://jscs.info/rule/requireSemicolons)
 
     ```javascript
-    // bad
+    // погано
     (function () {
       const name = 'Skywalker'
       return name
     })()
 
-    // good
+    // добре
     (function () {
       const name = 'Skywalker';
       return name;
     }());
 
-    // good, but legacy (guards against the function becoming an argument when two files with IIFEs are concatenated)
+    // добре, але застаріло (захист, щоб функція не перетворювалась на аргумент, коли об'єднуються два файли за допомогою IIFEs(негайно виконуваний функціональний вираз (НВФВ)))
     ;(() => {
       const name = 'Skywalker';
       return name;
     }());
     ```
 
-    [Read more](https://stackoverflow.com/questions/7365172/semicolon-before-self-invoking-function/7365214%237365214).
+    [Прочитати більше](https://stackoverflow.com/questions/7365172/semicolon-before-self-invoking-function/7365214%237365214).
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ вверх](#Зміст)**
 
 
-## Type Casting & Coercion
+## Приведення типів та Примушення
 
   <a name="coercion--explicit"></a><a name="21.1"></a>
-  - [21.1](#coercion--explicit) Perform type coercion at the beginning of the statement.
+  - [21.1](#coercion--explicit) Виконуйте примусове приведення типу на початку ствердження.
 
   <a name="coercion--strings"></a><a name="21.2"></a>
-  - [21.2](#coercion--strings)  Strings:
+  - [21.2](#coercion--strings)  Строки:
 
     ```javascript
     // => this.reviewScore = 9;
 
-    // bad
-    const totalScore = this.reviewScore + ''; // invokes this.reviewScore.valueOf()
+    // погано
+    const totalScore = this.reviewScore + ''; // викликає this.reviewScore.valueOf()
 
-    // bad
-    const totalScore = this.reviewScore.toString(); // isn't guaranteed to return a string
+    // погано
+    const totalScore = this.reviewScore.toString(); // не гарантовано, що повернеться строка
 
-    // good
+    // добре
     const totalScore = String(this.reviewScore);
     ```
 
   <a name="coercion--numbers"></a><a name="21.3"></a>
-  - [21.3](#coercion--numbers) Numbers: Use `Number` for type casting and `parseInt` always with a radix for parsing strings. eslint: [`radix`](http://eslint.org/docs/rules/radix)
+  - [21.3](#coercion--numbers) Цифри: Використовуйте `Number` для приведення типу та `parseInt` завжди з десятичною для синтаксичного аналізу строк. eslint: [`radix`](http://eslint.org/docs/rules/radix)
 
     ```javascript
     const inputValue = '4';
 
-    // bad
+    // погано
     const val = new Number(inputValue);
 
-    // bad
+    // погано
     const val = +inputValue;
 
-    // bad
+    // погано
     const val = inputValue >> 0;
 
-    // bad
+    // погано
     const val = parseInt(inputValue);
 
-    // good
+    // добре
     const val = Number(inputValue);
 
-    // good
+    // добре
     const val = parseInt(inputValue, 10);
     ```
 
   <a name="coercion--comment-deviations"></a><a name="21.4"></a>
-  - [21.4](#coercion--comment-deviations) If for whatever reason you are doing something wild and `parseInt` is your bottleneck and need to use Bitshift for [performance reasons](https://jsperf.com/coercion-vs-casting/3), leave a comment explaining why and what you're doing.
+  - [21.4](#coercion--comment-deviations) Якщо, з якоїсь причини, ви робите щось дике і `parseInt` являється слабкою ланкою і вам потрібно використати бітову операцію заради [ефективності](https://jsperf.com/coercion-vs-casting/3), залиште коментар, який пояснює навіщо і що ви робите.
 
     ```javascript
-    // good
+    // добре
     /**
-     * parseInt was the reason my code was slow.
-     * Bitshifting the String to coerce it to a
-     * Number made it a lot faster.
+     * parseInt сповільнював код.
+     * Застосування бітової операції щодо строки для примусового приведення до
+     * Number робить код набагато швидшим.
      */
     const val = inputValue >> 0;
     ```
 
   <a name="coercion--bitwise"></a><a name="21.5"></a>
-  - [21.5](#coercion--bitwise) **Note:** Be careful when using bitshift operations. Numbers are represented as [64-bit values](https://es5.github.io/#x4.3.19), but bitshift operations always return a 32-bit integer ([source](https://es5.github.io/#x11.7)). Bitshift can lead to unexpected behavior for integer values larger than 32 bits. [Discussion](https://github.com/airbnb/javascript/issues/109). Largest signed 32-bit Int is 2,147,483,647:
+  - [21.5](#coercion--bitwise) **Зауважте:** Будьте обачні при використанні бітових операцій. Цифри представленні як [64-бітні значення](https://es5.github.io/#x4.3.19), але бітові операції завжди повертають 32-bit ціле число ([джерело](https://es5.github.io/#x11.7)). Бітова операція може призвести до непердбачуваної поведінки для цілик значеннь, більших ніж 32-біта. [Обговорення](https://github.com/airbnb/javascript/issues/109). Найбільшим виявленим 32-бітним цілим числом є 2,147,483,647:
 
     ```javascript
     2147483647 >> 0 //=> 2147483647
@@ -2598,60 +2596,60 @@ Other Style Guides
     ```
 
   <a name="coercion--booleans"></a><a name="21.6"></a>
-  - [21.6](#coercion--booleans) Booleans:
+  - [21.6](#coercion--booleans) Булеві значення:
 
     ```javascript
     const age = 0;
 
-    // bad
+    // погано
     const hasAge = new Boolean(age);
 
-    // good
+    // добре
     const hasAge = Boolean(age);
 
     // best
     const hasAge = !!age;
     ```
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ вверх](#Зміст)**
 
 
-## Naming Conventions
+## Угоди про іменування
 
   <a name="naming--descriptive"></a><a name="22.1"></a>
-  - [22.1](#naming--descriptive) Avoid single letter names. Be descriptive with your naming. eslint: [`id-length`](http://eslint.org/docs/rules/id-length)
+  - [22.1](#naming--descriptive) Уникайте імен в одну літеру. Нехай ваші імена будуть описовими. eslint: [`id-length`](http://eslint.org/docs/rules/id-length)
 
     ```javascript
-    // bad
+    // погано
     function q() {
       // ...stuff...
     }
 
-    // good
+    // добре
     function query() {
       // ..stuff..
     }
     ```
 
   <a name="naming--camelCase"></a><a name="22.2"></a>
-  - [22.2](#naming--camelCase) Use camelCase when naming objects, functions, and instances. eslint: [`camelcase`](http://eslint.org/docs/rules/camelcase.html) jscs: [`requireCamelCaseOrUpperCaseIdentifiers`](http://jscs.info/rule/requireCamelCaseOrUpperCaseIdentifiers)
+  - [22.2](#naming--camelCase) Використовуйте `camelCase` коли називаєте об'єкти, функції і екземпляри. eslint: [`camelcase`](http://eslint.org/docs/rules/camelcase.html) jscs: [`requireCamelCaseOrUpperCaseIdentifiers`](http://jscs.info/rule/requireCamelCaseOrUpperCaseIdentifiers)
 
     ```javascript
-    // bad
+    // погано
     const OBJEcttsssss = {};
     const this_is_my_object = {};
     function c() {}
 
-    // good
+    // добре
     const thisIsMyObject = {};
     function thisIsMyFunction() {}
     ```
 
   <a name="naming--PascalCase"></a><a name="22.3"></a>
-  - [22.3](#naming--PascalCase) Use PascalCase only when naming constructors or classes. eslint: [`new-cap`](http://eslint.org/docs/rules/new-cap.html) jscs: [`requireCapitalizedConstructors`](http://jscs.info/rule/requireCapitalizedConstructors)
+  - [22.3](#naming--PascalCase) Використовуйте PascalCase лише коли називаєте конструктори чи класи. eslint: [`new-cap`](http://eslint.org/docs/rules/new-cap.html) jscs: [`requireCapitalizedConstructors`](http://jscs.info/rule/requireCapitalizedConstructors)
 
     ```javascript
-    // bad
+    // погано
     function user(options) {
       this.name = options.name;
     }
@@ -2660,7 +2658,7 @@ Other Style Guides
       name: 'nope',
     });
 
-    // good
+    // добре
     class User {
       constructor(options) {
         this.name = options.name;
@@ -2673,25 +2671,25 @@ Other Style Guides
     ```
 
   <a name="naming--leading-underscore"></a><a name="22.4"></a>
-  - [22.4](#naming--leading-underscore) Do not use trailing or leading underscores. eslint: [`no-underscore-dangle`](http://eslint.org/docs/rules/no-underscore-dangle.html) jscs: [`disallowDanglingUnderscores`](http://jscs.info/rule/disallowDanglingUnderscores)
+  - [22.4](#naming--leading-underscore) Не використовуйте завершальних чи лідуючих нижніх підкресленнь(underscores). eslint: [`no-underscore-dangle`](http://eslint.org/docs/rules/no-underscore-dangle.html) jscs: [`disallowDanglingUnderscores`](http://jscs.info/rule/disallowDanglingUnderscores)
 
-    > Why? JavaScript does not have the concept of privacy in terms of properties or methods. Although a leading underscore is a common convention to mean “private”, in fact, these properties are fully public, and as such, are part of your public API contract. This convention might lead developers to wrongly think that a change won't count as breaking, or that tests aren't needed. tl;dr: if you want something to be “private”, it must not be observably present.
+    > Чому? В JavaScript немає поняття приватності властивостей чи методів. Хоча, лідуюче нижнє підкреслення і прийнято використовувати для позначення "приватності", насправді, ці властивості всі публічні, і тому являються частиною вашого публічного API. Такий підхід може ввести розробниців в оману, що зміна не буде критичною, чи що не потрібні тести. tl;dr: якщо ви хочете зробити щось "приватним", воно не має бути видимим для сторонніх.
 
     ```javascript
-    // bad
+    // погано
     this.__firstName__ = 'Panda';
     this.firstName_ = 'Panda';
     this._firstName = 'Panda';
 
-    // good
+    // добре
     this.firstName = 'Panda';
     ```
 
   <a name="naming--self-this"></a><a name="22.5"></a>
-  - [22.5](#naming--self-this) Don't save references to `this`. Use arrow functions or [Function#bind](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/bind). jscs: [`disallowNodeTypes`](http://jscs.info/rule/disallowNodeTypes)
+  - [22.5](#naming--self-this) Не зберігайте посиланнь на `this`. Використовуйте arrow-функції чи [Function#bind](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/bind). jscs: [`disallowNodeTypes`](http://jscs.info/rule/disallowNodeTypes)
 
     ```javascript
-    // bad
+    // погано
     function foo() {
       const self = this;
       return function () {
@@ -2699,7 +2697,7 @@ Other Style Guides
       };
     }
 
-    // bad
+    // погано
     function foo() {
       const that = this;
       return function () {
@@ -2707,7 +2705,7 @@ Other Style Guides
       };
     }
 
-    // good
+    // добре
     function foo() {
       return () => {
         console.log(this);
@@ -2716,35 +2714,35 @@ Other Style Guides
     ```
 
   <a name="naming--filename-matches-export"></a><a name="22.6"></a>
-  - [22.6](#naming--filename-matches-export) A base filename should exactly match the name of its default export.
+  - [22.6](#naming--filename-matches-export) Базове ім'я файлу має співпадати з експортом за замовчуванням.
 
     ```javascript
-    // file 1 contents
+    // файл 1 містить
     class CheckBox {
       // ...
     }
     export default CheckBox;
 
-    // file 2 contents
+    // файл 2 містить
     export default function fortyTwo() { return 42; }
 
-    // file 3 contents
+    // файл 3 містить
     export default function insideDirectory() {}
 
-    // in some other file
-    // bad
+    // у якомусь іншому файлі
+    // погано
     import CheckBox from './checkBox'; // PascalCase import/export, camelCase filename
     import FortyTwo from './FortyTwo'; // PascalCase import/filename, camelCase export
     import InsideDirectory from './InsideDirectory'; // PascalCase import/filename, camelCase export
 
-    // bad
+    // погано
     import CheckBox from './check_box'; // PascalCase import/export, snake_case filename
     import forty_two from './forty_two'; // snake_case import/filename, camelCase export
     import inside_directory from './inside_directory'; // snake_case import, camelCase export
     import index from './inside_directory/index'; // requiring the index file explicitly
     import insideDirectory from './insideDirectory/index'; // requiring the index file explicitly
 
-    // good
+    // добре
     import CheckBox from './CheckBox'; // PascalCase export/import/filename
     import fortyTwo from './fortyTwo'; // camelCase export/import/filename
     import insideDirectory from './insideDirectory'; // camelCase export/import/directory name/implicit "index"
@@ -2752,7 +2750,7 @@ Other Style Guides
     ```
 
   <a name="naming--camelCase-default-export"></a><a name="22.7"></a>
-  - [22.7](#naming--camelCase-default-export) Use camelCase when you export-default a function. Your filename should be identical to your function's name.
+  - [22.7](#naming--camelCase-default-export) Використовуйте camelCase коли ви експортуєте за замовчуванням function. Ім'я файлу повинно співпадати з іменем функції.
 
     ```javascript
     function makeStyleGuide() {
@@ -2762,7 +2760,7 @@ Other Style Guides
     ```
 
   <a name="naming--PascalCase-singleton"></a><a name="22.8"></a>
-  - [22.8](#naming--PascalCase-singleton) Use PascalCase when you export a constructor / class / singleton / function library / bare object.
+  - [22.8](#naming--PascalCase-singleton) Використовуйте PascalCase коли ви експортуєте конструктор / клас / функціональну бібліотеку / чистий об'єкт.
 
     ```javascript
     const AirbnbStyleGuide = {
@@ -2774,49 +2772,49 @@ Other Style Guides
     ```
 
   <a name="naming--Acronyms-and-Initialisms"></a>
-  - [22.9](#naming--Acronyms-and-Initialisms) Acronyms and initialisms should always be all capitalized, or all lowercased.
+  - [22.9](#naming--Acronyms-and-Initialisms) Скорочення або абревійтури повинні завжди всі писатись або великими або маленькими літерами.
 
-    > Why? Names are for readability, not to appease a computer algorithm.
+    > Чому? Імена для зручності читання, а де для вдоволення комп'ютерного алгоритму.
 
     ```javascript
-    // bad
+    // погано
     import SmsContainer from './containers/SmsContainer';
 
-    // bad
+    // погано
     const HttpRequests = [
       // ...
     ];
 
-    // good
+    // добре
     import SMSContainer from './containers/SMSContainer';
 
-    // good
+    // добре
     const HTTPRequests = [
       // ...
     ];
 
-    // best
+    // найкраще
     import TextMessageContainer from './containers/TextMessageContainer';
 
-    // best
+    // найкраще
     const Requests = [
       // ...
     ];
     ```
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ вверх](#Зміст)**
 
 
-## Accessors
+## Аксессори
 
   <a name="accessors--not-required"></a><a name="23.1"></a>
-  - [23.1](#accessors--not-required) Accessor functions for properties are not required.
+  - [23.1](#accessors--not-required) Функції аксессори для доступу до властивостей не потрібні.
 
   <a name="accessors--no-getters-setters"></a><a name="23.2"></a>
-  - [23.2](#accessors--no-getters-setters) Do not use JavaScript getters/setters as they cause unexpected side effects and are harder to test, maintain, and reason about. Instead, if you do make accessor functions, use getVal() and setVal('hello').
+  - [23.2](#accessors--no-getters-setters) Не використовуйте геттери/сеттери JavaScript оскільки вони викликають неочікуванні побічні ефекти і їх важко тестувати, підтримувати і аргументувати їхню необхідність. Натомість, якщо ви робити функцію доступу - використовуйте getVal() та setVal('hello').
 
     ```javascript
-    // bad
+    // погано
     class Dragon {
       get age() {
         // ...
@@ -2827,7 +2825,7 @@ Other Style Guides
       }
     }
 
-    // good
+    // добре
     class Dragon {
       getAge() {
         // ...
@@ -2840,22 +2838,22 @@ Other Style Guides
     ```
 
   <a name="accessors--boolean-prefix"></a><a name="23.3"></a>
-  - [23.3](#accessors--boolean-prefix) If the property/method is a `boolean`, use `isVal()` or `hasVal()`.
+  - [23.3](#accessors--boolean-prefix) Якщо властивість/метод являються `boolean`, використовуйте `isVal()` або `hasVal()`.
 
     ```javascript
-    // bad
+    // погано
     if (!dragon.age()) {
       return false;
     }
 
-    // good
+    // добре
     if (!dragon.hasAge()) {
       return false;
     }
     ```
 
   <a name="accessors--consistent"></a><a name="23.4"></a>
-  - [23.4](#accessors--consistent) It's okay to create get() and set() functions, but be consistent.
+  - [23.4](#accessors--consistent) Це нормально створювати get() та set() функції, але будьте послідовні.
 
     ```javascript
     class Jedi {
@@ -2874,78 +2872,78 @@ Other Style Guides
     }
     ```
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ вверх](#Зміст)**
 
 
-## Events
+## Події
 
   <a name="events--hash"></a><a name="24.1"></a>
-  - [24.1](#events--hash) When attaching data payloads to events (whether DOM events or something more proprietary like Backbone events), pass a hash instead of a raw value. This allows a subsequent contributor to add more data to the event payload without finding and updating every handler for the event. For example, instead of:
+  - [24.1](#events--hash) Коли додаєте якусь інформацію до подій (неважливо до DOM подій, чи до якихось більш конкретних, наприклад подій у Backbone), передавайте хеш замість чистого значення. Це дозволяє в подальшому додавати більше даних до події без пошуку та оновлення кожного обробника події. Наприклад, замість:
 
     ```javascript
-    // bad
+    // погано
     $(this).trigger('listingUpdated', listing.id);
 
     ...
 
     $(this).on('listingUpdated', (e, listingId) => {
-      // do something with listingId
+      // зробити щось з listingId
     });
     ```
 
-    prefer:
+    віддати перевагу такому:
 
     ```javascript
-    // good
+    // добре
     $(this).trigger('listingUpdated', { listingId: listing.id });
 
     ...
 
     $(this).on('listingUpdated', (e, data) => {
-      // do something with data.listingId
+      // зробити щось з data.listingId
     });
     ```
 
-  **[⬆ back to top](#table-of-contents)**
+  **[⬆ вверх](#Зміст)**
 
 
 ## jQuery
 
   <a name="jquery--dollar-prefix"></a><a name="25.1"></a>
-  - [25.1](#jquery--dollar-prefix) Prefix jQuery object variables with a `$`. jscs: [`requireDollarBeforejQueryAssignment`](http://jscs.info/rule/requireDollarBeforejQueryAssignment)
+  - [25.1](#jquery--dollar-prefix) Префіксуйте об'єкт jQuery знаком `$`. jscs: [`requireDollarBeforejQueryAssignment`](http://jscs.info/rule/requireDollarBeforejQueryAssignment)
 
     ```javascript
-    // bad
+    // погано
     const sidebar = $('.sidebar');
 
-    // good
+    // добре
     const $sidebar = $('.sidebar');
 
-    // good
+    // добре
     const $sidebarBtn = $('.sidebar-btn');
     ```
 
   <a name="jquery--cache"></a><a name="25.2"></a>
-  - [25.2](#jquery--cache) Cache jQuery lookups.
+  - [25.2](#jquery--cache) Кешуйте результати пошуку jQuery.
 
     ```javascript
-    // bad
+    // погано
     function setSidebar() {
       $('.sidebar').hide();
 
-      // ...stuff...
+      // ...щось відбувається...
 
       $('.sidebar').css({
         'background-color': 'pink'
       });
     }
 
-    // good
+    // добре
     function setSidebar() {
       const $sidebar = $('.sidebar');
       $sidebar.hide();
 
-      // ...stuff...
+      // ...щось відбувається...
 
       $sidebar.css({
         'background-color': 'pink'
@@ -2954,69 +2952,69 @@ Other Style Guides
     ```
 
   <a name="jquery--queries"></a><a name="25.3"></a>
-  - [25.3](#jquery--queries) For DOM queries use Cascading `$('.sidebar ul')` or parent > child `$('.sidebar > ul')`. [jsPerf](http://jsperf.com/jquery-find-vs-context-sel/16)
+  - [25.3](#jquery--queries) Для звернень до DOM використовуйте каскадність запиту `$('.sidebar ul')` або предок > нащадок `$('.sidebar > ul')`. [jsPerf](http://jsperf.com/jquery-find-vs-context-sel/16)
 
   <a name="jquery--find"></a><a name="25.4"></a>
-  - [25.4](#jquery--find) Use `find` with scoped jQuery object queries.
+  - [25.4](#jquery--find) Використовуйте `find` з контекстними запитами jQuery об'єкта.
 
     ```javascript
-    // bad
+    // погано
     $('ul', '.sidebar').hide();
 
-    // bad
+    // погано
     $('.sidebar').find('ul').hide();
 
-    // good
+    // добре
     $('.sidebar ul').hide();
 
-    // good
+    // добре
     $('.sidebar > ul').hide();
 
-    // good
+    // добре
     $sidebar.find('ul').hide();
     ```
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ вверх](#Зміст)**
 
 
-## ECMAScript 5 Compatibility
+## ECMAScript 5 сумісність
 
   <a name="es5-compat--kangax"></a><a name="26.1"></a>
-  - [26.1](#es5-compat--kangax) Refer to [Kangax](https://twitter.com/kangax/)'s ES5 [compatibility table](https://kangax.github.io/es5-compat-table/).
+  - [26.1](#es5-compat--kangax) Звертайтесь до ES5 [таблиці сумісності](https://kangax.github.io/es5-compat-table/) [Kangax](https://twitter.com/kangax/)'са.
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ вверх](#Зміст)**
 
 <a name="ecmascript-6-styles"></a>
-## ECMAScript 6+ (ES 2015+) Styles
+## ECMAScript 6+ (ES 2015+) стилі
 
   <a name="es6-styles"></a><a name="27.1"></a>
-  - [27.1](#es6-styles) This is a collection of links to the various ES6 features.
+  - [27.1](#es6-styles) Це колекція посилання на різні особливості ES6.
 
-1. [Arrow Functions](#arrow-functions)
-1. [Classes](#classes--constructors)
-1. [Object Shorthand](#es6-object-shorthand)
-1. [Object Concise](#es6-object-concise)
-1. [Object Computed Properties](#es6-computed-properties)
-1. [Template Strings](#es6-template-literals)
-1. [Destructuring](#destructuring)
-1. [Default Parameters](#es6-default-parameters)
+1. [Arrow Functions](#arrow-функції)
+1. [Класи та Конструктори](#Класи-та-Конструктори)
+1. [Скорочення для методіва об'єкта](#es6-object-shorthand)
+1. [Скорочення об'єкта](#es6-object-concise)
+1. [Вираховані властивості об'єкта](#es6-computed-properties)
+1. [Строчні шаблони](#es6-template-literals)
+1. [Destructuring](#Деструктурування)
+1. [Параметри за замовчуаванням](#es6-default-parameters)
 1. [Rest](#es6-rest)
-1. [Array Spreads](#es6-array-spreads)
-1. [Let and Const](#references)
-1. [Iterators and Generators](#iterators-and-generators)
-1. [Modules](#modules)
+1. [spreads оператор масива](#es6-array-spreads)
+1. [Let та Const](#Посилання)
+1. [Ітератори та Генератори](#Ітератори-та-генератори)
+1. [Модулі](#Модулі)
 
   <a name="tc39-proposals"></a>
-  - [27.2](#tc39-proposals) Do not use [TC39 proposals](https://github.com/tc39/proposals) that have not reached stage 3.
+  - [27.2](#tc39-proposals) Не використовуйте [TC39 пропозиції](https://github.com/tc39/proposals) які не знаходяться у стадії stage 3.
 
-    > Why? [They are not finalized](https://tc39.github.io/process-document/), and they are subject to change or to be withdrawn entirely. We want to use JavaScript, and proposals are not JavaScript yet.
+    > Чому? [Вони не завершені](https://tc39.github.io/process-document/), і вони можуть бути змінені або повністю відмінені. Ми хочемо використовувати JavaScript, а пропозиції, покищо, ще не JavaScript.
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ вверх](#Зміст)**
 
-## Testing
+## Тестування
 
   <a name="testing--yup"></a><a name="28.1"></a>
-  - [28.1](#testing--yup) **Yup.**
+  - [28.1](#testing--yup) **Так.**
 
     ```javascript
     function foo() {
@@ -3025,18 +3023,18 @@ Other Style Guides
     ```
 
   <a name="testing--for-real"></a><a name="28.2"></a>
-  - [28.2](#testing--for-real) **No, but seriously**:
-   - Whichever testing framework you use, you should be writing tests!
-   - Strive to write many small pure functions, and minimize where mutations occur.
-   - Be cautious about stubs and mocks - they can make your tests more brittle.
-   - We primarily use [`mocha`](https://www.npmjs.com/package/mocha) at Airbnb. [`tape`](https://www.npmjs.com/package/tape) is also used occasionally for small, separate modules.
-   - 100% test coverage is a good goal to strive for, even if it's not always practical to reach it.
-   - Whenever you fix a bug, _write a regression test_. A bug fixed without a regression test is almost certainly going to break again in the future.
+  - [28.2](#testing--for-real) **Ні, але серйозно**:
+   - Який би тестувальний фреймфорк ви б не використовували - ви повинні писати тести!
+   - Намагайтесь писати багато дрібних функцій та зводити до мінімуму місця, де відбуваються мутації.
+   - Будьте обережними з stubs та mocks, оскільки вони можуть зробити ваші тести більш крихкими.
+   - Ми в першу чергу використовуємо [`mocha`](https://www.npmjs.com/package/mocha) у Airbnb. [`tape`](https://www.npmjs.com/package/tape) також час від часу використовується для малньких, окремих модулів.
+   - 100% покриття тестами - це гарна мета до якої варто прагнути, навіть якщо це не завжди практично.
+   - Кожного разу, коли ви виправляєте помилку, _пишіть тест регресії_. Помилка виправлена без написання регресивного тесту майже точно виникне в майбутньому знову.
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ вверх](#Зміст)**
 
 
-## Performance
+## Продуктивність
 
   - [On Layout & Web Performance](https://www.kellegous.com/j/2013/01/26/layout-performance/)
   - [String vs Array Concat](https://jsperf.com/string-vs-array-concat/2)
@@ -3048,43 +3046,43 @@ Other Style Guides
   - [Are Javascript functions like `map()`, `reduce()`, and `filter()` optimized for traversing arrays?](https://www.quora.com/JavaScript-programming-language-Are-Javascript-functions-like-map-reduce-and-filter-already-optimized-for-traversing-array/answer/Quildreen-Motta)
   - Loading...
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ вверх](#Зміст)**
 
 
-## Resources
+## Ресурси
 
-**Learning ES6**
+**Вивчення ES6**
 
   - [Draft ECMA 2015 (ES6) Spec](https://people.mozilla.org/~jorendorff/es6-draft.html)
   - [ExploringJS](http://exploringjs.com/)
   - [ES6 Compatibility Table](https://kangax.github.io/compat-table/es6/)
   - [Comprehensive Overview of ES6 Features](http://es6-features.org/)
 
-**Read This**
+**Прочитайте це**
 
   - [Standard ECMA-262](http://www.ecma-international.org/ecma-262/6.0/index.html)
 
-**Tools**
+**Інструменти**
 
   - Code Style Linters
     + [ESlint](http://eslint.org/) - [Airbnb Style .eslintrc](https://github.com/airbnb/javascript/blob/master/linters/.eslintrc)
     + [JSHint](http://jshint.com/) - [Airbnb Style .jshintrc](https://github.com/airbnb/javascript/blob/master/linters/.jshintrc)
     + [JSCS](https://github.com/jscs-dev/node-jscs) - [Airbnb Style Preset](https://github.com/jscs-dev/node-jscs/blob/master/presets/airbnb.json)
 
-**Other Style Guides**
+**Інші керівництва**
 
   - [Google JavaScript Style Guide](https://google.github.io/styleguide/javascriptguide.xml)
   - [jQuery Core Style Guidelines](https://contribute.jquery.org/style-guide/js/)
   - [Principles of Writing Consistent, Idiomatic JavaScript](https://github.com/rwaldron/idiomatic.js)
 
-**Other Styles**
+**Інші стилі**
 
   - [Naming this in nested functions](https://gist.github.com/cjohansen/4135065) - Christian Johansen
   - [Conditional Callbacks](https://github.com/airbnb/javascript/issues/52) - Ross Allen
   - [Popular JavaScript Coding Conventions on GitHub](http://sideeffect.kr/popularconvention/#javascript) - JeongHoon Byun
   - [Multiple var statements in JavaScript, not superfluous](http://benalman.com/news/2012/05/multiple-var-statements-javascript/) - Ben Alman
 
-**Further Reading**
+**Подальше читання**
 
   - [Understanding JavaScript Closures](https://javascriptweblog.wordpress.com/2010/10/25/understanding-javascript-closures/) - Angus Croll
   - [Basic JavaScript for the impatient programmer](http://www.2ality.com/2013/06/basic-javascript.html) - Dr. Axel Rauschmayer
@@ -3092,7 +3090,7 @@ Other Style Guides
   - [ES6 Features](https://github.com/lukehoban/es6features) - Luke Hoban
   - [Frontend Guidelines](https://github.com/bendc/frontend-guidelines) - Benjamin De Cock
 
-**Books**
+**Книжки**
 
   - [JavaScript: The Good Parts](https://www.amazon.com/JavaScript-Good-Parts-Douglas-Crockford/dp/0596517742) - Douglas Crockford
   - [JavaScript Patterns](https://www.amazon.com/JavaScript-Patterns-Stoyan-Stefanov/dp/0596806752) - Stoyan Stefanov
@@ -3111,7 +3109,7 @@ Other Style Guides
   - [Eloquent JavaScript](http://eloquentjavascript.net/) - Marijn Haverbeke
   - [You Don't Know JS: ES6 & Beyond](http://shop.oreilly.com/product/0636920033769.do) - Kyle Simpson
 
-**Blogs**
+**Блоги**
 
   - [JavaScript Weekly](http://javascriptweekly.com/)
   - [JavaScript, JavaScript...](https://javascriptweblog.wordpress.com/)
@@ -3124,17 +3122,17 @@ Other Style Guides
   - [Dustin Diaz](http://dustindiaz.com/)
   - [nettuts](http://code.tutsplus.com/?s=javascript)
 
-**Podcasts**
+**Подкасти**
 
   - [JavaScript Air](https://javascriptair.com/)
   - [JavaScript Jabber](https://devchat.tv/js-jabber/)
 
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ вверх](#Зміст)**
 
-## In the Wild
+## В реальному Світі
 
-  This is a list of organizations that are using this style guide. Send us a pull request and we'll add you to the list.
+  Це перелік організацій які використовують це керівництво. Надішліть нам pull request і ми додамо вас до цього списку.
 
   - **4Catalyzer**: [4Catalyzer/javascript](https://github.com/4Catalyzer/javascript)
   - **Aan Zee**: [AanZee/javascript](https://github.com/AanZee/javascript)
@@ -3216,7 +3214,7 @@ Other Style Guides
   - **Zillow**: [zillow/javascript](https://github.com/zillow/javascript)
   - **ZocDoc**: [ZocDoc/javascript](https://github.com/ZocDoc/javascript)
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ вверх](#Зміст)**
 
 ## Translation
 
@@ -3276,7 +3274,7 @@ CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
 TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
 SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ вверх](#Зміст)**
 
 ## Amendments
 
