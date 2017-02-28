@@ -41,8 +41,8 @@
   1. [Події](#Події)
   1. [jQuery](#jquery)
   1. [ECMAScript 5 сумісність](#ecmascript-5-сумісність)
-  1. [ECMAScript 6+ (ES 2015+) стилі](#ecmascript-6-es-2015-styles)
-  1. [Тестування](#testing)
+  1. [ECMAScript 6+ (ES 2015+) стилі](#ecmascript-6-es-2015-стилі)
+  1. [Тестування](#Тестування)
   1. [Продуктивність](#performance)
   1. [Ресурсии](#resources)
   1. [В реальному Світі](#in-the-wild)
@@ -2985,36 +2985,36 @@ TODO: FIXME
 **[⬆ вверх](#Зміст)**
 
 <a name="ecmascript-6-styles"></a>
-## ECMAScript 6+ (ES 2015+) Styles
+## ECMAScript 6+ (ES 2015+) стилі
 
   <a name="es6-styles"></a><a name="27.1"></a>
-  - [27.1](#es6-styles) This is a collection of links to the various ES6 features.
+  - [27.1](#es6-styles) Це колекція посилання на різні особливості ES6.
 
-1. [Arrow Functions](#arrow-functions)
-1. [Classes](#classes--constructors)
-1. [Object Shorthand](#es6-object-shorthand)
-1. [Object Concise](#es6-object-concise)
-1. [Object Computed Properties](#es6-computed-properties)
-1. [Template Strings](#es6-template-literals)
-1. [Destructuring](#destructuring)
-1. [Default Parameters](#es6-default-parameters)
+1. [Arrow Functions](#arrow-функції)
+1. [Класи та Конструктори](#Класи-та-Конструктори)
+1. [Скорочення для методіва об'єкта](#es6-object-shorthand)
+1. [Скорочення об'єкта](#es6-object-concise)
+1. [Вираховані властивості об'єкта](#es6-computed-properties)
+1. [Строчні шаблони](#es6-template-literals)
+1. [Destructuring](#Деструктурування)
+1. [Параметри за замовчуаванням](#es6-default-parameters)
 1. [Rest](#es6-rest)
-1. [Array Spreads](#es6-array-spreads)
-1. [Let and Const](#references)
-1. [Iterators and Generators](#iterators-and-generators)
-1. [Modules](#modules)
+1. [spreads оператор масива](#es6-array-spreads)
+1. [Let та Const](#Посилання)
+1. [Ітератори та Генератори](#Ітератори-та-генератори)
+1. [Модулі](#Модулі)
 
   <a name="tc39-proposals"></a>
-  - [27.2](#tc39-proposals) Do not use [TC39 proposals](https://github.com/tc39/proposals) that have not reached stage 3.
+  - [27.2](#tc39-proposals) Не використовуйте [TC39 пропозиції](https://github.com/tc39/proposals) які не знаходяться у стадії stage 3.
 
-    > Why? [They are not finalized](https://tc39.github.io/process-document/), and they are subject to change or to be withdrawn entirely. We want to use JavaScript, and proposals are not JavaScript yet.
+    > Чому? [Вони не завершені](https://tc39.github.io/process-document/), і вони можуть бути змінені або повністю відмінені. Ми хочемо використовувати JavaScript, а пропозиції, покищо, ще не JavaScript.
 
-**[⬆ back to top](#Зміст)**
+**[⬆ вверх](#Зміст)**
 
-## Testing
+## Тестування
 
   <a name="testing--yup"></a><a name="28.1"></a>
-  - [28.1](#testing--yup) **Yup.**
+  - [28.1](#testing--yup) **Так.**
 
     ```javascript
     function foo() {
@@ -3023,7 +3023,7 @@ TODO: FIXME
     ```
 
   <a name="testing--for-real"></a><a name="28.2"></a>
-  - [28.2](#testing--for-real) **No, but seriously**:
+  - [28.2](#testing--for-real) **Ні, але серйозно**:
    - Whichever testing framework you use, you should be writing tests!
    - Strive to write many small pure functions, and minimize where mutations occur.
    - Be cautious about stubs and mocks - they can make your tests more brittle.
