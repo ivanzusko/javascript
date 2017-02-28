@@ -2878,7 +2878,7 @@ TODO: FIXME
 ## Події
 
   <a name="events--hash"></a><a name="24.1"></a>
-  - [24.1](#events--hash) When attaching data payloads to events (whether DOM events or something more proprietary like Backbone events), pass a hash instead of a raw value. This allows a subsequent contributor to add more data to the event payload without finding and updating every handler for the event. For example, instead of:
+  - [24.1](#events--hash) Коли додаєте якусь інформацію до подій (неважливо до DOM подій, чи до якихось більш конкретних, наприклад подій у Backbone), передавайте хеш замість чистого значення. Це дозволяє в подальшому додавати більше даних до події без пошуку та оновлення кожного обробника події. Наприклад, замість:
 
     ```javascript
     // погано
@@ -2887,11 +2887,11 @@ TODO: FIXME
     ...
 
     $(this).on('listingUpdated', (e, listingId) => {
-      // do something with listingId
+      // зробити щось з listingId
     });
     ```
 
-    prefer:
+    віддати перевагу такому:
 
     ```javascript
     // добре
@@ -2900,17 +2900,17 @@ TODO: FIXME
     ...
 
     $(this).on('listingUpdated', (e, data) => {
-      // do something with data.listingId
+      // зробити щось з data.listingId
     });
     ```
 
-  **[⬆ back to top](#Зміст)**
+  **[⬆ вверх](#Зміст)**
 
 
 ## jQuery
 
   <a name="jquery--dollar-prefix"></a><a name="25.1"></a>
-  - [25.1](#jquery--dollar-prefix) Prefix jQuery object variables with a `$`. jscs: [`requireDollarBeforejQueryAssignment`](http://jscs.info/rule/requireDollarBeforejQueryAssignment)
+  - [25.1](#jquery--dollar-prefix) Префіксуйте об'єкт jQuery знаком `$`. jscs: [`requireDollarBeforejQueryAssignment`](http://jscs.info/rule/requireDollarBeforejQueryAssignment)
 
     ```javascript
     // погано
