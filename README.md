@@ -40,7 +40,7 @@
   1. [Аксессори](#Аксессори)
   1. [Події](#Події)
   1. [jQuery](#jquery)
-  1. [ECMAScript 5 сумісність](#ecmascript-5-compatibility)
+  1. [ECMAScript 5 сумісність](#ecmascript-5-сумісність)
   1. [ECMAScript 6+ (ES 2015+) стилі](#ecmascript-6-es-2015-styles)
   1. [Тестування](#testing)
   1. [Продуктивність](#performance)
@@ -2924,14 +2924,14 @@ TODO: FIXME
     ```
 
   <a name="jquery--cache"></a><a name="25.2"></a>
-  - [25.2](#jquery--cache) Cache jQuery lookups.
+  - [25.2](#jquery--cache) Кешуйте результати пошуку jQuery.
 
     ```javascript
     // погано
     function setSidebar() {
       $('.sidebar').hide();
 
-      // ...stuff...
+      // ...щось відбувається...
 
       $('.sidebar').css({
         'background-color': 'pink'
@@ -2943,7 +2943,7 @@ TODO: FIXME
       const $sidebar = $('.sidebar');
       $sidebar.hide();
 
-      // ...stuff...
+      // ...щось відбувається...
 
       $sidebar.css({
         'background-color': 'pink'
@@ -2952,10 +2952,10 @@ TODO: FIXME
     ```
 
   <a name="jquery--queries"></a><a name="25.3"></a>
-  - [25.3](#jquery--queries) For DOM queries use Cascading `$('.sidebar ul')` or parent > child `$('.sidebar > ul')`. [jsPerf](http://jsperf.com/jquery-find-vs-context-sel/16)
+  - [25.3](#jquery--queries) Для звернень до DOM використовуйте каскадність запиту `$('.sidebar ul')` або предок > нащадок `$('.sidebar > ul')`. [jsPerf](http://jsperf.com/jquery-find-vs-context-sel/16)
 
   <a name="jquery--find"></a><a name="25.4"></a>
-  - [25.4](#jquery--find) Use `find` with scoped jQuery object queries.
+  - [25.4](#jquery--find) Використовуйте `find` з контекстними запитами jQuery об'єкта.
 
     ```javascript
     // погано
@@ -2974,15 +2974,15 @@ TODO: FIXME
     $sidebar.find('ul').hide();
     ```
 
-**[⬆ back to top](#Зміст)**
+**[⬆ вверх](#Зміст)**
 
 
-## ECMAScript 5 Compatibility
+## ECMAScript 5 сумісність
 
   <a name="es5-compat--kangax"></a><a name="26.1"></a>
-  - [26.1](#es5-compat--kangax) Refer to [Kangax](https://twitter.com/kangax/)'s ES5 [compatibility table](https://kangax.github.io/es5-compat-table/).
+  - [26.1](#es5-compat--kangax) Звертайтесь до ES5 [таблиці сумісності](https://kangax.github.io/es5-compat-table/) [Kangax](https://twitter.com/kangax/)'са.
 
-**[⬆ back to top](#Зміст)**
+**[⬆ вверх](#Зміст)**
 
 <a name="ecmascript-6-styles"></a>
 ## ECMAScript 6+ (ES 2015+) Styles
