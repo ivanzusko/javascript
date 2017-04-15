@@ -4,7 +4,7 @@
 
 ## Зміст
 
-  1. [Основні правила](#basic-rules)
+  1. [Основні правила](#Основні-правила)
   1. [Class проти `React.createClass` проти безстейтового компонента](#class-vs-reactcreateclass-vs-stateless)
   1. [Іменування](#naming)
   1. [Оголошення](#declaration)
