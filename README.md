@@ -871,7 +871,7 @@ TODO: FIXME
   <a name="arrows--implicit-return"></a><a name="8.2"></a>
   - [8.2](#arrows--implicit-return) Якщо тіло функцій складається з одного виразу - не застосовуйте фігурні дужки, а одразу використовуйте неявне повернення. Або, лишіть фігурні дужки і використайте оператор `return`. eslint: [`arrow-parens`](http://eslint.org/docs/rules/arrow-parens.html), [`arrow-body-style`](http://eslint.org/docs/rules/arrow-body-style.html) jscs:  [`disallowParenthesesAroundArrowParam`](http://jscs.info/rule/disallowParenthesesAroundArrowParam), [`requireShorthandArrowFunctions`](http://jscs.info/rule/requireShorthandArrowFunctions)
 
-    > Чому? Синтаксичний цукор. Це гарно читається, особливо коли в функції вилаштовуються у послідовну ціпочку.
+    > Чому? Синтаксичний цукор. Це гарно читається, особливо коли кілька функцій формують послідовний ланцюжок.
 
     ```javascript
     // погано
