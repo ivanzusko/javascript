@@ -275,8 +275,7 @@
 
   <a name="objects--prototype-builtins"></a>
   - [3.7](#objects--prototype-builtins) Не використовуйте напряму методи `Object.prototype`, такі як `hasOwnProperty`, `propertyIsEnumerable`, і `isPrototypeOf`.
-TODO: FIXME
-  > Чому? These methods may be shadowed by properties on the object in question - consider `{ hasOwnProperty: false }` - or, the object may be a null object (`Object.create(null)`).
+  > Чому? Ці методи можуть бути переоприділені на поточному об'єкті, наприклад: `{ hasOwnProperty: false }`, або ж поточний об'єкт може не мати прототипа (`Object.create(null)`).
 
   ```javascript
   // погано
