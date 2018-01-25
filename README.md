@@ -1645,7 +1645,7 @@
     ```
 
   <a name="hoisting--named-expresions"></a><a name="14.3"></a>
-  - [14.3](#hoisting--named-expresions) Іменовані функціональні вирази пілнімають ім'я змінної, але не ім'я функції чи тіло функції.
+  - [14.3](#hoisting--named-expresions) Іменовані функціональні вирази піднімають ім'я змінної, але не ім'я функції чи тіло функції.
 
     ```javascript
     function example() {
