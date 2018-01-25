@@ -1339,7 +1339,7 @@
     > Чому? Вони не досить добре перетворюються в ES5.
 
   <a name="generators--spacing"></a>
-  - [11.3](#generators--spacing) Якщо вам потрібно використати генератори, або якщо ви вирішили не скористатись нашою порадою [our advice](#generators--nope), переконайтесь, що сигнатура функції має правильні фідступи. eslint: [`generator-star-spacing`](http://eslint.org/docs/rules/generator-star-spacing)
+  - [11.3](#generators--spacing) Якщо вам потрібно використати генератори, або якщо ви вирішили не скористатись нашою порадою [our advice](#generators--nope), переконайтесь, що сигнатура функції має правильні відступи. eslint: [`generator-star-spacing`](http://eslint.org/docs/rules/generator-star-spacing)
 
     > Чому? `function` і `*` є частиною одного концептуального ключового слова - `*` це не модифікатор `function`, `function*` - це унікальна конструкція, відмінна від `function`.
 
