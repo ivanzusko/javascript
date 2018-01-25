@@ -1595,7 +1595,7 @@
 ## Підняття (Hoisting)
 
   <a name="hoisting--about"></a><a name="14.1"></a>
-  - [14.1](#hoisting--about) Оголошенні `var` змінні піднімаються в гору їх обсласті видимості, в той час я привласнені їм значення - ні. Змінні, оголошені за допомогою `const` та `let` отримали нову концепцію - [Тимчасові Мертві Зони (ТМЗ)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let#Temporal_dead_zone_and_errors_with_let). Важливо знати, чому використовувати [typeof тепер небезпечно](http://es-discourse.com/t/why-typeof-is-no-longer-safe/15).
+  - [14.1](#hoisting--about) Оголошенні `var` змінні піднімаються вгору їхньої обсласті видимості, в той час як привласнені їм значення - ні. Змінні, оголошені за допомогою `const` та `let` отримали нову концепцію - [Тимчасові Мертві Зони (ТМЗ)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let#Temporal_dead_zone_and_errors_with_let). Важливо знати, чому використовувати [typeof тепер небезпечно](http://es-discourse.com/t/why-typeof-is-no-longer-safe/15).
 
     ```javascript
     // ми знаємо, що це не спрацює (припустимо, що
