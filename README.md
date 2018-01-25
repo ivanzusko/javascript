@@ -642,7 +642,7 @@
     ```
 
   <a name="es6-rest"></a><a name="7.6"></a>
-  - [7.6](#es6-rest) Ннколи не використовуйте `arguments`, краще натомість використовуйте `rest` синтаксис (`...`). eslint: [`prefer-rest-params`](http://eslint.org/docs/rules/prefer-rest-params)
+  - [7.6](#es6-rest) Ніколи не використовуйте `arguments`, краще натомість використовуйте `rest` синтаксис (`...`). eslint: [`prefer-rest-params`](http://eslint.org/docs/rules/prefer-rest-params)
 
     > Чому? `...` оператор явно зазначає, що ви хочете щось витягти. Крім того, rest аргументи являються реальним масивом, а не масивоподібністю, як `arguments`.
 
