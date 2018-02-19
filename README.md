@@ -1869,7 +1869,7 @@
     ```
 
   <a name="blocks--cuddled-elses"></a><a name="16.2"></a>
-  - [16.2](#blocks--cuddled-elses) Якщо ви використовуєте блоки у кілька рядків з `if` та `else`, то ставте `else` на тому самому рядку, що і закривающася дужка `if` блоку. eslint: [`brace-style`](http://eslint.org/docs/rules/brace-style.html) jscs:  [`disallowNewlineBeforeBlockStatements`](http://jscs.info/rule/disallowNewlineBeforeBlockStatements)
+  - [16.2](#blocks--cuddled-elses) Якщо ви використовуєте блоки у кілька рядків з `if` та `else`, то ставте `else` на тому самому рядку, що і закриваюча дужка `if` блоку. eslint: [`brace-style`](http://eslint.org/docs/rules/brace-style.html) jscs:  [`disallowNewlineBeforeBlockStatements`](http://jscs.info/rule/disallowNewlineBeforeBlockStatements)
 
     ```javascript
     // погано
