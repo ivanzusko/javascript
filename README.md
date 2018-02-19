@@ -95,7 +95,7 @@
   <a name="references--prefer-const"></a><a name="2.1"></a>
   - [2.1](#references--prefer-const) Використовуйте `const` для всіх посиланнь; уникайте використання `var`. eslint: [`prefer-const`](http://eslint.org/docs/rules/prefer-const.html), [`no-const-assign`](http://eslint.org/docs/rules/no-const-assign.html)
 
-    > Чому? Це убезпечить вас від переприсвоєння значення для вашого посилання, що може призвести до багів та важкості розуміння коду.
+    > Чому? Це убезпечить вас від переприсвоєння значення для вашого посилання, що може призвести до багів та складності розуміння коду.
 
     ```javascript
     // погано
