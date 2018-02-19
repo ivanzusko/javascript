@@ -2400,7 +2400,7 @@
   <a name="commas--dangling"></a><a name="19.2"></a>
   - [19.2](#commas--dangling) Додаткова кома в кінці рядку: **Так.** eslint: [`comma-dangle`](http://eslint.org/docs/rules/comma-dangle.html) jscs: [`requireTrailingComma`](http://jscs.info/rule/requireTrailingComma)
 
-    > Чому? Це веде до чистіших відмінностей у git. Також, транспайелри, такі як Babel, приберуть додаткому кому в кінці рядку з кінцевого коду, що означає, що ви не повинні перейматись через [проблему завершальної коми](https://github.com/airbnb/javascript/blob/es5-deprecated/es5/README.md#commas) у старих браузерах.
+    > Чому? Це веде до чистіших відмінностей у git. Також, транспайелри, такі як Babel, приберуть додаткову кому в кінці рядку з кінцевого коду, що означає, що ви не повинні перейматись через [проблему завершальної коми](https://github.com/airbnb/javascript/blob/es5-deprecated/es5/README.md#commas) у старих браузерах.
 
     ```diff
     // погано - git diff без завершальної коми
