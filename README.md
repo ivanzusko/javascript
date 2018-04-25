@@ -573,7 +573,7 @@
 ## Функції
 
   <a name="functions--declarations"></a><a name="7.1"></a>
-  - [7.1](#functions--declarations) Використовуйте іменовані функціональні вирази замість функціональних оголошеннь. eslint: [`func-style`](http://eslint.org/docs/rules/func-style) jscs: [`disallowFunctionDeclarations`](http://jscs.info/rule/disallowFunctionDeclarations)
+  - [7.1](#functions--declarations) Використовуйте іменовані функціональні вирази замість функціональних оголошень. eslint: [`func-style`](http://eslint.org/docs/rules/func-style) jscs: [`disallowFunctionDeclarations`](http://jscs.info/rule/disallowFunctionDeclarations)
 
     > Чому? Функціональні оголошення хойстяться (вспливають уверх), це означає, що дуже легко послатися на функцію до того, як вона оголошена у файлі. Це шкодить читаємості та підтримуємості. Якщо вам здається, що визначення функції досить велике чи воно ускладнює розуміння іншої частини файлу, то, можливо, прийшов час, щоб виокремити це в окремий модуль! Не забувайте іменувати вирази - анонімні функції можуть ускладнити локалізацію проблеми у стеку викликів. ([Discussion](https://github.com/airbnb/javascript/issues/794))
 
@@ -607,7 +607,7 @@
   - [7.3](#functions--in-blocks) Ніколи не оголошуйте функцію у нефункціональному блоці(if, while, etc). Натомість, призначте функцію змінній. Браузери дозволять вам це зробити, але всі вони інтерпретують це по-різному, що є поганими новинами. eslint: [`no-loop-func`](http://eslint.org/docs/rules/no-loop-func.html)
 
   <a name="functions--note-on-blocks"></a><a name="7.4"></a>
-  - [7.4](#functions--note-on-blocks) **Увага:** ECMA-262 визначає `block` як список визначеннь. Оголошення функції не є визначенням. [Read ECMA-262's note on this issue](http://www.ecma-international.org/publications/files/ECMA-ST/Ecma-262.pdf#page=97).
+  - [7.4](#functions--note-on-blocks) **Увага:** ECMA-262 визначає `block` як список визначень. Оголошення функції не є визначенням. [Read ECMA-262's note on this issue](http://www.ecma-international.org/publications/files/ECMA-ST/Ecma-262.pdf#page=97).
 
     ```javascript
     // погано
@@ -666,7 +666,7 @@
     // насправді погано
     function handleThings(opts) {
       // Ні! Ми не повинні мутувати аргументи функції.
-      // Двічі погано: якщо `opts` є направдивим(`falsy` - прим. прекладача), то воно так і буде задано об'єкту. Це, звісно, може бути тим, що
+      // Двічі погано: якщо `opts` є неправдивим(`falsy` - прим. прекладача), то воно так і буде задано об'єкту. Це, звісно, може бути тим, що
       // вам саме потрібно, але це може призвести до тонких багів.
       opts = opts || {};
       // ...
