@@ -20,7 +20,7 @@
   1. [Об'єкти](#Об'єкти)
   1. [Масиви](#Масиви)
   1. [Деструктурування](#Деструктурування)
-  1. [Строки](#Строки)
+  1. [Рядки](#Рядки)
   1. [Функції](#Функції)
   1. [Arrow-функції](#Arrow-функції)
   1. [Класи та Конструктори](#Класи-та-Конструктори)
@@ -486,16 +486,16 @@
 
 **[⬆ вверх](#Зміст)**
 
-## Строки
+## Рядки
 
   <a name="strings--quotes"></a><a name="6.1"></a>
-  - [6.1](#strings--quotes) Використовуйте одинарні лапки `''` для строк. eslint: [`quotes`](http://eslint.org/docs/rules/quotes.html) jscs: [`validateQuoteMarks`](http://jscs.info/rule/validateQuoteMarks)
+  - [6.1](#strings--quotes) Використовуйте одинарні лапки `''` для рядків. eslint: [`quotes`](http://eslint.org/docs/rules/quotes.html) jscs: [`validateQuoteMarks`](http://jscs.info/rule/validateQuoteMarks)
 
     ```javascript
     // погано
     const name = "Capt. Janeway";
 
-    // погано - літеральні шаблони мають містити інтерполяцію чи нові строки
+    // погано - літеральні шаблони мають містити інтерполяцію чи нові рядки
     const name = `Capt. Janeway`;
 
     // добре
@@ -503,9 +503,9 @@
     ```
 
   <a name="strings--line-length"></a><a name="6.2"></a>
-  - [6.2](#strings--line-length) Строки, які подовжують лінію більше ніж на 100 символів не повинні записуватись у кілька рядків за допомогою конкатенації
+  - [6.2](#strings--line-length) Рядки, які подовжують лінію більше ніж на 100 символів не повинні записуватись у кілька рядків за допомогою конкатенації
 
-    > Чому? З розбитими таким чином строками болючіше працювати і вони роблять код важко читаємим.
+    > Чому? З розбитими таким чином рядками болючіше працювати і вони роблять код важко читаємим.
 
     ```javascript
     // погано
@@ -524,9 +524,9 @@
     ```
 
   <a name="es6-template-literals"></a><a name="6.4"></a>
-  - [6.3](#es6-template-literals) Коли програмно будуєте строки, використовуйте строчні шаблони замість конкатенації. eslint: [`prefer-template`](http://eslint.org/docs/rules/prefer-template.html) [`template-curly-spacing`](http://eslint.org/docs/rules/template-curly-spacing) jscs: [`requireTemplateStrings`](http://jscs.info/rule/requireTemplateStrings)
+  - [6.3](#es6-template-literals) Коли програмно будуєте рядки, використовуйте рядкові шаблони замість конкатенації. eslint: [`prefer-template`](http://eslint.org/docs/rules/prefer-template.html) [`template-curly-spacing`](http://eslint.org/docs/rules/template-curly-spacing) jscs: [`requireTemplateStrings`](http://jscs.info/rule/requireTemplateStrings)
 
-    > Чому? Строчні шаблони дають читабельність, короткий синтаксис з переносом нових ліній та функціями інтерполяції строки.
+    > Чому? Рядкові шаблони дають читабельність, короткий синтаксис з переносом нових ліній та функціями інтерполяції рядка.
 
     ```javascript
     // погано
@@ -551,10 +551,10 @@
     ```
 
   <a name="strings--eval"></a><a name="6.5"></a>
-  - [6.4](#strings--eval) Ніколи не використовуйте `eval()` на строці, це відкриває дуже багато вразливостей.
+  - [6.4](#strings--eval) Ніколи не використовуйте `eval()` на рядку, це відкриває дуже багато вразливостей.
 
   <a name="strings--escaping"></a>
-  - [6.5](#strings--escaping) Не зловживайте символами екранування у строках. eslint: [`no-useless-escape`](http://eslint.org/docs/rules/no-useless-escape)
+  - [6.5](#strings--escaping) Не зловживайте символами екранування у рядках. eslint: [`no-useless-escape`](http://eslint.org/docs/rules/no-useless-escape)
 
     > Чому? Зворотні слеші ('\') шкодять читаємості, тому вони мають використовуватись лише там де дійсно необхідно.
 
@@ -721,7 +721,7 @@
   <a name="functions--constructor"></a><a name="7.10"></a>
   - [7.10](#functions--constructor) Ніколи не використовуйте конструктор функцій для створення нової функції. eslint: [`no-new-func`](http://eslint.org/docs/rules/no-new-func)
 
-    > Чому? Створення функції таким чином обчислює строку аналогічно eval(), що, в свою чергу, відкриває вразливості.
+    > Чому? Створення функції таким чином обчислює рядок аналогічно eval(), що, в свою чергу, відкриває вразливості.
 
     ```javascript
     // погано
@@ -1438,7 +1438,7 @@
   <a name="variables--one-const"></a><a name="13.2"></a>
   - [13.2](#variables--one-const) Використовуйте по одному `const` для кожної змінної. eslint: [`one-var`](http://eslint.org/docs/rules/one-var.html) jscs: [`disallowMultipleVarDecl`](http://jscs.info/rule/disallowMultipleVarDecl)
 
-    > Чому? Так легше оголошувати змінні таким чином, що вам не потрібно буде хвилюватись, що ви випадково переплутаєте в кінці строки `;` з `,`. Ви також можете пройти через кожне оголошення змінної за допомогою дебагера, замість того, щоб перестрибнути через всі оголошення змінних одразу.
+    > Чому? Так легше оголошувати змінні таким чином, що вам не потрібно буде хвилюватись, що ви випадково переплутаєте в кінці рядка `;` з `,`. Ви також можете пройти через кожне оголошення змінної за допомогою дебагера, замість того, щоб перестрибнути через всі оголошення змінних одразу.
 
     ```javascript
     // погано
@@ -2532,7 +2532,7 @@
   - [21.1](#coercion--explicit) Виконуйте примусове приведення типу на початку ствердження.
 
   <a name="coercion--strings"></a><a name="21.2"></a>
-  - [21.2](#coercion--strings)  Строки:
+  - [21.2](#coercion--strings)  Рядки:
 
     ```javascript
     // => this.reviewScore = 9;
@@ -2541,14 +2541,14 @@
     const totalScore = this.reviewScore + ''; // викликає this.reviewScore.valueOf()
 
     // погано
-    const totalScore = this.reviewScore.toString(); // не гарантовано, що повернеться строка
+    const totalScore = this.reviewScore.toString(); // не гарантовано, що повернеться рядок
 
     // добре
     const totalScore = String(this.reviewScore);
     ```
 
   <a name="coercion--numbers"></a><a name="21.3"></a>
-  - [21.3](#coercion--numbers) Цифри: Використовуйте `Number` для приведення типу та `parseInt` завжди з десятичною для синтаксичного аналізу строк. eslint: [`radix`](http://eslint.org/docs/rules/radix)
+  - [21.3](#coercion--numbers) Цифри: Використовуйте `Number` для приведення типу та `parseInt` завжди з десятичною для синтаксичного аналізу рядків. eslint: [`radix`](http://eslint.org/docs/rules/radix)
 
     ```javascript
     const inputValue = '4';
@@ -2579,7 +2579,7 @@
     // добре
     /**
      * parseInt сповільнював код.
-     * Застосування бітової операції щодо строки для примусового приведення до
+     * Застосування бітової операції щодо рядка для примусового приведення до
      * Number робить код набагато швидшим.
      */
     const val = inputValue >> 0;
